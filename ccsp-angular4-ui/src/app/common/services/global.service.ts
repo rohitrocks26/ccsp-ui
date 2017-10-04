@@ -1,0 +1,41 @@
+import { Injectable } from '@angular/core';
+import { Http, Response, RequestOptions, Headers, Request, RequestMethod} from '@angular/http';
+import { AuthenticationService } from './authentication.service';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/Rx';
+
+@Injectable()
+export class GlobalService {
+    private headers : Headers;
+    private requestOptions : RequestOptions;
+
+    constructor(private httpClient : Http, private authService : AuthenticationService ) {
+    }
+    public GetRequest ( requestUrl : string ) : any {
+
+        return this.httpClient
+        .get(requestUrl)
+        .map(response => this.handleResponse(response))
+        .catch(error => this.handleError(error))
+    } 
+    public PostRequest<T> (requestUrl : string, postBody : T) {
+        return this.httpClient.post(requestUrl, postBody)
+        .map(response => this.handleResponse(response))
+        .catch(error => this.handleError(error))
+    }
+    private getHeaders () : Headers {
+        let header = new Headers();
+        let token = this.authService.accessToken;
+        if (token !== undefined)
+            header.set('Authorization', 'Bearer ' + token  );
+        return header;
+    }
+    private handleResponse(response : any) : any {
+        // Check response and see if there's an error, 
+    }
+    private handleError(error : any) : any {
+        //if there's an error based on standardized format throw an error
+        //and catch at component level
+        Observable.throw(error);
+    }
+}
