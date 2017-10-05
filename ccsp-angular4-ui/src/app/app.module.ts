@@ -10,11 +10,13 @@ import { AppComponent } from './app.component';
 
 
 import { GlobalService, AuthenticationService } from './common';
+import { SampleTestingComponent } from './common/components/sample-testing/sample-testing.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SampleTestingComponent
   ],
   imports: [
     BrowserModule,

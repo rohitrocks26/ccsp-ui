@@ -32,6 +32,11 @@ export class GlobalService {
     }
     private handleResponse(response : any) : any {
         // Check response and see if there's an error, 
+        var responseJson = response.json();
+        if(responseJson.error !== undefined ) {
+            //Handle Error
+        }
+        return responseJson;
     }
     private handleError(error : any) : any {
         //if there's an error based on standardized format throw an error
