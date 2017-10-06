@@ -27,6 +27,6 @@ export class CurrencyPipeModule implements PipeTransform{
    
     integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, this.THOUSANDS_SEPARATOR);
 
-  return this.PREFIX + integer ;
+  return this.PREFIX + integer + this.SUFFIX ;
   }
  }
