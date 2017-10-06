@@ -11,14 +11,14 @@ export class GlobalService {
 
     constructor(private httpClient : Http, private authService : AuthenticationService ) {
     }
-    public GetRequest ( requestUrl : string ) : any {
+    public GetRequest ( requestUrl : string ) : Observable<any> {
 
         return this.httpClient
         .get(requestUrl)
         .map(response => this.handleResponse(response))
         .catch(error => this.handleError(error))
     } 
-    public PostRequest<T> (requestUrl : string, postBody : T) {
+    public PostRequest<T> (requestUrl : string, postBody : T) : Observable<any> {
         return this.httpClient.post(requestUrl, postBody)
         .map(response => this.handleResponse(response))
         .catch(error => this.handleError(error))

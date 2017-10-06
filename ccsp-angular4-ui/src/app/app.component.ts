@@ -2,7 +2,7 @@ import { CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteCo
 import { CurrencyPipeModule } from './common/modules/currency-pipe/currency-pipe.module';
 import { InputModule } from './common/model/input/input.module';
 import { ModalModule } from './common/model/modal/modal.module';
-
+import { GlobalService } from './common';
 import { Component ,ViewChild} from '@angular/core';
 
 @Component({
@@ -81,6 +81,11 @@ public itemLength=this.items.length;
 public limit:number=2;
 public minCount:number=0;
 public maxCount:number=this.limit-1;
+public id : string;
+public data : string;
+constructor ( private globalService : GlobalService ) {
+
+}
 
 list(){
   if(this.items.length<this.maxCount){
@@ -93,6 +98,14 @@ list(){
        
     }
     return items;
+  }
+  requestData() {
+    this.globalService.GetRequest('https://jsonplaceholder.typicode.com/comments/' + this.id)
+    .subscribe(data=> this.loadData(data));
+  }
+  loadData (data : any) {
+    this.data = data;
+    console.log(data);
   }
   changePage(ev){
     this.maxCount=ev.maxCount;

@@ -94,14 +94,24 @@
         <div class="panel-heading"><b>Input</b></div>
              <div class="panel-body">
                 <div class="container-fluid">
-                  <inputComponent [inputData]="inputtransfer"></inputComponent>
+                  <label>Id</label><input type="text" class="form-control" [(ngModel)]="id">
+                  <button type="submit" (click)="requestData()" class="btn btn-primary top-margin">Submit</button>
+                  </div>
+                
+                  <div *ngIf="data">
+                    <label>Id : {{data.id}}</label>
+                    <label>Name : {{data.name}}</label>
+                    <label>Email : {{data.email}}</label>
                   </div>
                   </div>
+                
                 <div class="panel-footer">
                   <a href="">Input Reference</a>
                 </div>
   </div>
+              
 </div>
+
 </div>
   </div>
    <!-- <div class="row">
