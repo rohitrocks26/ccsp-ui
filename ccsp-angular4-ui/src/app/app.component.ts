@@ -15,16 +15,16 @@ export class AppComponent {
   title = 'app';
   public modeltransfer:ModalModule = new ModalModule ("Model header","This is a model component defined for giving the confirmation or error triggered in a particalar process . The properties are fully configurable based on usage !!!!! ");
   public inputtransfer : InputModule = new InputModule("Amount","","enter some amount","text");
-  public groupItem=[{"title": 'qwerty', "id": '1'},
-  {"title": 'asdfg', "id": '2'},
-  {"title": 'zxcvb', "id": '3'},
-  {"title": 'qaz', "id": '4'},
-  {"title": 'wsx', "id": '5'},
-  {"title": 'qwtyuii', "id": '1'},
-  {"title": 'ashjk', "id": '2'},
-  {"title": 'zxbnmb', "id": '3'},
-  {"title": 'qsfj', "id": '4'},
-  {"title": 'wsxyjhgj', "id": '5'}];
+  public groupItem=[{"title": 'aditi', "id": '1'},
+  {"title": 'yash', "id": '2'},
+  {"title": 'nitin', "id": '3'},
+  {"title": 'anil', "id": '4'},
+  {"title": 'somdatt', "id": '5'},
+  {"title": 'rohit', "id": '1'},
+  {"title": 'nitish', "id": '2'},
+  {"title": 'koyel', "id": '3'},
+  {"title": 'shreeram', "id": '4'},
+  {"title": 'sourin', "id": '5'}];
 public group =
 CreateNewAutocompleteGroup(
 'Search from list',
@@ -35,30 +35,30 @@ this.groupItem,
 
 public items=[
   {
-    "name":"home1",
-    "id":"home",
+    "name":"content1",
+    "id":"content1",
     "url":"#"
   },{
-     "name":"home2",
-    "id":"home",
+     "name":"content2",
+    "id":"content2",
     "url":"#"
   },
   {
-    "name":"home3",
-    "id":"home",
+    "name":"content3",
+    "id":"content3",
     "url":"#"
   },{
-     "name":"home4",
-    "id":"home",
+     "name":"content4",
+    "id":"content4",
     "url":"#"
   },
   {
-    "name":"home5",
-    "id":"home",
+    "name":"content5",
+    "id":"content5",
     "url":"#"
   },{
-     "name":"home6",
-    "id":"home",
+     "name":"content6",
+    "id":"content6",
     "url":"#"
   }
 ]
