@@ -1,3 +1,4 @@
+
 import { AutoCompleteComponent } from './common/components/autocomplete/autocomplete.component';
 import { NgAutocompleteComponent } from 'ng-auto-complete';
 import { InputComponent } from './common/components/input/input.component';
@@ -21,6 +22,7 @@ import { CurrencyFormatterDirective } from './common/directives/currency-formatt
 
 @NgModule({
   declarations: [
+   
     AppComponent,
     SampleTestingComponent,
     ModalComponent,
