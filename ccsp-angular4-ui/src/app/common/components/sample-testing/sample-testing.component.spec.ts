@@ -19,7 +19,7 @@ describe('SampleTestingComponent', () => {
     fixture = TestBed.createComponent(SampleTestingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    debugElement = fixture.debugElement.query(By.css('p'));
+    debugElement = fixture.debugElement.query(By.css('class="modal"'));
     element = debugElement.nativeElement;
   });
 
