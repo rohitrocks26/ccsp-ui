@@ -1,10 +1,9 @@
-import { CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent 
-   } from 'ng-auto-complete';
+import { CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent } from 'ng-auto-complete';
 import { CurrencyPipeModule } from './common/modules/currency-pipe/currency-pipe.module';
 import { InputModule } from './common/model/input/input.module';
 import { ModalModule } from './common/model/modal/modal.module';
 
-import { Component } from '@angular/core';
+import { Component ,ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -34,4 +33,55 @@ this.groupItem,
 {titleKey: "title", childrenKey: null}
 );
 
+public items=[
+  {
+    "name":"home1",
+    "id":"home",
+    "url":"#"
+  },{
+     "name":"home2",
+    "id":"home",
+    "url":"#"
+  },
+  {
+    "name":"home3",
+    "id":"home",
+    "url":"#"
+  },{
+     "name":"home4",
+    "id":"home",
+    "url":"#"
+  },
+  {
+    "name":"home5",
+    "id":"home",
+    "url":"#"
+  },{
+     "name":"home6",
+    "id":"home",
+    "url":"#"
+  }
+]
+public itemLength=this.items.length;
+public limit:number=2;
+public minCount:number=0;
+public maxCount:number=this.limit-1;
+
+list(){
+  if(this.items.length<this.maxCount){
+    this.maxCount=this.items.length-1;
+  }
+    var items: Array<any> = [];
+    for(var i = this.minCount; i <= this.maxCount; i++){
+      
+       items.push(this.items[i]);
+       
+    }
+    return items;
+  }
+  changePage(ev){
+    this.maxCount=ev.maxCount;
+    this.minCount=ev.minCount;
+
+  }
 }

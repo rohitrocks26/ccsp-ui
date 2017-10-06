@@ -61,7 +61,7 @@
         <div class="panel-heading"><b>Autocomplete</b></div>
              <div class="panel-body">
                 <div class="container-fluid">
-                    <!-- <autoCompleteComponent [obj]="group"></autoCompleteComponent> -->
+                     <autoCompleteComponent [autoCompleteSearchList]="group"></autoCompleteComponent>
                   </div>
                   </div>
   </div>
@@ -71,6 +71,14 @@
         <div class="panel-heading"><b>Pagination</b></div>
              <div class="panel-body">
                 <div class="container-fluid">
+                  <div class="row">
+                    <ng-template ngFor let-item [ngForOf]="list()" let-currentElementIndex="(index + 1)" [ngForTrackBy]="trackByFn">
+                     <div id="{{item.id}}">{{item.name}}</div>
+                    </ng-template>
+                  </div>
+                  <div class="row">
+                   <paginationComponent (pageClicked)="changePage($event)" [maxLimit]="limit" [itemlength]="itemLength"></paginationComponent>
+                  </div>
                   </div>
                   </div>
   </div>

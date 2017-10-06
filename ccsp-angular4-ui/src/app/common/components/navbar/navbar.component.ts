@@ -9,9 +9,9 @@ import {
     selector: 'navbarComponent',
     providers: [
     ],
-    templateUrl:'./navbar/navbar.component.html'
+    templateUrl:'./navbar.component.html'
   })
-  export class NavbarCommonComponent implements OnInit {
+  export class NavbarComponent implements OnInit {
     
     @Input() public navbarList=Array<any>();
   
