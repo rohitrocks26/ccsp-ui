@@ -19,18 +19,16 @@ describe('InputComponent', () => {
     fixture = TestBed.createComponent(InputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    debugElement = fixture.debugElement.query(By.css('p'));
+    debugElement = fixture.debugElement.query(By.css('input'));
     element = debugElement.nativeElement;
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  // To check if the change is reflected onto the UI
-  it('should display updated property-name', () => {
-  component.name = 'New Name';
+  it('should display updated property-value', () => {
+    fixture.detectChanges();
   fixture.detectChanges();
-  expect(element.textContent).toContain('New Name');
+  expect(element.textContent).toContain('val');
   });
 });

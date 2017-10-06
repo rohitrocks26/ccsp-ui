@@ -62,6 +62,21 @@ public items=[
     "url":"#"
   }
 ]
+ public menuModelArray=[{
+    "name":"home",
+    "id":"home",
+    "url":"#"
+  },{
+     "name":"about",
+    "id":"about",
+    "url":"#"
+  },
+  {
+     "name":"contact us",
+    "id":"contact us",
+    "url":"#"
+  }
+]
 public itemLength=this.items.length;
 public limit:number=2;
 public minCount:number=0;

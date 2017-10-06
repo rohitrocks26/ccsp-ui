@@ -1,7 +1,6 @@
 import { Component, OnInit, Input,
     Output,
     EventEmitter } from '@angular/core';
-
 @Component({
   selector: 'paginationComponent',
   templateUrl: './pagination.component.html',
@@ -13,6 +12,7 @@ export class PaginationComponent implements OnInit {
     @Input() maxLimit:number;
     @Output() pageClicked : EventEmitter<any> = new EventEmitter<any>(); 
     private val: string;
+    public selected;
     constructor(
     ) {}
     
@@ -26,7 +26,6 @@ export class PaginationComponent implements OnInit {
     }
     public ngOnInit() {
       console.log(this.itemlength+ this.maxLimit);
-     
      this.count=this.itemlength/this.maxLimit;
      if(this.itemlength%this.maxLimit!=0){
         this.count=this.count+1;
@@ -35,8 +34,9 @@ export class PaginationComponent implements OnInit {
     }
     private minCount:number;
     private maxcount:number;
-    public onChangePage(ev){
+    public onChangePage(ev,item){
       var id=ev.srcElement.id;
+      //jQuery('#'+id).addClass('active');
       this.minCount=(id*this.maxLimit)-this.maxLimit;
       this.maxcount=(id*this.maxLimit)-1;
       if(this.maxcount>this.itemlength){
@@ -45,6 +45,9 @@ export class PaginationComponent implements OnInit {
       this.pageClicked.emit({"minCount":this.minCount,
                       "maxCount":this.maxcount});
     }
+    isActive(item) {
+      return this.selected === item;
+  };
   }
   
   

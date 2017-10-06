@@ -1,25 +1,19 @@
-import {
-    Component,
-    OnInit,
-    Input
-  } from '@angular/core';
-  
+import { Component, OnInit ,Input} from '@angular/core';
 
-  @Component({
-    selector: 'navbarComponent',
-    providers: [
-    ],
-    templateUrl:'./navbar.component.html'
-  })
-  export class NavbarComponent implements OnInit {
-    
-    @Input() public navbarList=Array<any>();
+@Component({
+  selector: 'navbarComponent',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
+})
+export class NavbarComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+  @Input() public navbarList=Array<any>();
   
     private val: string;
-    constructor(      
-    ) {
-      
-    }
    createRange(){
       var items: number[] = [];
       for(var i = 0; i < this.navbarList.length; i++){
@@ -27,9 +21,5 @@ import {
       }
       return items;
     }
-    public ngOnInit() {
-      
-    }
-  }
-  
-  
+
+}

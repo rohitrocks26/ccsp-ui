@@ -27,10 +27,5 @@ describe('MenuComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // To check if the change is reflected onto the UI
-  it('should display updated property-name', () => {
-  component.name = 'New Name';
-  fixture.detectChanges();
-  expect(element.textContent).toContain('New Name');
-  });
+  
 });
