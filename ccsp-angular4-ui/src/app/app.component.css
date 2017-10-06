@@ -7,3 +7,6 @@
 .top-margin {
     margin-top : 10px;
 }
+label {
+    display : block;
+}
