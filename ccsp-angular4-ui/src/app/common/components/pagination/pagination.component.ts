@@ -1,15 +1,14 @@
 import { Component, OnInit, Input,
     Output,
     EventEmitter } from '@angular/core';
-   
-  @Component({
-    selector: 'paginationComponent',
-    providers: [
-    ],
-    templateUrl: './pagination.component.html',
-    styleUrls:['']
-  })
-  export class PaginationComponent implements OnInit {
+
+@Component({
+  selector: 'paginationComponent',
+  templateUrl: './pagination.component.html',
+  styleUrls: ['./pagination.component.css']
+})
+export class PaginationComponent implements OnInit {
+
     @Input() itemlength:number;
     @Input() maxLimit:number;
     @Output() pageClicked : EventEmitter<any> = new EventEmitter<any>(); 

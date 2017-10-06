@@ -11,7 +11,7 @@ import {
     selector: 'autoCompleteComponent',
     providers: [
     ],
-    templateUrl: './autocomplete/autocomplete.component.html',
+    templateUrl: './autocomplete.component.html',
     styleUrls:[]
   })
   export class AutoCompleteComponent implements OnInit {
