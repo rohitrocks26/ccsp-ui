@@ -1,4 +1,4 @@
-import { InputModel } from './../shared/modal/modal.module';
+
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -8,8 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ModalComponent implements OnInit {
   @Input() modelinput ; 
-  public inputdata ; 
-
+ 
   constructor() {}
 
   ngOnInit() { }

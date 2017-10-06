@@ -1,6 +1,6 @@
 <div class="input-group">
     <span class="input-group-addon">{{inputData.type}}</span>
-    <input type="{{inputData.type}}" class="form-control" name="{{inputData.name}}"
-    placeholder="{{inputData.placeHolder}}" value="{{inputData.value}}" [ngModel]="inputData.name"
+    <input type="{{inputData.type}}" class="form-control" 
+    placeholder="{{inputData.placeHolder}}" value="{{inputData.value}}" [ngModel]="inputData.value"
     (ngModelChange)="change($event)">
     </div>

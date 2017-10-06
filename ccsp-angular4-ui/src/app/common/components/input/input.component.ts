@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'inputComp',
+  selector: 'inputComponent',
   providers: [
   ],
   templateUrl:'./input.component.html'

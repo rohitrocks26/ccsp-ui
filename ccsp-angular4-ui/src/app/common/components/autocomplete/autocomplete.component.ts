@@ -1,17 +1,18 @@
+
 import {
     Component,
     OnInit,
     Input,
     ViewChild
   } from '@angular/core';
-  import {CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent} from "ng-auto-complete";
+ import {CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent} from 'ng-auto-complete';
   
   @Component({
     selector: 'autoCompleteComponent',
     providers: [
     ],
     templateUrl: './autocomplete/autocomplete.component.html',
-    styleUrls:['./autocomplete/autocomplete.component.css']
+    styleUrls:[]
   })
   export class AutoCompleteComponent implements OnInit {
     @Input() autoCompleteSearchList;
