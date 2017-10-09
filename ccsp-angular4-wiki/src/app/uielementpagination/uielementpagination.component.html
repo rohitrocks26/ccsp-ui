@@ -7,6 +7,41 @@
     </div>
     <!-- /.row -->
     <div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3>Pagination Component</h3>
+                <p>This is an injectable component whose properties are purely configurable based on the kind of requirement !! </p>                           
+            </div>
+        </div>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Feature </h3>
+                    <span>number  of pages are counted on the basis number of records in a particaluar page and total number records</span><br>
+                    <span>on clicking any page it emits the page count</span>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+<div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>How to Include It </h3>
+                   Selector: <span>paginationComponent</span>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -75,6 +110,17 @@
     <paginationComponent (pageClicked)="changePage($event)" [maxLimit]="limit" [itemlength]="itemLength"></paginationComponent>
     </div>
 </div>
+<div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Code Snippet </h3>
+                    <span>&lt;</span>paginationComponent (pageClicked)="changePage($event)" [maxLimit]="limit" [itemlength]="itemLength"<span>&gt;</span> <span>&lt;</span>/paginationComponent<span>&gt;</span>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
 <!-- /#page-wrapper -->
 
 </div>
