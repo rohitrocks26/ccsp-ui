@@ -100,7 +100,7 @@ list(){
     return items;
   }
   requestData() {
-    this.globalService.GetRequest('https://jsonplaceholder.typicode.com/comments/' + this.id)
+    this.globalService.getRequest('http://34.208.243.62:6001/benefitcoding/adminplan/' + this.id)
     .subscribe(data=> this.loadData(data));
   }
   loadData (data : any) {
