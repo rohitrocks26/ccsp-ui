@@ -1,0 +1,9 @@
+<!-- This is the main container inside which application will render  -->
+<div id="wrapper">
+    <!-- Injecting the application navbar  -->
+    <app-navbar [data]="navbardata"> </app-navbar>
+     <!-- Router will be done inside this container -->
+    <div id="page-wrapper">
+        <router-outlet></router-outlet>
+    </div>
+</div>

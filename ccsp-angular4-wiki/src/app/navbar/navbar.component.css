@@ -1,0 +1,27 @@
+ul li{list-style-type:none; text-decoration: none;}
+
+#searchsuggestion{
+    position:absolute;
+    top: 65px;
+    z-index: 10000;
+    /* background-color: #f8f8f8; */
+    margin: 0px !important;
+    padding-left: 0px;
+    left: 0px;
+    background-color:darkgray;
+    margin-right:-6px;
+    color:black;
+    margin-top:-4px; 
+    
+}
+#searchsuggestion li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#searchsuggestion ul{
+    margin-left:-10px;
+}
+.anchordata{
+    font-weight: bold;
+    color:black;
+}

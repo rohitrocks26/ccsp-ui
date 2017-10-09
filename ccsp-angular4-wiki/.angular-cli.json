@@ -1,0 +1,64 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "wiki"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css","../node_modules/bootstrap/dist/css/bootstrap.min.css","../node_modules/metisMenu/dist/metisMenu.min.css","./app/shared/css/sb-admin-2.css","./app/shared/css/bootstrap-datepicker.css","../node_modules/font-awesome/css/font-awesome.css"],
+      "scripts": ["../node_modules/jquery/dist/jquery.min.js","../node_modules/bootstrap/dist/js/bootstrap.min.js",
+                  "../node_modules/metisMenu/dist/metisMenu.min.js","./app/shared/js/sb-admin-2.js",
+                  "./app/shared/js/excanvas.min.js","./app/shared/js/jquery.flot.js","./app/shared/js/jquery.flot.pie.js",
+                  "./app/shared/js/jquery.flot.resize.js","./app/shared/js/jquery.flot.time.js","./app/shared/js/jquery.flot.tooltip.min.js",
+                  "./app/shared/js/flot-data.js","./app/shared/js/raphael.min.js","./app/shared/js/morris.min.js",
+                  "./app/shared/js/morris-data.js","./app/shared/js/bootstrap-datepicker.js"],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}

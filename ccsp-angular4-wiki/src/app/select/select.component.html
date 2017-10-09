@@ -1,0 +1,8 @@
+<div class="form-group" style="box-sizing: none;">
+    <div class="selectcontainer">
+    <label for="{{selectdata.name}}"><span>Secret Question</span></label>
+    <select  style="width: 100%;" name="{{selectdata.name}}" class="form-control custom-select" value="selectdata.value" id="{{selectdata.id}}">
+      <option *ngFor="let item of selectdata.selectoption" value="{{item.key}}">{{item.value}}</option>
+    </select>
+  </div>
+  </div>
