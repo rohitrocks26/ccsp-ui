@@ -11,9 +11,7 @@ import { RouterModule,PreloadAllModules} from '@angular/router';
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { PaginationComponent} from './common/components/pagination/pagination.component';
-
 import { GlobalService, AuthenticationService } from './common';
-import { SampleTestingComponent } from './common/components/sample-testing/sample-testing.component';
 import { DatepickerComponent } from './common/components/datepicker/datepicker.component';
 import { CurrencyFormatterDirective } from './common/directives/currency-formatter.directive';
 import { NavbarComponent } from './common/components/navbar/navbar.component';
@@ -23,7 +21,6 @@ import { NavbarComponent } from './common/components/navbar/navbar.component';
   declarations: [
     PaginationComponent,
     AppComponent,
-    SampleTestingComponent,
     ModalComponent,
     DatepickerComponent,
     CurrencyFormatterDirective,

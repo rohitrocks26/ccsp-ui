@@ -19,8 +19,6 @@ describe('MenuComponent', () => {
     fixture = TestBed.createComponent(MenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    debugElement = fixture.debugElement.query(By.css('p'));
-    element = debugElement.nativeElement;
   });
 
   it('should create', () => {
