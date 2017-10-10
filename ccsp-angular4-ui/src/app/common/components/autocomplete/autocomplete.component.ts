@@ -23,7 +23,7 @@ import {
      @ViewChild(NgAutocompleteComponent) public completer: NgAutocompleteComponent;
      public selected;
      emitSelected(item){
-       this.selectedValue.emit({"value": this.selected});
+       this.selectedValue.emit({"value": item});
      }
         Selected(item: SelectedAutocompleteItem) {
            this.selected=item.item.title;

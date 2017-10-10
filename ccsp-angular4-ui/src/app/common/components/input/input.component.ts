@@ -14,10 +14,10 @@ import {
 })
 export class InputComponent implements OnInit {
   @Input() inputData: Object;
-   @Output() inputCangeValue : EventEmitter<any> = new EventEmitter<any>(); 
+   @Output() inputChangeValue : EventEmitter<any> = new EventEmitter<any>(); 
      constructor() {}
  public change(ev){
-    this.inputCangeValue.emit({"value":ev});
+    this.inputChangeValue.emit({"value":ev});
     console.log(ev)
   }
   public ngOnInit() {
