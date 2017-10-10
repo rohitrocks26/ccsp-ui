@@ -1,4 +1,4 @@
-import { AutoCompleteComponent } from './uielementautocompletecommon';
+import { AutoCompleteComponent } from './../autocomplete/autocomplete.component';
 import { Component, OnInit } from '@angular/core';
 import {CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent} from "ng-auto-complete";
 
