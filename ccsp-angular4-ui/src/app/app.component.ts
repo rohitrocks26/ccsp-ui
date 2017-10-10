@@ -13,7 +13,7 @@ import { Component ,ViewChild} from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  public modeltransfer:ModalModule = new ModalModule ("Model header","This is a model component defined for giving the confirmation or error triggered in a particalar process . The properties are fully configurable based on usage !!!!! ");
+  public modeltransfer:ModalModule = new ModalModule ("Model header","Model content");
   public inputtransfer : InputModule = new InputModule("Amount","","enter some amount","text");
   public groupItem=[{"title": 'aditi', "id": '1'},
   {"title": 'yash', "id": '2'},

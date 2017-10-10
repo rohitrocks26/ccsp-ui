@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule , DebugElement} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -15,3 +15,14 @@ export class InputModule {
     this.type=type;
   }
  }
+ export const ButtonClickEvents = {
+  left:  { button: 0 },
+  right: { button: 2 }
+};
+export function click(element: DebugElement | HTMLElement, eventObj: any = ButtonClickEvents.left): void {
+ if (element instanceof HTMLElement) {   
+   element.click();
+ } else {   
+  element.triggerEventHandler('click', eventObj);
+ }
+}

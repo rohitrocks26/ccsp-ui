@@ -15,6 +15,7 @@ import { GlobalService, AuthenticationService } from './common';
 import { DatepickerComponent } from './common/components/datepicker/datepicker.component';
 import { CurrencyFormatterDirective } from './common/directives/currency-formatter.directive';
 import { NavbarComponent } from './common/components/navbar/navbar.component';
+import { DirectivecontainerComponent } from './common/directives/directivecontainer/directivecontainer.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { NavbarComponent } from './common/components/navbar/navbar.component';
     CurrencyFormatterDirective,
     InputComponent,
     AutoCompleteComponent,
-    NavbarComponent
+    NavbarComponent,
+    DirectivecontainerComponent
     
   ],
   imports: [
