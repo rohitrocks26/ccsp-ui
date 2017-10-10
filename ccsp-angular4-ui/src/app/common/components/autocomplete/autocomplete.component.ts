@@ -3,24 +3,27 @@ import {
     Component,
     OnInit,
     Input,
-    ViewChild,EventEmitter,Output
+    ViewChild,
+    EventEmitter,
+    Output,
+    ViewEncapsulation
   } from '@angular/core';
  import {CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent} from 'ng-auto-complete';
-  
   @Component({
     selector: 'autoCompleteComponent',
     providers: [
     ],
     templateUrl: './autocomplete.component.html',
-    styleUrls:[]
+    styleUrls:['./autocomplete.component.css'],
+    encapsulation : ViewEncapsulation.None
   })
   export class AutoCompleteComponent implements OnInit {
     @Input() autoCompleteSearchList;
       @Output() selectedValue : EventEmitter<any> = new EventEmitter<any>(); 
      @ViewChild(NgAutocompleteComponent) public completer: NgAutocompleteComponent;
      public selected;
-     emitSelected(selectedItem){
-       this.selectedValue.emit({"value": selectedItem});
+     emitSelected(item){
+       this.selectedValue.emit({"value": this.selected});
      }
         Selected(item: SelectedAutocompleteItem) {
            this.selected=item.item.title;
@@ -33,6 +36,7 @@ import {
     public ngOnInit() {
       this.group = [this.autoCompleteSearchList];  
     }
+    
   }
   
   
