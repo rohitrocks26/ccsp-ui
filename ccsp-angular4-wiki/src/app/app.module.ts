@@ -1,4 +1,4 @@
-import { AutoCompleteComponent } from './uielementautocomplete/uielementautocompletecommon';
+import { AutoCompleteComponent } from './autocomplete/autocomplete.component';
 import { NgAutocompleteComponent } from 'ng-auto-complete';
 import { PaginationComponent } from './uielementpagination/uielementpaginationcommon.component';
 import { CurrencyFormatterDirective } from './shared/currency-formatter.directive';
