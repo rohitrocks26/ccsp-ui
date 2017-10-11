@@ -5,7 +5,7 @@ import { InputComponent } from './common/components/input/input.component';
 import { ModalComponent } from './common/components/modal/modal.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { NgModule, TrackByFn } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule,PreloadAllModules} from '@angular/router';
 import { ROUTES } from './app.routes';
@@ -15,6 +15,7 @@ import { GlobalService, AuthenticationService } from './common';
 import { DatepickerComponent } from './common/components/datepicker/datepicker.component';
 import { CurrencyFormatterDirective } from './common/directives/currency-formatter.directive';
 import { NavbarComponent } from './common/components/navbar/navbar.component';
+import { DirectivecontainerComponent } from './common/directives/directivecontainer/directivecontainer.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { NavbarComponent } from './common/components/navbar/navbar.component';
     CurrencyFormatterDirective,
     InputComponent,
     AutoCompleteComponent,
-    NavbarComponent
+    NavbarComponent,
+    DirectivecontainerComponent
   ],
   imports: [
     NgAutoCompleteModule,

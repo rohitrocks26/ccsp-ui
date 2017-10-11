@@ -17,7 +17,7 @@ export class CurrencyPipeModule implements PipeTransform{
     // TODO comes from configuration settings
     this.PREFIX = ''
     this.THOUSANDS_SEPARATOR = ",";
-    this.SUFFIX = '$'
+   
   }
 
   transform(value: string, fractionSize: number = 2): string {
@@ -27,6 +27,6 @@ export class CurrencyPipeModule implements PipeTransform{
    
     integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, this.THOUSANDS_SEPARATOR);
 
-  return this.PREFIX + integer + this.SUFFIX ;
+  return this.PREFIX + integer  ;
   }
  }
