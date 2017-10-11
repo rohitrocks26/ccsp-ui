@@ -1,6 +1,7 @@
 import { Component, OnInit, Input,
     Output,
-    EventEmitter } from '@angular/core';
+    EventEmitter, TrackByFn } from '@angular/core';
+    
 @Component({
   selector: 'paginationComponent',
   templateUrl: './pagination.component.html',

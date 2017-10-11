@@ -1,8 +1,6 @@
 import { CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent } from 'ng-auto-complete';
 import { CurrencyPipeModule } from './common/modules/currency-pipe/currency-pipe.module';
-import { InputModule } from './common/model/input/input.module';
-import { ModalModule } from './common/model/modal/modal.module';
-import { GlobalService } from './common';
+import { GlobalService, Modal, Input } from './common';
 import { Component ,ViewChild} from '@angular/core';
 
 @Component({
@@ -13,8 +11,9 @@ import { Component ,ViewChild} from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  public modeltransfer:ModalModule = new ModalModule ("Model header","This is a model component defined for giving the confirmation or error triggered in a particalar process . The properties are fully configurable based on usage !!!!! ");
-  public inputtransfer : InputModule = new InputModule("Amount","","enter some amount","text");
+  public donation : string; 
+  public modeltransfer:Modal = new Modal("Model header","This is a model component defined for giving the confirmation or error triggered in a particalar process . The properties are fully configurable based on usage !!!!! ");
+  public inputtransfer :Input  = new Input("Amount","","enter some amount","text");
   public groupItem=[{"title": 'aditi', "id": '1'},
   {"title": 'yash', "id": '2'},
   {"title": 'nitin', "id": '3'},

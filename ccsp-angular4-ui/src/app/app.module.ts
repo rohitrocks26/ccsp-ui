@@ -1,11 +1,11 @@
 
 import { AutoCompleteComponent } from './common/components/autocomplete/autocomplete.component';
-import {NgAutoCompleteModule} from "ng-auto-complete";
+import { NgAutoCompleteModule } from "ng-auto-complete";
 import { InputComponent } from './common/components/input/input.component';
 import { ModalComponent } from './common/components/modal/modal.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, TrackByFn } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule,PreloadAllModules} from '@angular/router';
 import { ROUTES } from './app.routes';
@@ -27,7 +27,6 @@ import { NavbarComponent } from './common/components/navbar/navbar.component';
     InputComponent,
     AutoCompleteComponent,
     NavbarComponent
-    
   ],
   imports: [
     NgAutoCompleteModule,
