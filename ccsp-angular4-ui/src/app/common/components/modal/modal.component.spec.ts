@@ -1,6 +1,5 @@
 import { FormsModule } from '@angular/forms';
 
-import { ButtonClickEvents ,click } from './../../model/input/input.module';
 import { By } from '@angular/platform-browser';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement }    from '@angular/core';
