@@ -1,6 +1,6 @@
 
 import { AutoCompleteComponent } from './common/components/autocomplete/autocomplete.component';
-import {NgAutoCompleteModule} from "ng-auto-complete";
+import { NgAutoCompleteModule } from "ng-auto-complete";
 import { InputComponent } from './common/components/input/input.component';
 import { ModalComponent } from './common/components/modal/modal.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,6 +16,7 @@ import { DatepickerComponent } from './common/components/datepicker/datepicker.c
 import { CurrencyFormatterDirective } from './common/directives/currency-formatter.directive';
 import { NavbarComponent } from './common/components/navbar/navbar.component';
 import { DirectivecontainerComponent } from './common/directives/directivecontainer/directivecontainer.component';
+import { DemoPageComponent } from './demo-page/demo-page.component';
 
 
 @NgModule({
@@ -28,8 +29,8 @@ import { DirectivecontainerComponent } from './common/directives/directivecontai
     InputComponent,
     AutoCompleteComponent,
     NavbarComponent,
-    DirectivecontainerComponent
-    
+    DirectivecontainerComponent,
+    DemoPageComponent
   ],
   imports: [
     NgAutoCompleteModule,
