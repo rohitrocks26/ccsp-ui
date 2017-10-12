@@ -38,9 +38,15 @@
         <div class="panel-heading"><b>Masking</b></div>
              <div class="panel-body">
                 <div class="container-fluid">
-                    <div class="col-md-12">
-                        <input type="text" placeholder="Please enter valid amount" class="form-control" id="donation" [ngModel]="donation" appCurrencyFormatter >
-                          </div>
+                    <div class="col-md-12 form-group">
+                      
+                        <input type="text" pattern="[0-9]*" #mobile="ngModel" placeholder="Please enter valid amount" class="form-control" id="donation" [ngModel]="donation" appCurrencyFormatter >
+                        <div [hidden]="mobile.valid || mobile.pristine"
+                        class="alert alert-danger">
+                       
+                        <div [hidden]="!mobile.hasError('pattern')">Please enter only numbers</div>
+                     </div>   
+                      </div>
                   </div>
                   </div>
                 <div class="panel-footer">
