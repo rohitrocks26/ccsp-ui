@@ -40,6 +40,7 @@ describe('ModalComponent', () => {
      expect(elementbody.textContent).toBe(component.modelinput.modelContent);
   });  
   it('should display modal header defined as property', () => {
+    
     var modal =<HTMLElement>elementheader.getElementsByClassName(".modal-title")[0];
     expect(elementheader.textContent).toBe(component.modelinput.modelHeader);
  });  
