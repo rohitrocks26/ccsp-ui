@@ -102,7 +102,7 @@
                                   <div class="panel panel-default">
                                         <div class="panel-body">
                                             <h3>Input Component</h3>  
-                                             <inputComponent [inputData]="inputModel"></inputComponent>
+                                             <inputComponent (inputChangeValue)="getInputValue($event)" [inputData]="inputModel"></inputComponent>
                                         </div>
                                     </div>   
                                    
