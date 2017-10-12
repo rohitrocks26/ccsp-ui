@@ -21,7 +21,7 @@ export class AppComponent {
                        {url:"uielement" , link: "UI Elements" ,icon:"fa-wrench", child:[
                               { url:"panel-wells", link:"Panels and Wells",child:[]},
                               { url:"buttons", link:"Buttons",child:[]},
-                              { url:"notifications", link:"Notifications",child:[]},
+                              { url:"notifications", link:"Modal",child:[]},
                               { url:"typography", link:"Typography",child:[]},
                               { url:"icons", link:"Icons",child:[]},
                               { url:"grid", link:"Grid",child:[]},
