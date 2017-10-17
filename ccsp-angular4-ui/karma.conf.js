@@ -27,8 +27,8 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
+    browsers: ['ChromeHeadless'],
+    singleRun: true,
     customLaunchers: {
   ChromeHeadless: {
     base: 'Chrome',
@@ -37,8 +37,8 @@ module.exports = function (config) {
       '--disable-gpu',
       // Without a remote debugging port, Google Chrome exits immediately.
       '--remote-debugging-port=9222',
-      ],
-    }
+    ],
   }
+}
   });
 };
