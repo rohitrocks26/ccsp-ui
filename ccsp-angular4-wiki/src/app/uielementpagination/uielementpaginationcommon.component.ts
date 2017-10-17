@@ -19,8 +19,8 @@ import {
   `
   })
   export class PaginationComponent implements OnInit {
-    @Input() itemlength:number;
-    @Input() maxLimit:number;
+    @Input() totalNumberOfRecords:number;
+    @Input() noOfRecordsInPage:number;
     @Output() pageClicked : EventEmitter<any> = new EventEmitter<any>(); 
     private val: string;
     constructor(
@@ -35,10 +35,10 @@ import {
       return items;
     }
     public ngOnInit() {
-      console.log(this.itemlength+ this.maxLimit);
+      console.log(this.totalNumberOfRecords+ this.noOfRecordsInPage);
      
-     this.count=this.itemlength/this.maxLimit;
-     if(this.itemlength%this.maxLimit!=0){
+     this.count=this.totalNumberOfRecords/this.noOfRecordsInPage;
+     if(this.totalNumberOfRecords%this.noOfRecordsInPage!=0){
         this.count=this.count+1;
      }
       console.log(this.count);
@@ -47,10 +47,10 @@ import {
     private maxcount:number;
     public onChangePage(ev){
       var id=ev.srcElement.id;
-      this.minCount=(id*this.maxLimit)-this.maxLimit;
-      this.maxcount=(id*this.maxLimit)-1;
-      if(this.maxcount>this.itemlength){
-        this.maxcount=this.itemlength-1;
+      this.minCount=(id*this.noOfRecordsInPage)-this.noOfRecordsInPage;
+      this.maxcount=(id*this.noOfRecordsInPage)-1;
+      if(this.maxcount>this.totalNumberOfRecords){
+        this.maxcount=this.totalNumberOfRecords-1;
       }
       this.pageClicked.emit({"minCount":this.minCount,
                       "maxCount":this.maxcount});

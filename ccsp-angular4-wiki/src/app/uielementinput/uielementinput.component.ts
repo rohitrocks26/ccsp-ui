@@ -20,7 +20,9 @@ export class UielementinputComponent implements OnInit {
     "type":"text"
   };
   }
-
+  public getInputValue(ev){
+    console.log(ev.value);
+  }
   ngOnInit() {
   }
 

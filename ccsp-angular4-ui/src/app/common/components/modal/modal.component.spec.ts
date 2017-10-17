@@ -1,6 +1,5 @@
 import { FormsModule } from '@angular/forms';
 
-import { ButtonClickEvents ,click } from './../../model/input/input.module';
 import { By } from '@angular/platform-browser';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement }    from '@angular/core';
@@ -40,6 +39,7 @@ describe('ModalComponent', () => {
      expect(elementbody.textContent).toBe(component.modelinput.modelContent);
   });  
   it('should display modal header defined as property', () => {
+    
     var modal =<HTMLElement>elementheader.getElementsByClassName(".modal-title")[0];
     expect(elementheader.textContent).toBe(component.modelinput.modelHeader);
  });  

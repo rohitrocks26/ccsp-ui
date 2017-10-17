@@ -11,7 +11,7 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <h3>Pagination Component</h3>
-                <p>This is an injectable component whose properties are purely configurable based on the kind of requirement !! </p>                           
+                <p>This component is used to generate numer of pages on the basis of the page's capacity </p>                           
             </div>
         </div>
     </div>
@@ -23,8 +23,8 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3>Feature </h3>
-                    <span>number  of pages are counted on the basis number of records in a particaluar page and total number records</span><br>
-                    <span>on clicking any page it emits the page count</span>
+                    <li><b> Data</b>: Number of pages are counted on the basis of number of records in a particaluar page and total number records</li>
+                    <li><b>Event</b>: clicking any page it emits the page count</li>
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@
 <div class="row">
     <div class="panel-body">
         <h1>Basic Pagination:</h1>
-    <paginationComponent (pageClicked)="changePage($event)" [maxLimit]="limit" [itemlength]="itemLength"></paginationComponent>
+    <paginationComponent (pageClicked)="changePage($event)" [noOfRecordsInPage]="limit" [totalNumberOfRecords]="itemLength"></paginationComponent>
     </div>
 </div>
 <div class="row">
@@ -115,7 +115,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3>Code Snippet </h3>
-                    <span>&lt;</span>paginationComponent (pageClicked)="changePage($event)" [maxLimit]="limit" [itemlength]="itemLength"<span>&gt;</span> <span>&lt;</span>/paginationComponent<span>&gt;</span>
+                    <code><span>&lt;</span>paginationComponent (pageClicked)="changePage($event)" [noOfRecordsInPage]="limit" [totalNumberOfRecords]="itemLength"<span>&gt;</span> <span>&lt;</span>/paginationComponent<span>&gt;</span></code>
                 </div>
             </div>
         </div>
