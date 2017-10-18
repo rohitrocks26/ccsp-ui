@@ -33,7 +33,7 @@ module.exports = function (config) {
     ChromeNoSandbox: {
     base: 'Chrome',
     flags: ['--no-sandbox']
+    }
   }
-}
   });
 };
