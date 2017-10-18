@@ -24,7 +24,7 @@ module.exports = function (config) {
       environment: 'dev'
     },
     
-    reporters: ['progress', 'kjhtml','junit'],
+    reporters: ['progress', 'kjhtml','jenkins'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -35,12 +35,12 @@ module.exports = function (config) {
     ChromeNoSandbox: {
     base: 'Chrome',
     flags: ['--no-sandbox']
-    },
+    }
+  },
   jenkinsReporter: {
       outputFile: 'test-results.xml',
       suite: 'CCSP',                 // this will be mapped to the package
       classnameSuffix: 'unit-test'
     }
-  }
   });
 };
