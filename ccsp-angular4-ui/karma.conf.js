@@ -28,7 +28,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome','ChromeNoSandbox','PhantomJS'],
+    browsers: ['PhantomJS'],
     singleRun: true,
    customLaunchers: {
     ChromeNoSandbox: {
