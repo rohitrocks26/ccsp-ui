@@ -24,7 +24,7 @@ module.exports = function (config) {
       environment: 'dev'
     },
     
-    reporters: ['progress', 'kjhtml','junit','coverage'],
+    reporters: ['progress', 'kjhtml','junit'],
     junitReporter: {
       outputDir: '', // results will be saved as $outputDir/$browserName.xml
       outputFile: 'test_jasmine_js.xml', // if included, results will be saved as $outputDir/$browserName/$outputFile
