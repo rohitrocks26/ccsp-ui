@@ -30,13 +30,7 @@ describe('InputComponent', () => {
   it('should create component', () => {
     expect(component).toBeTruthy();
   });
-   it('should emit value', () => {
-    let emittedObject : any;
-  component.inputChangeValue.subscribe((emitObject) => emittedObject = emitObject);
-  component.change(new KeyboardEvent("keypress",{ 'key' : 'a'}));
-  expect(emittedObject.value.key).toBe("a");
-  });
-
+   
 
   // To check if the change is reflected onto the UI
 
