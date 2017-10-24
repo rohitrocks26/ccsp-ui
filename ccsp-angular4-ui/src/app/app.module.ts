@@ -1,3 +1,4 @@
+import { CanactivateauthguardService } from './common/services/canactivateauthguard.service';
 
 import { AutoCompleteComponent } from './common/components/autocomplete/autocomplete.component';
 import { NgAutoCompleteModule } from "ng-auto-complete";
@@ -17,6 +18,7 @@ import { CurrencyFormatterDirective } from './common/directives/currency-formatt
 import { NavbarComponent } from './common/components/navbar/navbar.component';
 import { DirectivecontainerComponent } from './common/directives/directivecontainer/directivecontainer.component';
 import { DemoPageComponent } from './demo-page/demo-page.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { DemoPageComponent } from './demo-page/demo-page.component';
     AutoCompleteComponent,
     NavbarComponent,
     DirectivecontainerComponent,
-    DemoPageComponent
+    DemoPageComponent,
+    LoginComponent
   ],
   imports: [
     NgAutoCompleteModule,
@@ -43,7 +46,8 @@ import { DemoPageComponent } from './demo-page/demo-page.component';
   ],
   providers: [ 
     GlobalService,
-    AuthenticationService
+    AuthenticationService,
+    CanactivateauthguardService
   ],
   bootstrap: [AppComponent]
 })

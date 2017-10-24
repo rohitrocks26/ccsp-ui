@@ -13,8 +13,8 @@ export class AuthenticationService {
     public get accessToken() : string {
         return localStorage.getItem('token');
     }
-    public get isAuthenticated() : boolean {
-        return localStorage.getItem('token') !== undefined ? true : false;
+    public get isAuthenticated() : boolean {     
+        return localStorage.getItem('token') !== null ? true : false;
     }
     public authenticate( username : string, password : string ) {
         this.httpClient

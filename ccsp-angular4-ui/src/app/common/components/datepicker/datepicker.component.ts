@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-datepicker',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatepickerComponent implements OnInit {
 
-  constructor() { }
+  constructor () { }
 
   ngOnInit() {
+  
   }
 
 }

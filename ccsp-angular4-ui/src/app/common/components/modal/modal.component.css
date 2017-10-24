@@ -6,3 +6,6 @@
 .modal-top{
     top:125px;
 }
+.modal-dialog .modal-content{
+    border-radius: 0px;
+}

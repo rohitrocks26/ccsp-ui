@@ -112,6 +112,7 @@ list(){
 
   }
   ngOnInit() {
+    console.log("inside the inint");
   }
 
 }
