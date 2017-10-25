@@ -5,10 +5,7 @@ import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
 export const ROUTES: Routes = [
-  {
-    path:'',
-    children:[
-      {
+      { 
         path:'dashboard',
         canActivate:[CanactivateauthguardService],
         component:DemoPageComponent
@@ -19,8 +16,6 @@ export const ROUTES: Routes = [
       },
       {
         path:'**',
-        redirectTo:'dashboard'
+        redirectTo:''
       }
-    ]
-  }
 ];

@@ -8,8 +8,7 @@ import { CurrencyPipe } from '@angular/common';
 
 import { FilterpipeModule } from './filterpipe/filterpipe.module';
 import { FormsModule } from '@angular/forms';
-import { RoutingModule } from './routing/routing.module';
-import { RouterModule } from '@angular/router';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NavbarCommonComponent } from './uielementnavbar/uielementnavbarcommon.component';
@@ -52,7 +51,8 @@ import { UielementpaginationComponent } from './uielementpagination/uielementpag
 import { UielementautocompleteComponent } from './uielementautocomplete/uielementautocomplete.component';
 import { NgAutoCompleteModule} from 'ng-auto-complete';
 import { MenuComponentComponent } from './menu-component/menu-component.component';
- 
+import { appRoutes } from './routing/app.routes'
+
 @NgModule({
   declarations: [
     
@@ -102,7 +102,8 @@ import { MenuComponentComponent } from './menu-component/menu-component.componen
     
   ],
   imports: [
-    BrowserModule, RouterModule,RoutingModule ,FormsModule,NgAutoCompleteModule
+    BrowserModule,  RouterModule.forRoot(appRoutes,
+    { useHash: true, preloadingStrategy: PreloadAllModules }) ,FormsModule,NgAutoCompleteModule
   ],
   providers: [CurrencyPipe, CompCurrencyPipe],
   bootstrap: [AppComponent]

@@ -12,7 +12,7 @@ export class CanactivateauthguardService implements CanActivate {
               console.log("inside the can activate guard"+this.authservice.isAuthenticated);
                  return true;
             }    
-            this.router.navigate(['/']);
+            this.router.navigate(['']);
             return false;
         }
 }
