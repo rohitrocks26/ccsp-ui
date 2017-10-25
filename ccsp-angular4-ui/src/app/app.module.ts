@@ -41,7 +41,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES,
-    { useHash: false, preloadingStrategy: PreloadAllModules }),
+    { useHash: true, preloadingStrategy: PreloadAllModules }),
     
   ],
   providers: [ 
