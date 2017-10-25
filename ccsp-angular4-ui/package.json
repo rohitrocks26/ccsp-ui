@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "cibuild" : "ng build --prod --env=prod",
+    "cibuild" : "ng build --prod --env=prod --base-href /ui-demopage/",
     "citest" : "ng test --browser=PhantomJS --single-run --reporters junit -cc"
   },
   "private": true,
