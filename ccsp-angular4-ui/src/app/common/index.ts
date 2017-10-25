@@ -2,7 +2,7 @@
 
 export * from './services/authentication.service'; 
 export * from './services/global.service'; 
-
+export * from './global';
 
 //Component exports
 export * from './components/input/input.component';

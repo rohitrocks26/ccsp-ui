@@ -19,10 +19,10 @@
         <div class="form">
           <h2 class="heading">Login to your account</h2>
           <form>
-            <input type="text" id="Username" class="form-control"placeholder="Username"/>
-            <input type="password" class="log-status form-control" id="Password" placeholder="Password"/>
+            <input type="text" id="Username" class="form-control"placeholder="Username" #Username/>
+            <input type="password" class="log-status form-control" id="Password" placeholder="Password" #Password/>
             <span class="alert">Invalid Credentials</span>
-            <button class="log-btn"(click)="formdata()">Login</button>
+            <button class="log-btn"(click)="formdata(Username.value,Password.value)">Login</button>
           </form>
         </div>
         <!-- <div class="form">

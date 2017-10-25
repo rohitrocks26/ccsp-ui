@@ -1,15 +1,16 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
-
+import {AuthenticationService} from '../common/services/authentication.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers:[AuthenticationService]
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  constructor(private router : Router,private authenticationService : AuthenticationService) { }
 
   ngOnInit() {
     $(document).ready(function(){
@@ -45,9 +46,8 @@ export class LoginComponent implements OnInit {
      });
      });
   }
-  formdata(){
-    localStorage.setItem('token','1234');
-    console.log("token value set");
-    this.router.navigateByUrl('/dashboard');  
+  formdata(username:string,password:string){
+    console.log(username,password);
+    this.authenticationService.authenticate(username,password);
   }
 }

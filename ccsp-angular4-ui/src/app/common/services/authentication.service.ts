@@ -1,13 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable,Component } from '@angular/core';
 import { Http, Response, RequestOptions, Headers, Request, RequestMethod} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
+import { Globals } from '../global';
 import 'rxjs/Rx';
 
+@Component({
+  providers: [Globals]
+})
 @Injectable()
 export class AuthenticationService {
     private _authToken : string;
-    private _authenticationUrl : string;
-    constructor(private httpClient : Http) {
+    constructor(private httpClient : Http,private globals: Globals) {
 
     }
     public get accessToken() : string {
@@ -18,11 +21,12 @@ export class AuthenticationService {
     }
     public authenticate( username : string, password : string ) {
         this.httpClient
-        .post(this._authenticationUrl, { username : username, password : password })
+        .post(this.globals._authenticationUrl, { username : username, password : password })
         .subscribe(response => this.handleResponse(response))
     }
     public handleResponse(response : Response) {
         localStorage.setItem('token', response.json())
+        console.log(localStorage.getItem('token'));
         // Pending -- Save User information as well
     }
     public handleError(error : any) : any {
