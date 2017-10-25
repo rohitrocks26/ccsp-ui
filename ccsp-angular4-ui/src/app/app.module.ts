@@ -11,7 +11,7 @@ import { RouterModule,PreloadAllModules} from '@angular/router';
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { PaginationComponent} from './common/components/pagination/pagination.component';
-import { GlobalService, AuthenticationService ,Globals} from './common';
+import { GlobalService, AuthenticationService} from './common';
 import { DatepickerComponent } from './common/components/datepicker/datepicker.component';
 import { CurrencyFormatterDirective } from './common/directives/currency-formatter.directive';
 import { NavbarComponent } from './common/components/navbar/navbar.component';
@@ -46,8 +46,7 @@ import { LoginComponent } from './login/login.component';
   providers: [ 
     GlobalService,
     AuthenticationService,
-    CanactivateauthguardService,
-    Globals
+    CanactivateauthguardService
   ],
   bootstrap: [AppComponent]
 })

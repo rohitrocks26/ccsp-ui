@@ -1,16 +1,13 @@
 import { Injectable,Component } from '@angular/core';
 import { Http, Response, RequestOptions, Headers, Request, RequestMethod} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
-import { Globals } from '../global';
+import { Constants } from '../constants';
 import 'rxjs/Rx';
 
-@Component({
-  providers: [Globals]
-})
 @Injectable()
 export class AuthenticationService {
     private _authToken : string;
-    constructor(private httpClient : Http,private globals: Globals) {
+    constructor(private httpClient : Http) {
 
     }
     public get accessToken() : string {
@@ -21,7 +18,7 @@ export class AuthenticationService {
     }
     public authenticate( username : string, password : string ) {
         this.httpClient
-        .post(this.globals._authenticationUrl, { username : username, password : password })
+        .post(Constants._authenticationUrl, { username : username, password : password })
         .subscribe(response => this.handleResponse(response))
     }
     public handleResponse(response : Response) {
