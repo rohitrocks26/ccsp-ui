@@ -10,21 +10,23 @@ export class GlobalService {
     private requestOptions : RequestOptions;
 
     constructor(private httpClient : Http, private authService : AuthenticationService ) {
+        this.headers = this.getHeaders();
     }
     public getRequest ( requestUrl : string ) : Observable<any> {
-
         return this.httpClient
-        .get(requestUrl)
+        .get(requestUrl, { headers : this.headers })
         .map(response => this.handleResponse(response))
         .catch(error => this.handleError(error))
     } 
     public postRequest<T> (requestUrl : string, postBody : T) : Observable<any> {
-        return this.httpClient.post(requestUrl, postBody)
+        
+        return this.httpClient.post(requestUrl, postBody, {headers : this.headers })
         .map(response => this.handleResponse(response))
         .catch(error => this.handleError(error))
     }
     private getHeaders () : Headers {
         let header = new Headers();
+        header.set('Access-Control-Allow-Origin','*');
         let token = this.authService.accessToken;
         if (token !== undefined)
             header.set('Authorization', 'Bearer ' + token  );

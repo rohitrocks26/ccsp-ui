@@ -7,8 +7,9 @@ import 'rxjs/Rx';
 @Injectable()
 export class AuthenticationService {
     private _authToken : string;
+    private headers : Headers;
     constructor(private httpClient : Http) {
-
+        this.headers = this.getHeaders();
     }
     public get accessToken() : string {
         return localStorage.getItem('token');
@@ -26,6 +27,13 @@ export class AuthenticationService {
         console.log(localStorage.getItem('token'));
         // Pending -- Save User information as well
     }
+    
+    private getHeaders () : Headers {
+        let header = new Headers();
+        header.set('Access-Control-Allow-Origin','*');
+        return header;
+    }
+
     public handleError(error : any) : any {
 
     }
