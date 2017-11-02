@@ -18,6 +18,7 @@ import { NavbarComponent } from './common/components/navbar/navbar.component';
 import { DirectivecontainerComponent } from './common/directives/directivecontainer/directivecontainer.component';
 import { DemoPageComponent } from './demo-page/demo-page.component';
 import { LoginComponent } from './login/login.component';
+import { MemberAccumsInquiryComponent } from './member-accums-inquiry/member-accums-inquiry.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { LoginComponent } from './login/login.component';
     NavbarComponent,
     DirectivecontainerComponent,
     DemoPageComponent,
-    LoginComponent
+    LoginComponent,
+    MemberAccumsInquiryComponent
   ],
   imports: [
     NgAutoCompleteModule,
