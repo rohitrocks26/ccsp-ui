@@ -1,0 +1,11 @@
+.modal-body{
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow: auto;
+}
+.modal-top{
+    top:125px;
+}
+.modal-dialog .modal-content{
+    border-radius: 0px;
+}
