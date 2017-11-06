@@ -1,0 +1,109 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.hcsc</groupId>
+  <artifactId>ui</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>ccsp-angular4-ui-testing</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+	<sonar.projectKey>CCSPUI:SonarTest</sonar.projectKey>
+	<sonar.projectName>CCSPUISonarTest</sonar.projectName>
+	<sonar.projectVersion>1.0</sonar.projectVersion>
+	<sonar.sources>src/app</sonar.sources>
+	<sonar.test>src/app</sonar.test>
+	<sonar.test.inclusions>**/*.spec.ts</sonar.test.inclusions>
+	<sonar.exclusions>**/*.module.ts</sonar.exclusions>
+	<sonar.ts.tslint.configPath>tslint.json</sonar.ts.tslint.configPath>
+	<sonar.typescript.lcov.reportPath>coverage/lcov.info</sonar.typescript.lcov.reportPath>
+	<sonar.host.url>http://35.164.32.240:9000</sonar.host.url>
+  </properties>
+  
+  
+  <dependencies>
+    
+  </dependencies>
+  <build>
+    <finalName>ui</finalName>
+	
+	<plugins>
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>1.4</version>
+				<executions>
+					<execution>
+						<id>install node and npm</id>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+						<configuration>
+							<nodeVersion>v6.11.1</nodeVersion>
+							<npmVersion>3.10.10</npmVersion>
+						</configuration>
+					</execution>
+					<execution>
+						<id>npm install</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<!-- Optional configuration which provides for running any npm command -->
+						<configuration>
+							<arguments>install</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>npm run citest</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>run citest</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>npm run cibuild</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>run cibuild</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>sonar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> 
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptor>assembly-descriptor.xml</descriptor>
+					<finalName>ccsp-angular4-ui-${pom.version}</finalName>
+				</configuration>
+				<executions>
+					<execution>
+					<phase>package</phase>
+					<goals>
+						<goal>single</goal>
+					</goals>
+					</execution>
+				</executions>
+			</plugin>
+	</plugins>
+	
+  </build>
+</project>

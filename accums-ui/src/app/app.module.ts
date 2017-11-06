@@ -1,32 +1,41 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { HeaderComponent } from './header/header.component';
+import { TabsComponent } from './tabs/tabs.component';
+import { MemberAccumsInquiryComponent } from './member-accums-inquiry/member-accums-inquiry.component';
+import { MemberAccumsSearchComponent } from './member-accums-search/member-accums-search.component';
+
+
 import { CanactivateauthguardService } from './common/services/canactivateauthguard.service';
 import { AutoCompleteComponent } from './common/components/autocomplete/autocomplete.component';
 import { NgAutoCompleteModule } from "ng-auto-complete";
 import { InputComponent } from './common/components/input/input.component';
 import { ModalComponent } from './common/components/modal/modal.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule,PreloadAllModules} from '@angular/router';
 import { ROUTES } from './app.routes';
-import { AppComponent } from './app.component';
 import { PaginationComponent} from './common/components/pagination/pagination.component';
-import { GlobalService, AuthenticationService} from './common';
+import { GlobalService, AuthenticationService ,Globals} from './common';
 import { DatepickerComponent } from './common/components/datepicker/datepicker.component';
 import { CurrencyFormatterDirective } from './common/directives/currency-formatter.directive';
 import { NavbarComponent } from './common/components/navbar/navbar.component';
 import { DirectivecontainerComponent } from './common/directives/directivecontainer/directivecontainer.component';
-import { DemoPageComponent } from './demo-page/demo-page.component';
-import { LoginComponent } from './login/login.component';
-import { DemoContainerComponent } from './demo-container/demo-container.component';
-import { MemberAccumsInquiryComponent } from './member-accums-inquiry/member-accums-inquiry.component';
-import { UtilizationTableComponent } from './common/components/utilization-table/utilization-table.component';
-import { MemberUtilizationCollapseComponent } from './member-utilization-collapse/member-utilization-collapse.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+
 
 @NgModule({
   declarations: [
-    PaginationComponent,
     AppComponent,
+    LandingPageComponent,
+    HeaderComponent,
+    TabsComponent,
+    MemberAccumsInquiryComponent,
+    MemberAccumsSearchComponent,
+     PaginationComponent,
     ModalComponent,
     DatepickerComponent,
     CurrencyFormatterDirective,
@@ -34,27 +43,20 @@ import { MemberUtilizationCollapseComponent } from './member-utilization-collaps
     AutoCompleteComponent,
     NavbarComponent,
     DirectivecontainerComponent,
-    DemoPageComponent,
-    LoginComponent,
-    DemoContainerComponent,
-    MemberAccumsInquiryComponent
-    UtilizationTableComponent,
-    MemberUtilizationCollapseComponent,
+    SearchResultsComponent,
   ],
   imports: [
-    NgAutoCompleteModule,
+       NgAutoCompleteModule,
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES,
     { useHash: true, preloadingStrategy: PreloadAllModules }),
-    
   ],
-  providers: [ 
-    GlobalService,
+  providers: [ GlobalService,
     AuthenticationService,
-    CanactivateauthguardService
-  ],
+    CanactivateauthguardService,
+    Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

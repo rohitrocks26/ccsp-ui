@@ -1,0 +1,102 @@
+<div class="container">
+      <div class="row header">
+        <div class="col-sm-2 ">
+          <img src="../../assets/hcsc-logo.jpg">
+        </div>
+        <div class="col-sm-10">
+          <span>HCSC ACCUMS</span>
+        </div>
+      </div>
+      <div class="row pillHeader">
+        <div class="col-sm-12 ">
+          <ul class="nav nav-pills">
+            <li><span class="glyphicon glyphicon-home home-logo"></span></li>
+       <li class="active member-inquiry-tab"><a href="#">Member Accums Inquiry</a></li>
+  
+</ul>
+        </div>
+        
+      </div>
+      <div id="search" class="search-div">
+        <div class="row">
+        <div class="col-sm-12">
+         <b><u>Search By Member Information</u></b>
+        </div>
+      </div>
+      <div class="row padding-top-6">
+        <div class="col-sm-6">
+          Username:<inputComponent [inputData]="username"></inputComponent>
+        </div>
+         <div class="col-sm-6">
+         Extn:<inputComponent [inputData]="EXtn"></inputComponent>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col-sm-6">
+          Position:<autoCompleteComponent [autoCompleteSearchList]="group"></autoCompleteComponent>
+        </div>
+         <div class="col-sm-6">
+          Start Date:<app-datepicker></app-datepicker>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col-sm-6">
+          Office:<inputComponent [inputData]="office"></inputComponent>
+        </div>
+         <div class="col-sm-6">
+          Salary:<div class="form-group">
+                      
+                        <input type="text" pattern="[0-9]*" #mobile="ngModel" placeholder="" class="form-control" id="donation" [ngModel]="donation" appCurrencyFormatter >
+                        <div [hidden]="mobile.valid || mobile.pristine"
+                        class="alert alert-danger">
+                       
+                        <div [hidden]="!mobile.hasError('pattern')">Please enter only numbers</div>
+                     </div>   
+                      </div>
+        </div>
+      </div>
+      <div class="row margin-bottom-3">
+        <button type="submit" class="btn btn-success top-margin margin-left-2-button" data-toggle="modal" data-target="#myModal">Submit</button>
+        <app-modal [modelinput]="modeltransfer"></app-modal>
+      </div></div>
+      <div id="searchResult" class="table-div">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="tableContainer">
+            <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Extn.</th>
+        <th>Start Date</th>
+        <th>Salary($)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-template ngFor let-item [ngForOf]="list()" let-currentElementIndex="(index + 1)">
+      <tr>
+        <td>{{item.username}}</td>
+        <td>{{item.position}}</td>
+        <td>{{item.office}}</td>
+        <td>{{item.Extn}}</td>
+        <td>{{item.startDate}}</td>
+        <td>{{item.salary}}</td>
+      </tr>
+      </ng-template>
+    </tbody>
+  </table>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div id="pagination">
+        <div class="row">
+          <div class="col-sm-12">
+            <paginationComponent (pageClicked)="changePage($event)" [maxLimit]="limit" [itemlength]="itemLength"></paginationComponent>
+          </div>
+        </div>
+      </div>
+    </div> 

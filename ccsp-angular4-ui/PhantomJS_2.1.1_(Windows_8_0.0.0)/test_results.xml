@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<testsuite name="PhantomJS 2.1.1 (Windows 8 0.0.0)" package="" timestamp="2017-10-25T13:03:30" id="0" hostname="USBLRADKHAITAN1" tests="13" errors="0" failures="1" time="3.018">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"/>
+  </properties>
+  <testcase name="AutocompleteComponent should create component" time="0.242" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).AutocompleteComponent"/>
+  <testcase name="AutocompleteComponent should emit value" time="0.139" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).AutocompleteComponent"/>
+  <testcase name="DatepickerComponent should create the component" time="0.145" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).DatepickerComponent"/>
+  <testcase name="InputComponent should create component" time="0.21" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).InputComponent"/>
+  <testcase name="ModalComponent should display modal body defined as property" time="0.183" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).ModalComponent"/>
+  <testcase name="ModalComponent should display modal header defined as property" time="0.186" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).ModalComponent"/>
+  <testcase name="NavbarComponent should create component" time="0.18" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).NavbarComponent"/>
+  <testcase name="PaginationComponent should create" time="0.14" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).PaginationComponent"/>
+  <testcase name="PaginationComponent should calculate and update the count of pages" time="0.132" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).PaginationComponent"/>
+  <testcase name="PaginationComponent should trigger event emitter on click" time="0.134" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).PaginationComponent"/>
+  <testcase name="CurrencyFormatterDirective should create an instance" time="0.001" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).CurrencyFormatterDirective"/>
+  <testcase name="DirectivecontainerComponent should display masked value " time="0.726" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).DirectivecontainerComponent"/>
+  <testcase name="DemoPageComponent should create" time="0.6" classname="PhantomJS_2_1_1_(Windows_8_0_0_0).DemoPageComponent">
+    <failure type="">Error: No provider for Globals! in http://localhost:9876/_karma_webpack_/vendor.bundle.js (line 74159)
+_throwOrNull@http://localhost:9876/_karma_webpack_/vendor.bundle.js:74159:45
+_getByKeyDefault@http://localhost:9876/_karma_webpack_/vendor.bundle.js:74198:37
+_getByKey@http://localhost:9876/_karma_webpack_/vendor.bundle.js:74130:41
+get@http://localhost:9876/_karma_webpack_/vendor.bundle.js:73999:30
+resolveNgModuleDep@http://localhost:9876/_karma_webpack_/vendor.bundle.js:80999:28
+_createClass@http://localhost:9876/_karma_webpack_/vendor.bundle.js:81042:83
+_createProviderInstance$1@http://localhost:9876/_karma_webpack_/vendor.bundle.js:81010:38
+resolveNgModuleDep@http://localhost:9876/_karma_webpack_/vendor.bundle.js:80995:42
+_createClass@http://localhost:9876/_karma_webpack_/vendor.bundle.js:81042:83
+_createProviderInstance$1@http://localhost:9876/_karma_webpack_/vendor.bundle.js:81010:38
+resolveNgModuleDep@http://localhost:9876/_karma_webpack_/vendor.bundle.js:80995:42
+get@http://localhost:9876/_karma_webpack_/vendor.bundle.js:82087:34
+resolveDep@http://localhost:9876/_karma_webpack_/vendor.bundle.js:82590:48
+createClass@http://localhost:9876/_karma_webpack_/vendor.bundle.js:82443:45
+createDirectiveInstance@http://localhost:9876/_karma_webpack_/vendor.bundle.js:82274:48
+createViewNodes@http://localhost:9876/_karma_webpack_/vendor.bundle.js:83722:72
+createRootView@http://localhost:9876/_karma_webpack_/vendor.bundle.js:83617:20
+callWithDebugContext@http://localhost:9876/_karma_webpack_/vendor.bundle.js:85003:47
+debugCreateRootView@http://localhost:9876/_karma_webpack_/vendor.bundle.js:84320:32
+create@http://localhost:9876/_karma_webpack_/vendor.bundle.js:81382:60
+initComponent@http://localhost:9876/_karma_webpack_/vendor.bundle.js:87259:55
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10616:31
+onInvoke@http://localhost:9876/_karma_webpack_/vendor.bundle.js:38519:45
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10615:40
+onInvoke@http://localhost:9876/_karma_webpack_/vendor.bundle.js:75400:39
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10615:40
+run@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10366:49
+run@http://localhost:9876/_karma_webpack_/vendor.bundle.js:75331:72
+createComponent@http://localhost:9876/_karma_webpack_/vendor.bundle.js:87262:61
+createComponent@http://localhost:9876/_karma_webpack_/vendor.bundle.js:87026:44
+http://localhost:9876/_karma_webpack_/main.bundle.js:1278:52
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10616:31
+onInvoke@http://localhost:9876/_karma_webpack_/vendor.bundle.js:38519:45
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10615:40
+run@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10366:49
+http://localhost:9876/_karma_webpack_/vendor.bundle.js:38216:37
+http://localhost:9876/_karma_webpack_/vendor.bundle.js:86462:31
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10616:31
+onInvoke@http://localhost:9876/_karma_webpack_/vendor.bundle.js:37698:45
+onInvoke@http://localhost:9876/_karma_webpack_/vendor.bundle.js:38516:47
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10615:40
+run@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10366:49
+http://localhost:9876/_karma_webpack_/vendor.bundle.js:86457:28
+http://localhost:9876/_karma_webpack_/vendor.bundle.js:37687:46
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10649:36
+runTask@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10416:57
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10723:41
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10712:53
+timer@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:12264:34
+</failure>
+    <failure type="">Expected undefined to be truthy.
+http://localhost:9876/_karma_webpack_/main.bundle.js:1283:37
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10616:31
+onInvoke@http://localhost:9876/_karma_webpack_/vendor.bundle.js:38519:45
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10615:40
+run@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10366:49
+http://localhost:9876/_karma_webpack_/vendor.bundle.js:38216:37
+http://localhost:9876/_karma_webpack_/vendor.bundle.js:86462:31
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10616:31
+onInvoke@http://localhost:9876/_karma_webpack_/vendor.bundle.js:37698:45
+onInvoke@http://localhost:9876/_karma_webpack_/vendor.bundle.js:38516:47
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10615:40
+run@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10366:49
+http://localhost:9876/_karma_webpack_/vendor.bundle.js:86457:28
+http://localhost:9876/_karma_webpack_/vendor.bundle.js:37687:46
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10649:36
+runTask@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10416:57
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10723:41
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10712:53
+timer@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:12264:34
+</failure>
+  </testcase>
+  <system-out>
+    <![CDATA[PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: undefined
+,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 110
+,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 10
+,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 110
+,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 10
+,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 110
+,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 10
+,PhantomJS 2.1.1 (Windows 8 0.0.0) ERROR: 'ERROR', TypeError{stack: '
+handleEvent@http://localhost:9876/_karma_webpack_/vendor.bundle.js:83533:138
+callWithDebugContext@http://localhost:9876/_karma_webpack_/vendor.bundle.js:85003:47
+debugHandleEvent@http://localhost:9876/_karma_webpack_/vendor.bundle.js:84591:32
+dispatchEvent@http://localhost:9876/_karma_webpack_/vendor.bundle.js:80125:32
+http://localhost:9876/_karma_webpack_/vendor.bundle.js:80736:33
+http://localhost:9876/_karma_webpack_/vendor.bundle.js:77925:34
+forEach@[native code]
+triggerEventHandler@http://localhost:9876/_karma_webpack_/vendor.bundle.js:77923:31
+http://localhost:9876/_karma_webpack_/main.bundle.js:896:41
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10616:31
+onInvoke@http://localhost:9876/_karma_webpack_/vendor.bundle.js:38519:45
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10615:40
+run@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10366:49
+http://localhost:9876/_karma_webpack_/vendor.bundle.js:38216:37
+attemptSync@http://localhost:9876/base/node_modules/jasmine-core/lib/jasmine-core/jasmine.js?da99c5b057693d025fad3d7685e1590600ca376d:3898:28
+run@http://localhost:9876/base/node_modules/jasmine-core/lib/jasmine-core/jasmine.js?da99c5b057693d025fad3d7685e1590600ca376d:3887:20
+http://localhost:9876/base/node_modules/jasmine-core/lib/jasmine-core/jasmine.js?da99c5b057693d025fad3d7685e1590600ca376d:3924:21
+http://localhost:9876/base/node_modules/jasmine-core/lib/jasmine-core/jasmine.js?da99c5b057693d025fad3d7685e1590600ca376d:3848:11
+http://localhost:9876/_karma_webpack_/main.bundle.js:892:17
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10649:36
+onInvokeTask@http://localhost:9876/_karma_webpack_/vendor.bundle.js:38543:49
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10648:48
+runTask@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10416:57
+invokeTask@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10723:41
+invoke@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:10712:53
+timer@http://localhost:9876/_karma_webpack_/polyfills.bundle.js:12264:34', line: 29, ngDebugContext: DebugContext_{view: Object{def: ..., parent: ..., viewContainerParent: ..., parentNodeDef: ..., context: ..., component: ..., nodes: ..., state: ..., root: ..., renderer: ..., oldValues: ..., disposables: ...}, nodeIndex: 0, nodeDef: Object{index: ..., parent: ..., renderParent: ..., bindingIndex: ..., outputIndex: ..., flags: ..., childFlags: ..., directChildFlags: ..., childMatchedQueries: ..., matchedQueries: ..., matchedQueryIds: ..., references: ..., ngContentIndex: ..., childCount: ..., bindings: ..., bindingFlags: ..., outputs: ..., element: ..., provider: ..., text: ..., query: ..., ngContent: ...}, elDef: Object{index: ..., parent: ..., renderParent: ..., bindingIndex: ..., outputIndex: ..., flags: ..., childFlags: ..., directChildFlags: ..., childMatchedQueries: ..., matchedQueries: ..., matchedQueryIds: ..., references: ..., ngContentIndex: ..., childCount: ..., bindings: ..., bindingFlags: ..., outputs: ..., element: ..., provider: ..., text: ..., query: ..., ngContent: ...}, elView: Object{def: ..., parent: ..., viewContainerParent: ..., parentNodeDef: ..., context: ..., component: ..., nodes: ..., state: ..., root: ..., renderer: ..., oldValues: ..., disposables: ...}}, ngErrorLogger: function () { ... }}
+,PhantomJS 2.1.1 (Windows 8 0.0.0) ERROR: 'ERROR CONTEXT', DebugContext_{view: Object{def: Object{factory: ..., nodeFlags: ..., rootNodeFlags: ..., nodeMatchedQueries: ..., flags: ..., nodes: ..., updateDirectives: ..., updateRenderer: ..., handleEvent: ..., bindingCount: ..., outputCount: ..., lastRenderRootNode: ...}, parent: Object{def: ..., parent: ..., viewContainerParent: ..., parentNodeDef: ..., context: ..., component: ..., nodes: ..., state: ..., root: ..., renderer: ..., oldValues: ..., disposables: ...}, viewContainerParent: null, parentNodeDef: Object{index: ..., parent: ..., renderParent: ..., bindingIndex: ..., outputIndex: ..., flags: ..., childFlags: ..., directChildFlags: ..., childMatchedQueries: ..., matchedQueries: ..., matchedQueryIds: ..., references: ..., ngContentIndex: ..., childCount: ..., bindings: ..., bindingFlags: ..., outputs: ..., element: ..., provider: ..., text: ..., query: ..., ngContent: ...}, context: DirectivecontainerComponent{datacontent: ..., result: ...}, component: DirectivecontainerComponent{datacontent: ..., result: ...}, nodes: [..., ..., ..., ..., ..., ..., ...], state: 14, root: Object{ngModule: ..., injector: ..., projectableNodes: ..., selectorOrNode: ..., sanitizer: ..., rendererFactory: ..., renderer: ..., errorHandler: ...}, renderer: DebugRenderer2{delegate: ...}, oldValues: [..., ..., ..., ..., ..., ..., ..., ...], disposables: [..., ..., ..., ...]}, nodeIndex: 0, nodeDef: Object{index: 0, parent: null, renderParent: null, bindingIndex: 0, outputIndex: 0, flags: 1, childFlags: 740352, directChildFlags: 740352, childMatchedQueries: 0, matchedQueries: Object{}, matchedQueryIds: 0, references: Object{}, ngContentIndex: null, childCount: 6, bindings: [..., ..., ..., ..., ..., ..., ...], bindingFlags: 2, outputs: [..., ..., ..., ...], element: Object{ns: ..., name: ..., attrs: ..., template: ..., componentProvider: ..., componentView: ..., componentRendererType: ..., publicProviders: ..., allProviders: ..., handleEvent: ...}, provider: null, text: null, query: null, ngContent: null}, elDef: Object{index: 0, parent: null, renderParent: null, bindingIndex: 0, outputIndex: 0, flags: 1, childFlags: 740352, directChildFlags: 740352, childMatchedQueries: 0, matchedQueries: Object{}, matchedQueryIds: 0, references: Object{}, ngContentIndex: null, childCount: 6, bindings: [..., ..., ..., ..., ..., ..., ...], bindingFlags: 2, outputs: [..., ..., ..., ...], element: Object{ns: ..., name: ..., attrs: ..., template: ..., componentProvider: ..., componentView: ..., componentRendererType: ..., publicProviders: ..., allProviders: ..., handleEvent: ...}, provider: null, text: null, query: null, ngContent: null}, elView: Object{def: Object{factory: ..., nodeFlags: ..., rootNodeFlags: ..., nodeMatchedQueries: ..., flags: ..., nodes: ..., updateDirectives: ..., updateRenderer: ..., handleEvent: ..., bindingCount: ..., outputCount: ..., lastRenderRootNode: ...}, parent: Object{def: ..., parent: ..., viewContainerParent: ..., parentNodeDef: ..., context: ..., component: ..., nodes: ..., state: ..., root: ..., renderer: ..., oldValues: ..., disposables: ...}, viewContainerParent: null, parentNodeDef: Object{index: ..., parent: ..., renderParent: ..., bindingIndex: ..., outputIndex: ..., flags: ..., childFlags: ..., directChildFlags: ..., childMatchedQueries: ..., matchedQueries: ..., matchedQueryIds: ..., references: ..., ngContentIndex: ..., childCount: ..., bindings: ..., bindingFlags: ..., outputs: ..., element: ..., provider: ..., text: ..., query: ..., ngContent: ...}, context: DirectivecontainerComponent{datacontent: ..., result: ...}, component: DirectivecontainerComponent{datacontent: ..., result: ...}, nodes: [..., ..., ..., ..., ..., ..., ...], state: 14, root: Object{ngModule: ..., injector: ..., projectableNodes: ..., selectorOrNode: ..., sanitizer: ..., rendererFactory: ..., renderer: ..., errorHandler: ...}, renderer: DebugRenderer2{delegate: ...}, oldValues: [..., ..., ..., ..., ..., ..., ..., ...], disposables: [..., ..., ..., ...]}}
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

@@ -1,15 +1,14 @@
 import { Injectable,Component } from '@angular/core';
 import { Http, Response, RequestOptions, Headers, Request, RequestMethod} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
-import { Constants } from '../constants';
+import { Globals } from '../global';
 import 'rxjs/Rx';
 
 @Injectable()
 export class AuthenticationService {
     private _authToken : string;
-    private headers : Headers;
-    constructor(private httpClient : Http) {
-        this.headers = this.getHeaders();
+    constructor(private httpClient : Http,private globals: Globals) {
+
     }
     public get accessToken() : string {
         return localStorage.getItem('token');
@@ -18,25 +17,22 @@ export class AuthenticationService {
         return localStorage.getItem('token') !== null ? true : false;
     }
     public authenticate( username : string, password : string ) {
-        let detail = JSON.stringify({ username : username, password : password })
         this.httpClient
-        .post(Constants._authenticationUrl, detail)
-        .subscribe(response => this.handleResponse(response.text()))
+        .post(this.globals._authenticationUrl, { username : username, password : password },new RequestOptions({headers : this.getHeaders()}))
+        .subscribe(response => this.handleResponse(response))
     }
-    public handleResponse(response) {
-        localStorage.setItem('token', response)
+    public handleResponse(response : Response) {
+        localStorage.setItem('token', response.json())
         console.log(localStorage.getItem('token'));
         // Pending -- Save User information as well
     }
-    
-    private getHeaders () : Headers {
-        let header = new Headers();
-        header.set('Access-Control-Allow-Origin','*');
-        return header;
-    }
-
     public handleError(error : any) : any {
 
+    }
+    private getHeaders () : Headers {
+        let header = new Headers();
+        header.append('AAA','AAcc')
+        return header;
     }
     public logout() {
         localStorage.removeItem('token');
