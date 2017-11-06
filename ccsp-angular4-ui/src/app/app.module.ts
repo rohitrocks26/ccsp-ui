@@ -18,8 +18,10 @@ import { NavbarComponent } from './common/components/navbar/navbar.component';
 import { DirectivecontainerComponent } from './common/directives/directivecontainer/directivecontainer.component';
 import { DemoPageComponent } from './demo-page/demo-page.component';
 import { LoginComponent } from './login/login.component';
+import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { MemberAccumsInquiryComponent } from './member-accums-inquiry/member-accums-inquiry.component';
-
+import { UtilizationTableComponent } from './common/components/utilization-table/utilization-table.component';
+import { MemberUtilizationCollapseComponent } from './member-utilization-collapse/member-utilization-collapse.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,10 @@ import { MemberAccumsInquiryComponent } from './member-accums-inquiry/member-acc
     DirectivecontainerComponent,
     DemoPageComponent,
     LoginComponent,
-    MemberAccumsInquiryComponent
+    DemoContainerComponent,
+    MemberAccumsInquiryComponent,
+    UtilizationTableComponent,
+    MemberUtilizationCollapseComponent,
   ],
   imports: [
     NgAutoCompleteModule,
