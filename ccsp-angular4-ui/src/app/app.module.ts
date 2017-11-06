@@ -37,7 +37,7 @@ import { MemberUtilizationCollapseComponent } from './member-utilization-collaps
     DemoPageComponent,
     LoginComponent,
     DemoContainerComponent,
-    MemberAccumsInquiryComponent
+    MemberAccumsInquiryComponent,
     UtilizationTableComponent,
     MemberUtilizationCollapseComponent,
   ],
