@@ -1,0 +1,42 @@
+ <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'> 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">HCSC</a>
+    </div>
+  </div>
+</nav>
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="module form-module">
+        <!-- <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+          <div class="tooltip">New user</div>
+        </div> -->
+        <div class="form">
+          <h2 class="heading">Login to your account</h2>
+          <form>
+            <input type="text" id="Username" class="form-control"placeholder="Username" #Username/>
+            <input type="password" class="log-status form-control" id="Password" placeholder="Password" #Password/>
+            <span class="alert">Invalid Credentials</span>
+            <button class="log-btn"(click)="formdata(Username.value,Password.value)">Login</button>
+          </form>
+        </div>
+        <!-- <div class="form">
+          <h2>Create an account</h2>
+          <form>
+            <input type="text" placeholder="Username"/>
+            <input type="password" placeholder="Password"/>
+            <input type="email" placeholder="Email Address"/>
+            <input type="tel" placeholder="Phone Number"/>
+            <button>Register</button>
+          </form>
+        </div> -->
+        <div class="cta"><a href="#">Forgot your password?</a></div>
+      </div>
+    </div>
+  </div>
+</div>

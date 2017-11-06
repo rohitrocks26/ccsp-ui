@@ -18,13 +18,12 @@ export class AuthenticationService {
         return localStorage.getItem('token') !== null ? true : false;
     }
     public authenticate( username : string, password : string ) {
-        let detail = JSON.stringify({ username : username, password : password })
         this.httpClient
-        .post(Constants._authenticationUrl, detail)
-        .subscribe(response => this.handleResponse(response.text()))
+        .post(Constants._authenticationUrl, { username : username, password : password })
+        .subscribe(response => this.handleResponse(response))
     }
-    public handleResponse(response) {
-        localStorage.setItem('token', response)
+    public handleResponse(response : Response) {
+        localStorage.setItem('token', response.json())
         console.log(localStorage.getItem('token'));
         // Pending -- Save User information as well
     }
