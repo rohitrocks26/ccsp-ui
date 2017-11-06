@@ -59,12 +59,12 @@ export class SearchResultsComponent implements OnInit {
     "benefitPeriod":"",
     "networkType":"",
     "accumType":""
-  },
+  }
   ];
   searchList(){
   
       var items: Array<any> = [];
-      for(var i = 0; i <= this.items.length; i++){
+      for(var i = 0; i <= this.items.length-1; i++){
         
          items.push(this.items[i]);
          
