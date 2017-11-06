@@ -8,6 +8,8 @@
               <th>Member Name</th>
               <th>Group Number</th>
               <th>Section Number</th>
+              <th>Account Number</th>
+              <th>SSN</th>
               <th>Relationship</th>
               <th>Gender</th>
               <th>DOB</th>
@@ -18,20 +20,52 @@
             </tr>
           </thead>
           <tbody>
+              <ng-template ngFor let-item [ngForOf]="searchList()" let-currentElementIndex="(index + 1)">
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>{{item.subscriberId}}</td>
+              <td>{{item.memberPartyId}}</td>
+              <td>{{item.memberName}}</td>
+              <td>{{item.groupNumber}}</td>
+              <td>{{item.sectionNumber}}</td>
+              <td>{{item.accountNumber}}</td>
+              <td>{{item.ssn}}</td>
+              <td>{{item.relationship}}</td>
+              <td>{{item.gender}}</td>
+              <td>{{item.dob}}</td>
+              <td>   
+                <div class="form-group">
+                  <select class="form-control">
+                    <option></option>
+                    <option></option>
+                  </select>
+                </div>
+              </td>
+              <td>   
+                <div class="form-group">
+                  <select class="form-control">
+                    <option></option>
+                    <option></option>
+                  </select>
+                </div>
+            </td>
+            <td>   
+                <div class="form-group">
+                  <select class="form-control">
+                    <option></option>
+                    <option></option>
+                  </select>
+                </div>
+            </td>
+            <td>   
+                <div class="form-group">
+                  <select class="form-control">
+                    <option></option>
+                    <option></option>
+                  </select>
+                </div>
+            </td>
             </tr>
+            </ng-template>
           </tbody>
         </table>
   </div>
