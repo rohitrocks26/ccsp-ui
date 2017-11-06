@@ -1,4 +1,4 @@
-export class Input {
+export class InputModel {
 constructor(public name:string , public value:string, public placeholder:string , public type:string ){
     this.name=name;
     this.value=value;

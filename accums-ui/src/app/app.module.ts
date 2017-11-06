@@ -24,6 +24,7 @@ import { DatepickerComponent } from './common/components/datepicker/datepicker.c
 import { CurrencyFormatterDirective } from './common/directives/currency-formatter.directive';
 import { NavbarComponent } from './common/components/navbar/navbar.component';
 import { DirectivecontainerComponent } from './common/directives/directivecontainer/directivecontainer.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { DirectivecontainerComponent } from './common/directives/directivecontai
     AutoCompleteComponent,
     NavbarComponent,
     DirectivecontainerComponent,
+    SearchResultsComponent,
   ],
   imports: [
        NgAutoCompleteModule,

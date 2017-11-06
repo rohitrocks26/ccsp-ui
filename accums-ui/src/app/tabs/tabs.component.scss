@@ -1,11 +1,20 @@
 .pillHeader{
-    background-color: lightgrey;
+    background-color: #F2F2F2;
     border: 1px solid grey;
-    margin-top: 1%;
     margin-bottom: 1%;
     padding-top: 1%;
     padding-bottom: 1%;
 }
 .home-logo{
     font-size: xx-large;
+}
+.lightGrey{
+    background-color: #F2F2F2;
+    margin-top: 5%;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+    background-color:grey !important;
+}
+.floatRight{
+    float:right;
 }
