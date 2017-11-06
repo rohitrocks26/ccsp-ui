@@ -1,6 +1,7 @@
 export class Member {
-constructor(public name:string , public id:string){
+constructor(public name:string , public partyId:string, public subscriberId?:string){
     this.name=name;
-    this.id = id;
+    this.partyId = partyId;
+    this.subscriberId = subscriberId;
   }
 }

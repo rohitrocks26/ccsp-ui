@@ -8,6 +8,7 @@ import { Member } from '../common';
 })
 export class MemberUtilizationCollapseComponent implements OnInit {
   @Input() member : Member;
+  @Input() isFamily : boolean;
   constructor() { 
   }
 

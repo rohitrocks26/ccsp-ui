@@ -1,3 +1,6 @@
+:host {
+  font-size : 12px;
+}
 .table-header {
   background-color:rgba(1,12,109,0.92);
   color:rgb(251,246,246);

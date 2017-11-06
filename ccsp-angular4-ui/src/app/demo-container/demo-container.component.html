@@ -1,8 +1,21 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-6">
-            <member-utilization-collapse [member]="firstMember"></member-utilization-collapse>
-            <member-utilization-collapse [member]="secondMember"></member-utilization-collapse>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-6">
+                    <member-utilization-collapse [member]="firstMember"></member-utilization-collapse>
+                    <member-utilization-collapse [member]="secondMember"></member-utilization-collapse>
+                </div>
+                <div class="col-sm-6">
+                    <member-utilization-collapse [isFamily]="true" [member]="familyMember"></member-utilization-collapse>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1">
+           <div class="middle">
+               <button class="btn btn-default button-style" type="button"><i class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp;Export Details</button>
+               <button class="btn btn-default button-style" type="button">View Details</button>
+            </div>
         </div>
     </div>
 </div>
