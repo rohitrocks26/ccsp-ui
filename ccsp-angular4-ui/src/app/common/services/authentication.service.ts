@@ -24,7 +24,7 @@ export class AuthenticationService {
         .subscribe(response => this.handleResponse(response))
     }
     public handleResponse(response : Response) {
-        localStorage.setItem('token', response.json())
+        localStorage.setItem('token', response.toString())
         console.log(localStorage.getItem('token'));
         // Pending -- Save User information as well
     }
