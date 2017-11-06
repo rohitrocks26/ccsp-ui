@@ -23,8 +23,8 @@ export class AuthenticationService {
         .post(Constants._authenticationUrl, detail)
         .subscribe(response => this.handleResponse(response))
     }
-    public handleResponse(response : Response) {
-        localStorage.setItem('token', response.toString())
+    public handleResponse(response) {
+        localStorage.setItem('token', response)
         console.log(localStorage.getItem('token'));
         // Pending -- Save User information as well
     }
