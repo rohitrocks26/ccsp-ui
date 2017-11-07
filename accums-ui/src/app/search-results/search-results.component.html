@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-sm-12">
-      <table class="table">
+      <table class="table tableBorder">
           <thead class="font-smaller">
             <tr>
               <th></th>
@@ -39,9 +39,16 @@
                       <button class="btn dropdowns dropdown-toggle" type="button" data-toggle="dropdown">
                       <span class="caret"></span></button>
                       <ul class="dropdown-menu">
-                        <li><input type="checkbox" value="ALL"/>ALL</li>
-                        <li><input type="checkbox" value="01/01/2017-03/31/2017"/>01/01/2017-03/31/2017</li>
-                        <li><input type="checkbox" value="04/01/2017-12/31/2017"/>04/01/2017-12/31/2017</li>
+                      <li>
+                          <li class="checkbox ">
+                              <input type="checkbox" id="allplanPeriodFilter" name="all"  value="all" (click)="toggleSelect($event,planPeriodFilters)" />All
+                              
+                          </li>
+                        <li class="modal_line"></li> 
+                        <li class="checkbox " *ngFor="let planPeriodFilter of planPeriodFilters;let i=index;">
+                         <input type="checkbox" name="planPeriodFilter.name[{{i}}]"  [checked]="planPeriodFilter.selected" value="planPeriodFilter.selected" id="{{planPeriodFilter.name}}" (change)="planPeriodFilter.selected = !(planPeriodFilter.selected)"/>{{planPeriodFilter.name}}
+                        
+                        </li>  
                       </ul>
                     </div>
               </td>
@@ -70,7 +77,6 @@
                     <button class="btn dropdowns dropdown-toggle" type="button" data-toggle="dropdown">
                     <span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                      <li><input type="checkbox" value="Accum Type"/>Accum Type</li>
                       <li><input type="checkbox" value="Select All"/>Select All</li>
                       <li><input type="checkbox" value="Copay"/>Copay</li>
                       <li><input type="checkbox" value="Deductible"/>Deductible</li>

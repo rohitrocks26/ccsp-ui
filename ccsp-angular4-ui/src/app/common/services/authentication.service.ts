@@ -19,9 +19,12 @@ export class AuthenticationService {
     }
     public authenticate( username : string, password : string ) {
         let detail = JSON.stringify({ username : username, password : password })
-        this.httpClient
-        .post(Constants._authenticationUrl, detail)
-        .subscribe(response => this.handleResponse(response.text()))
+        if(username == "admin" && password == "admin" ){
+            localStorage.setItem('token', '12345');
+        }        
+        //this.httpClient
+        //.post(Constants._authenticationUrl, detail)
+        //.subscribe(response => this.handleResponse(response.text()))
     }
     public handleResponse(response) {
         localStorage.setItem('token', response)

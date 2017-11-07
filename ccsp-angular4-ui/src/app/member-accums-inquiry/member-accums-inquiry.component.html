@@ -1,9 +1,10 @@
-<div class="container">
+<div class="container-fluid">
       <div class="row header">
         <div class="col-sm-2 ">
-          <img src="../../assets/hcsc-logo.jpg">
+          <img class="iconwidth" src="../../assets/hcsc-logo.png">
         </div>
-        <div class="col-sm-10">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-6">
           <span>HCSC ACCUMS</span>
         </div>
       </div>
@@ -17,46 +18,72 @@
         </div>
         
       </div>
+      </div>
+      <div class="container">
       <div id="search" class="search-div">
         <div class="row">
         <div class="col-sm-12">
          <b><u>Search By Member Information</u></b>
         </div>
       </div>
-      <div class="row padding-top-6">
-        <div class="col-sm-6">
-          Username:<inputComponent [inputData]="username"></inputComponent>
+      <div class="row padding-top-3">
+          <div class="col-sm-2"></div>
+        <div class="col-sm-1">
+          Username:
         </div>
-         <div class="col-sm-6">
-         Extn:<inputComponent [inputData]="EXtn"></inputComponent>
+        <div class="col-sm-3">
+          <inputComponent [inputData]="username"></inputComponent>
         </div>
+         <div class="col-sm-1">
+         Extn:
+        </div>
+        <div class="col-sm-3">
+          <inputComponent [inputData]="EXtn"></inputComponent>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+       <div class="row padding-top-1">
+          <div class="col-sm-2"></div>
+        <div class="col-sm-1">
+          Position:
+        </div>
+        <div class="col-sm-3">
+          <autoCompleteComponent [autoCompleteSearchList]="group"></autoCompleteComponent>
+        </div>
+         <div class="col-sm-1">
+          Start Date:
+        </div>
+        <div class="col-sm-3">
+            <app-datepicker></app-datepicker>
+          </div>
+          <div class="col-sm-2"></div>
       </div>
        <div class="row">
-        <div class="col-sm-6">
-          Position:<autoCompleteComponent [autoCompleteSearchList]="group"></autoCompleteComponent>
+          <div class="col-sm-2"></div>
+        <div class="col-sm-1">
+          Office:
         </div>
-         <div class="col-sm-6">
-          Start Date:<app-datepicker></app-datepicker>
+        <div class="col-sm-3">
+            <inputComponent [inputData]="office"></inputComponent>
         </div>
-      </div>
-       <div class="row">
-        <div class="col-sm-6">
-          Office:<inputComponent [inputData]="office"></inputComponent>
+         <div class="col-sm-1">
+          Salary:
         </div>
-         <div class="col-sm-6">
-          Salary:<div class="form-group">
-                      
-                        <input type="text" pattern="[0-9]*" #mobile="ngModel" placeholder="" class="form-control" id="donation" [ngModel]="donation" appCurrencyFormatter >
-                        <div [hidden]="mobile.valid || mobile.pristine"
-                        class="alert alert-danger">
-                       
-                        <div [hidden]="!mobile.hasError('pattern')">Please enter only numbers</div>
-                     </div>   
-                      </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                
+                  <input type="text" pattern="[0-9]*" #mobile="ngModel" placeholder="" class="form-control" id="donation" [ngModel]="donation" appCurrencyFormatter >
+                  <div [hidden]="mobile.valid || mobile.pristine"
+                  class="alert alert-danger">
+                 
+                  <div [hidden]="!mobile.hasError('pattern')">Please enter only numbers</div>
+               </div>   
+                </div>
         </div>
+        <div class="col-sm-2"></div>
       </div>
       <div class="row margin-bottom-3">
-        <button type="submit" class="btn btn-success top-margin margin-left-2-button" data-toggle="modal" data-target="#myModal">Submit</button>
+        <button type="submit" class="btn btn-success top-margin margin-left-48-button" data-toggle="modal" data-target="#myModal" (click)="filterItem(username.value);">Submit</button>
         <app-modal [modelinput]="modeltransfer"></app-modal>
       </div></div>
       <div id="searchResult" class="table-div">

@@ -11,6 +11,47 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit() {
   }
+  public planPeriodFilters=[
+    {
+      "name":"01/01/2017-03/31/2017",
+    },
+    {
+      "name":"04/01/2017-12/31/2017",
+    },
+  ];
+  public benefitPeriodFilters=[
+    {
+      "name":"2017",
+    }
+  ];
+  public networkTypeFilters=[
+    {
+      "name":"In Network",
+    },
+    {
+      "name":"Out Of Network",
+    }
+  ];
+  public accumTypeFilters=[
+    {
+      "name":"Copay",
+    },
+    {
+      "name":"Deductible",
+    },
+    {
+      "name":"Coinsurance",
+    },
+    {
+      "name":"OPX",
+    },
+    {
+      "name":"Maximum",
+    },
+    {
+      "name":"",
+    }
+  ];
   public items=[
   {
     "subscriberId":"20301",
@@ -61,8 +102,16 @@ export class SearchResultsComponent implements OnInit {
     "accumType":""
   }
   ];
+  checkboxList(checkbox){
+    var items: Array<any> = [];
+    for(var i = 0; i <= checkbox.length-1; i++){
+      
+       items.push(this.items[i]);
+       
+    }
+    return items;
+  }
   searchList(){
-  
       var items: Array<any> = [];
       for(var i = 0; i <= this.items.length-1; i++){
         
@@ -71,4 +120,13 @@ export class SearchResultsComponent implements OnInit {
       }
       return items;
     }
+    toggleSelect = function(event,item){  
+      
+              this.selectAll = event.target.checked;
+              item.forEach(function(item){
+               console.log(item);
+               item.selected = event.target.checked;
+            });
+      
+        }    
 }
