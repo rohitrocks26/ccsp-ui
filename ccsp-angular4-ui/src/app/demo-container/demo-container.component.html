@@ -2,11 +2,16 @@
     <div class="row">
         <div class="col-sm-10">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-5">
+                    <h5>Individual Utilization</h5>
                     <member-utilization-collapse [member]="firstMember"></member-utilization-collapse>
                     <member-utilization-collapse [member]="secondMember"></member-utilization-collapse>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-2">
+                    <div class="vertical-line"></div>
+                </div>
+                <div class="col-sm-5">
+                    <h5>Family Utilization</h5>                    
                     <member-utilization-collapse [isFamily]="true" [member]="familyMember"></member-utilization-collapse>
                 </div>
             </div>
