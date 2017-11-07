@@ -12,3 +12,14 @@
 .middle {
     margin-top : 150px;
 }
+h5 {
+    font-weight: bold;
+    text-align: center;
+}
+.vertical-line {
+    background-color: black;
+    width : 2px;
+    height: 500px;
+    margin: auto;
+    margin-top : 20px;
+}
