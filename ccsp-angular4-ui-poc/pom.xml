@@ -4,7 +4,7 @@
   <groupId>com.hcsc</groupId>
   <artifactId>ui</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>ccsp-angular4-ui-testing</name>
+  <name>ccsp-angular4-ui-poc</name>
   <url>http://maven.apache.org</url>
   
   <properties>

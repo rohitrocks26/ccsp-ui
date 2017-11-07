@@ -1,8 +1,9 @@
 <div class="row">
   <div class="col-sm-12">
-      <table class="table tableBorder">
-          <thead>
+      <table class="table">
+          <thead class="font-smaller">
             <tr>
+              <th></th>
               <th>Subscriber ID</th>
               <th>Member Party ID</th>
               <th>Member Name</th>
@@ -19,9 +20,10 @@
               <th>Accum Type</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="font-smaller">
               <ng-template ngFor let-item [ngForOf]="searchList()" let-currentElementIndex="(index + 1)">
             <tr>
+              <td><input type="checkbox" value="ALL"/></td>
               <td>{{item.subscriberId}}</td>
               <td>{{item.memberPartyId}}</td>
               <td>{{item.memberName}}</td>
@@ -33,36 +35,52 @@
               <td>{{item.gender}}</td>
               <td>{{item.dob}}</td>
               <td>   
-                <div class="form-group">
-                  <select class="form-control">
-                    <option></option>
-                    <option></option>
-                  </select>
-                </div>
+                  <div class="dropdown">
+                      <button class="btn dropdowns dropdown-toggle" type="button" data-toggle="dropdown">
+                      <span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><input type="checkbox" value="ALL"/>ALL</li>
+                        <li><input type="checkbox" value="01/01/2017-03/31/2017"/>01/01/2017-03/31/2017</li>
+                        <li><input type="checkbox" value="04/01/2017-12/31/2017"/>04/01/2017-12/31/2017</li>
+                      </ul>
+                    </div>
               </td>
               <td>   
-                <div class="form-group">
-                  <select class="form-control">
-                    <option></option>
-                    <option></option>
-                  </select>
-                </div>
+                  <div class="dropdown">
+                      <button class="btn dropdowns dropdown-toggle" type="button" data-toggle="dropdown">
+                      <span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><input type="checkbox" value="ALL"/>2017</li>
+                      </ul>
+                    </div>
+             </td>
+             <td>   
+                <div class="dropdown">
+                    <button class="btn dropdowns dropdown-toggle" type="button" data-toggle="dropdown">
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><input type="checkbox" value="Select All"/>Select All</li>
+                      <li><input type="checkbox" value="In Network"/>In Network</li>
+                      <li><input type="checkbox" value="Out of Network"/>Out of Network</li>
+                    </ul>
+                  </div>
             </td>
             <td>   
-                <div class="form-group">
-                  <select class="form-control">
-                    <option></option>
-                    <option></option>
-                  </select>
-                </div>
-            </td>
-            <td>   
-                <div class="form-group">
-                  <select class="form-control">
-                    <option></option>
-                    <option></option>
-                  </select>
-                </div>
+                <div class="dropdown">
+                    <button class="btn dropdowns dropdown-toggle" type="button" data-toggle="dropdown">
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><input type="checkbox" value="Accum Type"/>Accum Type</li>
+                      <li><input type="checkbox" value="Select All"/>Select All</li>
+                      <li><input type="checkbox" value="Copay"/>Copay</li>
+                      <li><input type="checkbox" value="Deductible"/>Deductible</li>
+                      <li><input type="checkbox" value="Coinsurance"/>Coinsurance</li>
+                      <li><input type="checkbox" value="OPX"/>OPX</li>
+                      <li><input type="checkbox" value="Maximum"/>Maximum</li>
+
+
+                    </ul>
+                  </div>
             </td>
             </tr>
             </ng-template>
