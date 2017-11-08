@@ -94,6 +94,10 @@ filterItem(value){
      item => item.username.toLowerCase().indexOf(value.toLowerCase()) > -1
   )
   this.itemLength=this.filteredItems.length;
+  if(value==""||value=="undefined"){
+    this.minCount=0;
+    this.maxCount=this.limit-1;
+  }
 }
 list(){
   var itemsList: Array<any> = [];
@@ -126,7 +130,6 @@ list(){
   changePage(ev){
     this.maxCount=ev.maxCount;
     this.minCount=ev.minCount;
-
   }
  
   ngOnInit() {
