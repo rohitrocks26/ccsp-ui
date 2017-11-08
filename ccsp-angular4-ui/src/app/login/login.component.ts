@@ -47,9 +47,14 @@ export class LoginComponent implements OnInit {
      });
   }
   formdata(username:string,password:string){
-      this.authenticationService.authenticate(username,password).subscribe(response=> console.log('response'+response),
-        error=>console.log(error)
+      this.authenticationService.authenticate(username,password).subscribe(
+        response=> console.log('response'+response),
+        error=>this.handleError(error)
       )
+    }
+    public handleError (error : Error) : void {
+      debugger;
+      console.log("error"+error);
     }
    /* else {
       $('.log-status').addClass('wrong-entry');

@@ -4,7 +4,6 @@ import {Router} from '@angular/router';
 import {Observable} from 'rxjs/Rx';
 import { Constants } from '../constants';
 import 'rxjs/Rx';
-
 @Injectable()
 export class AuthenticationService {
     private _authToken : string;
@@ -22,20 +21,18 @@ export class AuthenticationService {
         return this.httpClient
         .post(Constants._authenticationUrl, { username : username, password : password })
         .map(response => this.handleResponse(response))
+        .catch(error=>Observable.throw(error))
     }
     public handleResponse(response) {
         //Subject to change depending upon the token response returned
         debugger;
-        try {
-            var responseResult = JSON.parse(response._body);
-            let error = new Error("Invalid Credentials");
-            return Observable.throw(error);
-        }
-        catch(ex) {
+        
+            throw new Error("Invalid Credentials");
+        /* var responseResult = JSON.parse(response._body);
             localStorage.setItem('token', response._body);
             this.router.navigate(['/memberInquiry']);
             return response;
-        }
+        }*/
         //localStorage.setItem('token', response._body);
         //console.log(response._body);
         // Pending -- Save User information as well
