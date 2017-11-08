@@ -34,7 +34,6 @@ export class PaginationComponent implements OnInit {
       console.log(this.count);
     }
     ngOnChanges(changes: SimpleChanges) {
-      console.log(this.itemlength+ this.maxLimit);
       this.count=this.itemlength/this.maxLimit;
       if(this.itemlength%this.maxLimit!=0){
          this.count=this.count+1;

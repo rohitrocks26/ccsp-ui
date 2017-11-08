@@ -93,7 +93,7 @@ filterItem(value){
   this.filteredItems = Object.assign([], this.items).filter(
      item => item.username.toLowerCase().indexOf(value.toLowerCase()) > -1
   )
- 
+  this.itemLength=this.filteredItems.length;
 }
 list(){
   var itemsList: Array<any> = [];
@@ -128,23 +128,8 @@ list(){
     this.minCount=ev.minCount;
 
   }
-  ngOnChanges(changes: SimpleChanges) {
-    if(this.filteredItems.length>0){
-      this.itemLength=this.filteredItems.length;
-    }
-    else{
-      this.itemLength=this.items.length;
-    }
-    console.log("inside the inint");
-  }
+ 
   ngOnInit() {
-    if(this.filteredItems.length>0){
-      this.itemLength=this.filteredItems.length;
-    }
-    else{
-      this.itemLength=this.items.length;
-    }
-    console.log("inside the inint");
   }
 }
 
