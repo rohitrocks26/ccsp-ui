@@ -14,7 +14,7 @@ export class MemberAccumsInquiryComponent implements OnInit {
 
 title = 'app';
   public donation : string; 
-  public modeltransfer:Modal = new Modal("Model header","This is a model component defined for giving the confirmation or error triggered in a particalar process . The properties are fully configurable based on usage !!!!! ");
+  public modeltransfer:Modal = new Modal("Search Message","You will see search results in below table ");
   public username :Input  = new Input("username","","enter username","text","username");
   public EXtn :Input  = new Input("extension","","enter extn.","text","extension");
   public office :Input  = new Input("office","","enter office location","text","office");
