@@ -13,7 +13,7 @@ export class DemoPageComponent implements OnInit {
   title = 'app';
   public donation : string; 
   public modeltransfer:Modal = new Modal("Model header","This is a model component defined for giving the confirmation or error triggered in a particalar process . The properties are fully configurable based on usage !!!!! ");
-  public inputtransfer :Input  = new Input("Amount","","enter some amount","text");
+  public inputtransfer :Input  = new Input("Amount","","enter some amount","text","amount");
   public groupItem=[{"title": 'aditi', "id": '1'},
   {"title": 'yash', "id": '2'},
   {"title": 'nitin', "id": '3'},

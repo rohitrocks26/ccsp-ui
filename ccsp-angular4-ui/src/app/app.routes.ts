@@ -14,11 +14,13 @@ export const ROUTES: Routes = [
       },
       { 
         path:'dashboard',
-        component:DemoPageComponent
+        component:DemoPageComponent,
+        canActivate:[CanactivateauthguardService]
       },
       {
         path:'memberInquiry',
-        component:MemberAccumsInquiryComponent
+        component:MemberAccumsInquiryComponent,
+        canActivate:[CanactivateauthguardService]
       },
       {
         path:'demoContainer',

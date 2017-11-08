@@ -1,6 +1,6 @@
 import { Component, OnInit, Input,
     Output,
-    EventEmitter, TrackByFn } from '@angular/core';
+    EventEmitter, TrackByFn,OnChanges,SimpleChanges } from '@angular/core';
     
 @Component({
   selector: 'paginationComponent',
@@ -32,6 +32,13 @@ export class PaginationComponent implements OnInit {
         this.count=this.count+1;
      }
       console.log(this.count);
+    }
+    ngOnChanges(changes: SimpleChanges) {
+      this.count=this.itemlength/this.maxLimit;
+      if(this.itemlength%this.maxLimit!=0){
+         this.count=this.count+1;
+      }
+       console.log(this.count);
     }
     private minCount:number;
     private maxcount:number;
