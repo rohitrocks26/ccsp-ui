@@ -19,17 +19,24 @@ export class AuthenticationService {
         return localStorage.getItem('token') !== null ? true : false;
     }
     public authenticate( username : string, password : string ) {
-        this.httpClient
+        return this.httpClient
         .post(Constants._authenticationUrl, { username : username, password : password })
-        .subscribe(response => this.handleResponse(response))
+        .map(response => this.handleResponse(response))
     }
     public handleResponse(response) {
         //Subject to change depending upon the token response returned
-        if(response._body !== undefined) { 
+        debugger;
+        try {
+            var responseResult = JSON.parse(response._body);
+            let error = new Error("Invalid Credentials");
+            return Observable.throw(error);
+        }
+        catch(ex) {
             localStorage.setItem('token', response._body);
             this.router.navigate(['/memberInquiry']);
+            return response;
         }
-        localStorage.setItem('token', response._body);
+        //localStorage.setItem('token', response._body);
         //console.log(response._body);
         // Pending -- Save User information as well
     }
