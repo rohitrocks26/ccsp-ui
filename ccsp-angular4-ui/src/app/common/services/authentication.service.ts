@@ -29,7 +29,7 @@ export class AuthenticationService {
         try {
             var responseResult = JSON.parse(response._body);
             let error = new Error("Invalid Credentials");
-            Observable.throw(error);
+            return Observable.throw(error);
         }
         catch(ex) {
             localStorage.setItem('token', response._body);
