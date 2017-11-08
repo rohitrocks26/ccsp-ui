@@ -47,15 +47,15 @@ export class LoginComponent implements OnInit {
      });
   }
   formdata(username:string,password:string){
-    if($("#Username").val() == "admin" && $("#Password").val() == "admin"){
-      this.authenticationService.authenticate(username,password);
-      this.router.navigateByUrl('/memberInquiry');
+      this.authenticationService.authenticate(username,password).subscribe(response=> console.log('response'+response),
+        error=>console.log(error)
+      )
     }
-    else {
+   /* else {
       $('.log-status').addClass('wrong-entry');
       $('.alert').fadeIn(500);
       setTimeout( "$('.alert').fadeOut(1500);",3000 );
     }
     
-  }
+  }*/
 }
