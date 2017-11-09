@@ -48,19 +48,13 @@ export class LoginComponent implements OnInit {
   }
   formdata(username:string,password:string){
       this.authenticationService.authenticate(username,password).subscribe(
-        response=> console.log('response'+response),
+        response=> this.router.navigate(['/memberInquiry']),
         error=>this.handleError(error)
       )
     }
     public handleError (error : Error) : void {
-      debugger;
-      console.log("error"+error);
-    }
-   /* else {
       $('.log-status').addClass('wrong-entry');
       $('.alert').fadeIn(500);
       setTimeout( "$('.alert').fadeOut(1500);",3000 );
     }
-    
-  }*/
 }

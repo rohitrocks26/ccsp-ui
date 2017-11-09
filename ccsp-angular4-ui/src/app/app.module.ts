@@ -11,7 +11,7 @@ import { RouterModule,PreloadAllModules} from '@angular/router';
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { PaginationComponent} from './common/components/pagination/pagination.component';
-import { GlobalService, AuthenticationService} from './common';
+import { GlobalService, AuthenticationService, UtilsService} from './common';
 import { DatepickerComponent } from './common/components/datepicker/datepicker.component';
 import { CurrencyFormatterDirective } from './common/directives/currency-formatter.directive';
 import { NavbarComponent } from './common/components/navbar/navbar.component';
@@ -53,7 +53,8 @@ import { MemberUtilizationCollapseComponent } from './member-utilization-collaps
   providers: [ 
     GlobalService,
     AuthenticationService,
-    CanactivateauthguardService
+    CanactivateauthguardService,
+    UtilsService
   ],
   bootstrap: [AppComponent]
 })

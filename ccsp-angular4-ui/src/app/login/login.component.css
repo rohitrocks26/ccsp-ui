@@ -17,10 +17,15 @@ body {
     border-radius: 0px;
   }
   .alert {
-    display: none;
-    font-size: 12px;
-    color: #f00;
-    float: left;
+    display : none;
+    font-size : 12px;
+    color : #f00;
+    padding: 0; 
+    margin-bottom: 0; 
+    margin-top: 10px;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
   }
   .log-status.wrong-entry {
     -moz-animation: wrong-log 0.3s;
