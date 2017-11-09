@@ -21,4 +21,3 @@ export * from './components/datepicker/datepicker.component';
 //Model exports
 export * from './model/Input';
 export * from './model/Modal';
-export * from './model/Member';

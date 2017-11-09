@@ -27,7 +27,6 @@ export class AuthenticationService {
     }
     public handleResponse(response) {
         //Subject to change depending upon the token response returned
-        debugger;
         let isResponseJson = this.utilsService.isJSON(response._body);
         if(isResponseJson) {
             let responseJson = JSON.parse(response._body);
