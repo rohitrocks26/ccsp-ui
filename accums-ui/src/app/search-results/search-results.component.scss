@@ -1,19 +1,20 @@
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
-        border-top: 0px solid #ddd !important; 
-        padding: 18px  !important; 
-    }
-    .tableBorder{
-        border: 1px solid;
-    }
-    .table>thead>tr>th{
-            border-bottom: 0px solid #ddd !important;
-    }
-    .dropdowns{
-        background-color: transparent;
-        border: 1px solid;
-        width: 150% !important;
-    }
-    .font-smaller{
-        font-size: smaller;
-        
-    }
+    border-top: 0px solid #ddd !important; 
+    padding: 24px  !important; 
+}
+.tableBorder{
+    border: 1px solid;
+}
+.table>thead>tr>th{
+        border-bottom: 0px solid #ddd !important;
+}
+
+.dropdowns{
+    background-color: transparent;
+    border: 1px solid;
+    width: 150% !important;
+}
+.font-smaller{
+    font-size: smaller;
+    
+}
