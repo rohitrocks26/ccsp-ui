@@ -25,11 +25,13 @@ import { CurrencyFormatterDirective } from './common/directives/currency-formatt
 import { NavbarComponent } from './common/components/navbar/navbar.component';
 import { DirectivecontainerComponent } from './common/directives/directivecontainer/directivecontainer.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
-
+import {UtilizationTableComponent} from './common';
+import { MemberUtilizationCollapseComponent } from './member-utilization-collapse/member-utilization-collapse.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MemberUtilizationCollapseComponent,
     LandingPageComponent,
     HeaderComponent,
     TabsComponent,
@@ -38,6 +40,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
      PaginationComponent,
     ModalComponent,
     DatepickerComponent,
+    UtilizationTableComponent,
     CurrencyFormatterDirective,
     InputComponent,
     AutoCompleteComponent,

@@ -39,15 +39,10 @@
                       <button class="btn dropdowns dropdown-toggle" type="button" data-toggle="dropdown">
                       <span class="caret"></span></button>
                       <ul class="dropdown-menu">
-                      <li>
-                          <li class="checkbox ">
-                              <input type="checkbox" id="allplanPeriodFilter" name="all"  value="all" (click)="toggleSelect($event,planPeriodFilters)" />All
-                              
-                          </li>
+                        <li><input type="checkbox" id="allplanPeriodFilter" [(ngModel)]="isAllplanPeriodFilterChecked.selected" (change)="selectAll($event,planPeriodFilters,isAllplanPeriodFilterChecked);"  /><span>All</span></li>
                         <li class="modal_line"></li> 
-                        <li class="checkbox " *ngFor="let planPeriodFilter of planPeriodFilters;let i=index;">
-                         <input type="checkbox" name="planPeriodFilter.name[{{i}}]"  [checked]="planPeriodFilter.selected" value="planPeriodFilter.selected" id="{{planPeriodFilter.name}}" (change)="planPeriodFilter.selected = !(planPeriodFilter.selected)"/>{{planPeriodFilter.name}}
-                        
+                        <li *ngFor="let planPeriodFilter of planPeriodFilters;let i=index;">
+                         <input type="checkbox" name="planPeriodFilter.name[{{i}}]"  value="planPeriodFilter.selected" id="{{planPeriodFilter.name}}" [(ngModel)]="planPeriodFilter.selected" (change)="checkIfAllSelected($event,planPeriodFilters,isAllplanPeriodFilterChecked);"/>{{planPeriodFilter.name}}
                         </li>  
                       </ul>
                     </div>
@@ -57,7 +52,11 @@
                       <button class="btn dropdowns dropdown-toggle" type="button" data-toggle="dropdown">
                       <span class="caret"></span></button>
                       <ul class="dropdown-menu">
-                        <li><input type="checkbox" value="ALL"/>2017</li>
+                        <li><input type="checkbox" id="allbenefitPeriodFilter"  name="all"  value="all"  [(ngModel)]="isAllbenefitPeriodFilterChecked.selected" (change)="selectAll($event,benefitPeriodFilters,isAllbenefitPeriodFilterChecked);" /><span>All</span></li>
+                        <li class="modal_line"></li> 
+                        <li *ngFor="let benefitPeriodFilter of benefitPeriodFilters;let i=index;">
+                         <input type="checkbox" name="benefitPeriodFilter.name[{{i}}]"   value="benefitPeriodFilter.selected" id="{{benefitPeriodFilter.name}}" [(ngModel)]="benefitPeriodFilter.selected" (change)="checkIfAllSelected($event,benefitPeriodFilters,isAllbenefitPeriodFilterChecked);"/>{{benefitPeriodFilter.name}}
+                        </li> 
                       </ul>
                     </div>
              </td>
@@ -66,9 +65,11 @@
                     <button class="btn dropdowns dropdown-toggle" type="button" data-toggle="dropdown">
                     <span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                      <li><input type="checkbox" value="Select All"/>Select All</li>
-                      <li><input type="checkbox" value="In Network"/>In Network</li>
-                      <li><input type="checkbox" value="Out of Network"/>Out of Network</li>
+                      <li><input type="checkbox" id="allnetworkTypeFilter" [(ngModel)]="isAllnetworkTypeFilterChecked.selected" (change)="selectAll($event,networkTypeFilters,isAllnetworkTypeFilterChecked);" name="all"  value="all"  /><span>All</span></li>
+                      <li class="modal_line"></li> 
+                      <li *ngFor="let networkTypeFilter of networkTypeFilters;let i=index;">
+                       <input type="checkbox" name="networkTypeFilter.name[{{i}}]"   value="networkTypeFilter.selected" id="{{networkTypeFilter.name}}"  [(ngModel)]="networkTypeFilter.selected" (change)="checkIfAllSelected($event,networkTypeFilters,isAllnetworkTypeFilterChecked);"/>{{networkTypeFilter.name}}
+                      </li> 
                     </ul>
                   </div>
             </td>
@@ -77,14 +78,11 @@
                     <button class="btn dropdowns dropdown-toggle" type="button" data-toggle="dropdown">
                     <span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                      <li><input type="checkbox" value="Select All"/>Select All</li>
-                      <li><input type="checkbox" value="Copay"/>Copay</li>
-                      <li><input type="checkbox" value="Deductible"/>Deductible</li>
-                      <li><input type="checkbox" value="Coinsurance"/>Coinsurance</li>
-                      <li><input type="checkbox" value="OPX"/>OPX</li>
-                      <li><input type="checkbox" value="Maximum"/>Maximum</li>
-
-
+                      <li><input type="checkbox" id="allaccumTypeFilter" name="all"  value="all" [(ngModel)]="isAllaccumTypeFilterChecked.selected" (change)="selectAll($event,accumTypeFilters,isAllaccumTypeFilterChecked);" /><span>All</span></li>
+                      <li class="modal_line"></li> 
+                      <li *ngFor="let accumTypeFilter of accumTypeFilters;let i=index;">
+                       <input type="checkbox" name="accumTypeFilter.name[{{i}}]"   value="accumTypeFilter.selected" id="{{accumTypeFilter.name}}" [(ngModel)]="accumTypeFilter.selected" (change)="checkIfAllSelected($event,accumTypeFilters,isAllaccumTypeFilterChecked);"/>{{accumTypeFilter.name}}
+                      </li>   
                     </ul>
                   </div>
             </td>

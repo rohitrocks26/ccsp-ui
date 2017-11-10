@@ -10,7 +10,7 @@ export * from './components/pagination/pagination.component';
 export * from './components/navbar/navbar.component';
 export * from './components/modal/modal.component';
 export * from './components/datepicker/datepicker.component';
-
+export * from './components/utilization-table/utilization-table.component';
 //Directive exports
 
 
@@ -21,3 +21,4 @@ export * from './components/datepicker/datepicker.component';
 //Model exports
 export * from './model/Input';
 export * from './model/Modal';
+export * from './model/Member';

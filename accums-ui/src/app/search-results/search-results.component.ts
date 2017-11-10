@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-search-results',
@@ -6,127 +6,133 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-results.component.scss']
 })
 export class SearchResultsComponent implements OnInit {
-
+  isAllaccumTypeFilterChecked : any;
+  isAllnetworkTypeFilterChecked : any
+  isAllbenefitPeriodFilterChecked: any;
+  isAllplanPeriodFilterChecked : any;
   constructor() { }
 
   ngOnInit() {
+    this.isAllaccumTypeFilterChecked = { selected : false};
+    this.isAllnetworkTypeFilterChecked = { selected : false};
+    this.isAllbenefitPeriodFilterChecked = { selected : false};
+    this.isAllplanPeriodFilterChecked = { selected : false};
   }
-  public planPeriodFilters=[
+  public planPeriodFilters = [
     {
-      "name":"01/01/2017-03/31/2017",
+      "name": "01/01/2017-03/31/2017",
     },
     {
-      "name":"04/01/2017-12/31/2017",
-    },
-  ];
-  public benefitPeriodFilters=[
-    {
-      "name":"2017",
+      "name": "04/01/2017-12/31/2017",
     }
   ];
-  public networkTypeFilters=[
+  public benefitPeriodFilters = [
     {
-      "name":"In Network",
-    },
-    {
-      "name":"Out Of Network",
+      "name": "2017",
     }
   ];
-  public accumTypeFilters=[
+  public networkTypeFilters = [
     {
-      "name":"Copay",
+      "name": "In Network",
     },
     {
-      "name":"Deductible",
-    },
-    {
-      "name":"Coinsurance",
-    },
-    {
-      "name":"OPX",
-    },
-    {
-      "name":"Maximum",
-    },
-    {
-      "name":"",
+      "name": "Out Of Network",
     }
   ];
-  public items=[
-  {
-    "subscriberId":"20301",
-    "memberPartyId":"12983",
-    "memberName":"John Doe",
-    "groupNumber":"100",
-    "sectionNumber":"1",
-    "accountNumber":"1010100",
-    "ssn":"xxx.xxx.xxxx",
-    "relationship":"subscriber",
-    "gender":"Male",
-    "dob":"01/09/1980",
-    "planPeriod":"",
-    "benefitPeriod":"",
-    "networkType":"",
-    "accumType":""
-  },
-  {
-    "subscriberId":"20301",
-    "memberPartyId":"12985",
-    "memberName":"Mary Doe",
-    "groupNumber":"100",
-    "sectionNumber":"1",
-    "accountNumber":"1010101",
-    "ssn":"xxx.xxx.xxxx",
-    "relationship":"dependent",
-    "gender":"Female",
-    "dob":"02/08/1972",
-    "planPeriod":"",
-    "benefitPeriod":"",
-    "networkType":"",
-    "accumType":""
-  },
-  {
-    "subscriberId":"20301",
-    "memberPartyId":"12984",
-    "memberName":"Sally Doe",
-    "groupNumber":"100",
-    "sectionNumber":"1",
-    "accountNumber":"1010110",
-    "ssn":"xxx.xxx.xxxx",
-    "relationship":"dependent",
-    "gender":"Female",
-    "dob":"03/09/2000",
-    "planPeriod":"",
-    "benefitPeriod":"",
-    "networkType":"",
-    "accumType":""
-  }
+  public accumTypeFilters = [
+    {
+      "name": "Copay",
+    },
+    {
+      "name": "Deductible",
+    },
+    {
+      "name": "Coinsurance",
+    },
+    {
+      "name": "OPX",
+    },
+    {
+      "name": "Maximum",
+    }
   ];
-  checkboxList(checkbox){
+  public items = [
+    {
+      "subscriberId": "20301",
+      "memberPartyId": "12983",
+      "memberName": "John Doe",
+      "groupNumber": "100",
+      "sectionNumber": "1",
+      "accountNumber": "1010100",
+      "ssn": "xxx.xxx.xxxx",
+      "relationship": "subscriber",
+      "gender": "Male",
+      "dob": "01/09/1980",
+      "planPeriod": "",
+      "benefitPeriod": "",
+      "networkType": "",
+      "accumType": ""
+    },
+    {
+      "subscriberId": "20301",
+      "memberPartyId": "12985",
+      "memberName": "Mary Doe",
+      "groupNumber": "100",
+      "sectionNumber": "1",
+      "accountNumber": "1010101",
+      "ssn": "xxx.xxx.xxxx",
+      "relationship": "dependent",
+      "gender": "Female",
+      "dob": "02/08/1972",
+      "planPeriod": "",
+      "benefitPeriod": "",
+      "networkType": "",
+      "accumType": ""
+    },
+    {
+      "subscriberId": "20301",
+      "memberPartyId": "12984",
+      "memberName": "Sally Doe",
+      "groupNumber": "100",
+      "sectionNumber": "1",
+      "accountNumber": "1010110",
+      "ssn": "xxx.xxx.xxxx",
+      "relationship": "dependent",
+      "gender": "Female",
+      "dob": "03/09/2000",
+      "planPeriod": "",
+      "benefitPeriod": "",
+      "networkType": "",
+      "accumType": ""
+    }
+  ];
+  checkboxList(checkbox) {
     var items: Array<any> = [];
-    for(var i = 0; i <= checkbox.length-1; i++){
-      
-       items.push(this.items[i]);
-       
+    for (var i = 0; i <= checkbox.length - 1; i++) {
+
+      items.push(this.items[i]);
+
     }
     return items;
   }
-  searchList(){
-      var items: Array<any> = [];
-      for(var i = 0; i <= this.items.length-1; i++){
-        
-         items.push(this.items[i]);
-         
-      }
-      return items;
+  searchList() {
+    var items: Array<any> = [];
+    for (var i = 0; i <= this.items.length - 1; i++) {
+
+      items.push(this.items[i]);
+
     }
-    toggleSelect = function(event,item){  
-      
-              this.selectAll = event.target.checked;
-              item.forEach(function(item){
-               console.log(item);
-               item.selected = event.target.checked;
-            });
-      
-        }    
+    return items;
+  }
+
+  selectAll(event,item,selectAll) {
+    for (var i = 0; i < item.length; i++) {
+      item[i].selected = selectAll.selected;
+    }
+  }
+  checkIfAllSelected(event,item,selectAll) {
+    selectAll.selected = item.every(function(items:any) {
+        return items.selected == true;
+      })
+  }
 }
