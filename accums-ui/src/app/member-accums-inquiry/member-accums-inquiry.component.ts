@@ -17,4 +17,42 @@ export class MemberAccumsInquiryComponent implements OnInit {
     this.familyMember = new Member('John Doe','12983','20301');
   }
 
+  public planPeriodFilters = [
+    {
+      "name": "01/01/2017-03/31/2017",
+    },
+    {
+      "name": "04/01/2017-12/31/2017",
+    }
+  ];
+  public benefitPeriodFilters = [
+    {
+      "name": "2017",
+    }
+  ];
+  public networkTypeFilters = [
+    {
+      "name": "In Network",
+    },
+    {
+      "name": "Out Of Network",
+    }
+  ];
+  public accumTypeFilters = [
+    {
+      "name": "Copay",
+    },
+    {
+      "name": "Deductible",
+    },
+    {
+      "name": "Coinsurance",
+    },
+    {
+      "name": "OPX",
+    },
+    {
+      "name": "Maximum",
+    }
+  ];
 }
