@@ -36,8 +36,8 @@
               <td>{{item.dob}}</td>
               <td>   
                   <div class="dropdown">
-                      <button class="btn dropdowns dropdown-toggle" type="button" data-toggle="dropdown">
-                      <span class="caret"></span></button>
+                      <div class=" dropdowns dropdown-toggle"  data-toggle="dropdown">Select
+                      <span class="dropdownCaret"></span></div>
                       <ul class="dropdown-menu">
                         <li><input type="checkbox" id="allplanPeriodFilter" [(ngModel)]="isAllplanPeriodFilterChecked.selected" (change)="selectAll($event,planPeriodFilters,isAllplanPeriodFilterChecked);"  /><span>All</span></li>
                         <li class="modal_line"></li> 
@@ -49,8 +49,8 @@
               </td>
               <td>   
                   <div class="dropdown">
-                      <button class="btn dropdowns dropdown-toggle" type="button" data-toggle="dropdown">
-                      <span class="caret"></span></button>
+                      <div class=" dropdowns dropdown-toggle"  data-toggle="dropdown">Select
+                      <span class="dropdownCaret"></span></div>
                       <ul class="dropdown-menu">
                         <li><input type="checkbox" id="allbenefitPeriodFilter"  name="all"  value="all"  [(ngModel)]="isAllbenefitPeriodFilterChecked.selected" (change)="selectAll($event,benefitPeriodFilters,isAllbenefitPeriodFilterChecked);" /><span>All</span></li>
                         <li class="modal_line"></li> 
@@ -62,8 +62,8 @@
              </td>
              <td>   
                 <div class="dropdown">
-                    <button class="btn dropdowns dropdown-toggle" type="button" data-toggle="dropdown">
-                    <span class="caret"></span></button>
+                    <div class=" dropdowns dropdown-toggle"  data-toggle="dropdown">Select
+                    <span class="dropdownCaret"></span></div>
                     <ul class="dropdown-menu">
                       <li><input type="checkbox" id="allnetworkTypeFilter" [(ngModel)]="isAllnetworkTypeFilterChecked.selected" (change)="selectAll($event,networkTypeFilters,isAllnetworkTypeFilterChecked);" name="all"  value="all"  /><span>All</span></li>
                       <li class="modal_line"></li> 
@@ -75,8 +75,8 @@
             </td>
             <td>   
                 <div class="dropdown">
-                    <button class="btn dropdowns dropdown-toggle" type="button" data-toggle="dropdown">
-                    <span class="caret"></span></button>
+                    <div class=" dropdowns dropdown-toggle" data-toggle="dropdown">Select
+                    <span class="dropdownCaret"></span></div>
                     <ul class="dropdown-menu">
                       <li><input type="checkbox" id="allaccumTypeFilter" name="all"  value="all" [(ngModel)]="isAllaccumTypeFilterChecked.selected" (change)="selectAll($event,accumTypeFilters,isAllaccumTypeFilterChecked);" /><span>All</span></li>
                       <li class="modal_line"></li> 
