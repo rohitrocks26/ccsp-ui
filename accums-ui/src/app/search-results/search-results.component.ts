@@ -6,17 +6,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./search-results.component.scss']
 })
 export class SearchResultsComponent implements OnInit {
-  isAllaccumTypeFilterChecked : any;
-  isAllnetworkTypeFilterChecked : any
-  isAllbenefitPeriodFilterChecked: any;
-  isAllplanPeriodFilterChecked : any;
   constructor() { }
 
   ngOnInit() {
-    this.isAllaccumTypeFilterChecked = { selected : false};
-    this.isAllnetworkTypeFilterChecked = { selected : false};
-    this.isAllbenefitPeriodFilterChecked = { selected : false};
-    this.isAllplanPeriodFilterChecked = { selected : false};
+    this.searchList();
   }
   public planPeriodFilters = [
     {
@@ -56,6 +49,7 @@ export class SearchResultsComponent implements OnInit {
       "name": "Maximum",
     }
   ];
+  public searchListResults=[];
   public items = [
     {
       "subscriberId": "20301",
@@ -122,17 +116,7 @@ export class SearchResultsComponent implements OnInit {
       items.push(this.items[i]);
 
     }
-    return items;
+    this.searchListResults= items;
   }
 
-  selectAll(event,item,selectAll) {
-    for (var i = 0; i < item.length; i++) {
-      item[i].selected = selectAll.selected;
-    }
-  }
-  checkIfAllSelected(event,item,selectAll) {
-    selectAll.selected = item.every(function(items:any) {
-        return items.selected == true;
-      })
-  }
 }

@@ -27,6 +27,7 @@ import { DirectivecontainerComponent } from './common/directives/directivecontai
 import { SearchResultsComponent } from './search-results/search-results.component';
 import {UtilizationTableComponent} from './common';
 import { MemberUtilizationCollapseComponent } from './member-utilization-collapse/member-utilization-collapse.component';
+import { TableDropdownComponent } from './common/table-dropdown/table-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { MemberUtilizationCollapseComponent } from './member-utilization-collaps
     NavbarComponent,
     DirectivecontainerComponent,
     SearchResultsComponent,
+    TableDropdownComponent,
   ],
   imports: [
        NgAutoCompleteModule,
