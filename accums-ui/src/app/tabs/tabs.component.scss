@@ -10,6 +10,7 @@
     border-radius: 4px;
     margin-right: 5px;
     height: 28px;
+    line-height: 1.2;
 }
 .nav>li>a {
     position: relative;
@@ -38,4 +39,11 @@
     color: #fff;
     background-color:grey !important;
     height: 28px !important;
+}
+.act {
+    background-color: grey;
+    border : 1px solid grey;
+}
+a {
+    color : black;
 }
