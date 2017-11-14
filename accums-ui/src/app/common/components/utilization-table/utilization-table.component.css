@@ -24,3 +24,7 @@
 .no-background {
     background: #fff;
 }
+.table>thead>tr>th {
+  vertical-align: bottom;
+  font-size: smaller !important;
+}

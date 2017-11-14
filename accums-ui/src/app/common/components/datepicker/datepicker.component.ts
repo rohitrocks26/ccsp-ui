@@ -1,7 +1,7 @@
 import { Component, OnInit , AfterViewInit ,ViewChild ,ElementRef} from '@angular/core';
-import * as $ from 'jquery';
 import datepicker from 'bootstrap-datepicker';
 
+declare var $ : any;
 @Component({
   selector: 'app-datepicker',
   templateUrl: './datepicker.component.html',
@@ -16,6 +16,5 @@ export class DatepickerComponent implements OnInit , AfterViewInit{
     
   }
   ngAfterViewInit(){
-   
   }
 }
