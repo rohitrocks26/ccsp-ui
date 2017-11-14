@@ -3,7 +3,7 @@
     padding : 0;
 }
 .button-style {
-    width : 110px;
+    width : 100px;
     background-color: #f7f7f7;
     font-size : 12px;   
     margin : auto;
@@ -27,7 +27,7 @@ h5 {
     margin-left : 25px;
 }
 .familyFilter{
-    border: 1px solid;
+    border: 0.5px solid;
     padding: 8px;
     padding-bottom: 5% !important;
     margin-bottom: 5%;
@@ -36,9 +36,13 @@ h5 {
     font-size: smaller;
 }
 .button-width{
-    font-size: xx-small;
+    font-size: 8px;
 }
 .btn-default {
     color: #333;
     border-color: black;
+    border:0.5px solid;
     }
+.reduced_width{
+    width: 40.666667% !important;
+}
