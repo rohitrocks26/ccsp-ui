@@ -11,7 +11,7 @@ export class TabsComponent implements OnInit {
   public classChanged:boolean=false;
   ngOnInit() {
   }
-  toggleClass(){
+  toggleClass(event){
     this.classChanged=!this.classChanged;
   }
   
