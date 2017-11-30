@@ -1,4 +1,5 @@
 import { Component, OnInit ,Input} from '@angular/core';
+import { AuthenticationService } from '../../services/authentication/authentication.service';
 
 @Component({
   selector: 'navbarComponent',
@@ -7,7 +8,7 @@ import { Component, OnInit ,Input} from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authenticationService : AuthenticationService) { }
 
   ngOnInit() {
   }
@@ -20,6 +21,9 @@ export class NavbarComponent implements OnInit {
          items.push(this.navbarList[i]);
       }
       return items;
+    }
+    logout() {
+      this.authenticationService.logout();
     }
 
 }

@@ -1,4 +1,4 @@
-import { Component ,ViewChild, OnInit} from '@angular/core';
+import { Component ,ViewChild, OnInit, ViewContainerRef} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,18 +6,10 @@ import { Component ,ViewChild, OnInit} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor() {}
+  constructor() {
+  }
   ngOnInit() {
-    for(var i=0; i < 50; i++) {
-      this.doThis();
-    }
   }
   ngOnChanges() {
-  for(var i=0; i < 50; i++) {
-      this.doThis();
-    }
-  }
-  doThis() {
-    
   }
 }

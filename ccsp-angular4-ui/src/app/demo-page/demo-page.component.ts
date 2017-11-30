@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent } from 'ng-auto-complete';
 import { CurrencyPipeModule } from '../common/modules/currency-pipe/currency-pipe.module';
-import { GlobalService, Modal, Input } from '../common';
+import { GlobalService } from '../common/';
+import { Modal } from '../common/components/modal/modal';
+import { Input } from '../common/components/input/input';
 
 @Component({
   selector: 'demo-page',
@@ -99,8 +101,8 @@ list(){
     return items;
   }
   requestData() {
-    this.globalService.getRequest('http://34.208.243.62:6001/benefitcoding/adminplan/' + this.id)
-    .subscribe(data=> this.loadData(data));
+    this.globalService.getRequest('https://172.31.37.79:8080/' + this.id)
+    .subscribe(data=> this.loadData(data),error=>console.log("Error in component" + error));
   }
   loadData (data : any) {
     this.data = data;

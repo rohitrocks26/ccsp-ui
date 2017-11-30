@@ -9,8 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "cibuild" : "ng build --prod --env=prod --base-href /ui-demopage/",
-    "citest" : "ng test --browser=PhantomJS --single-run --reporters junit -cc"
+    "cibuild": "ng build --prod --env=prod --base-href /ui-demopage/",
+    "citest": "ng test --browser=PhantomJS --single-run --reporters junit -cc"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +23,8 @@
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
+    "@ngrx/core": "^1.2.0",
+    "@ngrx/store": "^4.1.1",
     "@types/jquery": "^3.2.13",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
@@ -30,6 +32,7 @@
     "jquery": "^3.2.1",
     "ng-auto-complete": "^1.7.12",
     "ng2-input-autocomplete": "0.0.11",
+    "ng2-toastr": "^4.1.2",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },

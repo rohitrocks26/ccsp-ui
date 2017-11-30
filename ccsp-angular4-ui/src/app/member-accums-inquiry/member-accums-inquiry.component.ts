@@ -1,7 +1,9 @@
 import { Component, OnInit ,SimpleChanges} from '@angular/core';
 import { CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent } from 'ng-auto-complete';
 import { CurrencyPipeModule } from '../common/modules/currency-pipe/currency-pipe.module';
-import { GlobalService, Modal, Input } from '../common';
+import { GlobalService } from '../common';
+import { Modal } from '../common/components/modal/modal';
+import { Input } from '../common/components/input/input';
 
 @Component({
   selector: 'app-member-accums-inquiry',

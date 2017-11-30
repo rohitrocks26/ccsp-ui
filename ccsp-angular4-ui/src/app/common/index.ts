@@ -1,8 +1,9 @@
 //Service exports
 
-export * from './services/authentication.service'; 
-export * from './services/global.service'; 
-export * from './services/utils.service'; 
+export * from './services/authentication/authentication.service'; 
+export * from './services/global/global.service'; 
+export * from './services/utils/utils.service'; 
+export * from './services/global/globalerrorhandler.service'; 
 
 //Component exports
 export * from './components/input/input.component';
@@ -19,5 +20,3 @@ export * from './components/datepicker/datepicker.component';
 
 
 //Model exports
-export * from './model/Input';
-export * from './model/Modal';

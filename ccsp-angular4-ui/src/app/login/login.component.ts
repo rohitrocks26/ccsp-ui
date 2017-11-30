@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
-import {AuthenticationService} from '../common/services/authentication.service';
+import {AuthenticationService} from '../common';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -53,8 +53,8 @@ export class LoginComponent implements OnInit {
       )
     }
     public handleError (error : Error) : void {
-      $('.log-status').addClass('wrong-entry');
+      /*$('.log-status').addClass('wrong-entry');
       $('.alert').fadeIn(500);
-      setTimeout( "$('.alert').fadeOut(1500);",3000 );
+      setTimeout( "$('.alert').fadeOut(1500);",3000 );*/
     }
 }

@@ -1,4 +1,4 @@
-import { CanactivateauthguardService } from './common/services/canactivateauthguard.service';
+import { AuthGuard } from './common/services/authentication/auth-guard.service';
 import { AutoCompleteComponent } from './common/components/autocomplete/autocomplete.component';
 import { NgAutoCompleteModule } from "ng-auto-complete";
 import { InputComponent } from './common/components/input/input.component';
@@ -11,15 +11,17 @@ import { RouterModule,PreloadAllModules} from '@angular/router';
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { PaginationComponent} from './common/components/pagination/pagination.component';
-import { GlobalService, AuthenticationService, UtilsService} from './common';
+import { GlobalService, AuthenticationService, UtilsService, GlobalErrorHandlerService} from './common';
 import { DatepickerComponent } from './common/components/datepicker/datepicker.component';
 import { CurrencyFormatterDirective } from './common/directives/currency-formatter.directive';
 import { NavbarComponent } from './common/components/navbar/navbar.component';
 import { DirectivecontainerComponent } from './common/directives/directivecontainer/directivecontainer.component';
 import { DemoPageComponent } from './demo-page/demo-page.component';
 import { LoginComponent } from './login/login.component';
-
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
 import { MemberAccumsInquiryComponent } from './member-accums-inquiry/member-accums-inquiry.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ErrorComponent } from './common/components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -34,24 +36,25 @@ import { MemberAccumsInquiryComponent } from './member-accums-inquiry/member-acc
     DirectivecontainerComponent,
     DemoPageComponent,
     LoginComponent,
-    
     MemberAccumsInquiryComponent,
-    
+    ErrorComponent,
   ],
   imports: [
     NgAutoCompleteModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES,
     { useHash: true, preloadingStrategy: PreloadAllModules }),
-    
+    ToastModule.forRoot()
   ],
   providers: [ 
     GlobalService,
     AuthenticationService,
-    CanactivateauthguardService,
-    UtilsService
+    AuthGuard,
+    UtilsService,
+    GlobalErrorHandlerService
   ],
   bootstrap: [AppComponent]
 })
