@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class TabsComponent implements OnInit {
 
   constructor() { }
-
+  public classChanged:boolean=false;
   ngOnInit() {
+  }
+  toggleClass(event){
+    this.classChanged=!this.classChanged;
   }
   
 }

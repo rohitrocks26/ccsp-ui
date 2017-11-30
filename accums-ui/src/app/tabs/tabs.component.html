@@ -20,7 +20,7 @@
         <a href="#">Manual Speed Load</a>
       </li>
       <li class="floatRight">
-        <span class="glyphicon glyphicon-plus" data-toggle="collapse" data-target="#search"></span>
+        <span class="glyphicon" [class.glyphicon-minus]="classChanged" [class.glyphicon-plus]="!classChanged" (click)="toggleClass($event)" data-toggle="collapse" data-target="#search"></span>
       </li>
     </ul>
   </div>

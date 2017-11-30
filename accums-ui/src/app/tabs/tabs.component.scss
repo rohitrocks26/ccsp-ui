@@ -15,8 +15,8 @@
 .nav>li>a {
     position: relative;
     padding: 10px 15px;
-    vertical-align: -webkit-baseline-middle !important;
-    display: initial !important;
+    line-height: 6px;
+    color: black;
 }
 .home-logo{
     font-size: xx-large;
@@ -36,7 +36,7 @@
     margin-left: 18px;    
 }
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
-    color: #fff;
+    color: black;
     background-color:grey !important;
     height: 28px !important;
 }

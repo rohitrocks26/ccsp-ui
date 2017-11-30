@@ -72,7 +72,7 @@
         <div class="col-sm-3">
             <div class="form-group">
                 
-                  <input type="text" pattern="[0-9]*" #mobile="ngModel" placeholder="" class="form-control" id="donation" [ngModel]="donation" >
+                  <input type="text" pattern="[0-9]*" #mobile="ngModel" placeholder="" class="form-control" id="donation" [ngModel]="donation" appCurrencyFormatter>
                   <div [hidden]="mobile.valid || mobile.pristine"
                   class="alert alert-danger">
                   <div [hidden]="!mobile.hasError('pattern')">Please enter only numbers</div>
