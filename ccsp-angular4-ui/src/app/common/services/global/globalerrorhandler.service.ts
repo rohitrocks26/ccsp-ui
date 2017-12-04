@@ -15,11 +15,7 @@ export class GlobalErrorHandlerService {
                 break;
             default:
                 let errorObject = ErrorMessage.errorMap[error.status] || ErrorMessage.errorMap['default'];
-                if (errorObject) {
-                    error.errorMessage = errorObject.errorMessage;
-                    error.errorDescription = errorObject.errorDescription;
-                    this.displayErrorSubject.next(error);
-                }
+                this.displayErrorSubject.next(errorObject);
         }
     }
     public getDisplayErrorSubject(): Subject<any> {

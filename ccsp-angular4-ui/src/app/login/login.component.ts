@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
   }
   formdata(username:string,password:string){
       this.authenticationService.authenticate(username,password).subscribe(
-        response=> this.router.navigate(['/memberInquiry']),
+        response=> this.router.navigate(['/demoPage']),
         error=>this.handleError(error)
       )
     }

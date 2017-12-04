@@ -1,0 +1,98 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "ng-auto-complete@^1.7.12",
+        "scope": null,
+        "escapedName": "ng-auto-complete",
+        "name": "ng-auto-complete",
+        "rawSpec": "^1.7.12",
+        "spec": ">=1.7.12 <2.0.0",
+        "type": "range"
+      },
+      "C:\\Users\\ychandra\\Documents\\Projects\\SOS\\ccsp-ui\\ccsp-angular4-ui"
+    ]
+  ],
+  "_from": "ng-auto-complete@>=1.7.12 <2.0.0",
+  "_id": "ng-auto-complete@1.7.12",
+  "_inCache": true,
+  "_location": "/ng-auto-complete",
+  "_nodeVersion": "7.8.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/ng-auto-complete-1.7.12.tgz_1503912344773_0.4501883664634079"
+  },
+  "_npmUser": {
+    "name": "sengira",
+    "email": "benjamin@codebridge.nl"
+  },
+  "_npmVersion": "4.2.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "ng-auto-complete@^1.7.12",
+    "scope": null,
+    "escapedName": "ng-auto-complete",
+    "name": "ng-auto-complete",
+    "rawSpec": "^1.7.12",
+    "spec": ">=1.7.12 <2.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ng-auto-complete/-/ng-auto-complete-1.7.12.tgz",
+  "_shasum": "efb2015ed46debdbc854c9e9eb5a042f38f3b3d2",
+  "_shrinkwrap": null,
+  "_spec": "ng-auto-complete@^1.7.12",
+  "_where": "C:\\Users\\ychandra\\Documents\\Projects\\SOS\\ccsp-ui\\ccsp-angular4-ui",
+  "bugs": {
+    "url": "https://github.com/sengirab/ngAutocomplete/issues"
+  },
+  "dependencies": {},
+  "description": "Light-weight autocomplete component for Angular2.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "efb2015ed46debdbc854c9e9eb5a042f38f3b3d2",
+    "tarball": "https://registry.npmjs.org/ng-auto-complete/-/ng-auto-complete-1.7.12.tgz"
+  },
+  "email": "benjamin@codebridge.nl",
+  "homepage": "https://github.com/sengirab/ngAutocomplete#readme",
+  "jsnext:main": "ng-autocomplete.esm.js",
+  "keywords": [
+    "angular2",
+    "ng",
+    "ng2",
+    "ng-autocomplete",
+    "autocomplete",
+    "ng-dropdown",
+    "dropdown",
+    "angular dropdown"
+  ],
+  "license": "MIT",
+  "main": "ng-autocomplete.umd.js",
+  "maintainers": [
+    {
+      "name": "sengira",
+      "email": "benjamin@codebridge.nl"
+    }
+  ],
+  "module": "ng-autocomplete.esm.js",
+  "name": "ng-auto-complete",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "@angular/core": "^2.4.0 || ^4.0.0",
+    "@angular/compiler": "^2.4.0 || ^4.0.0",
+    "@angular/common": "^2.4.0 || ^4.0.0",
+    "rxjs": "^5.0.1"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sengirab/ngAutocomplete.git"
+  },
+  "scripts": {},
+  "types": "ng-autocomplete.d.ts",
+  "url": "https://github.com/sengirab/ngAutocomplete",
+  "version": "1.7.12"
+}

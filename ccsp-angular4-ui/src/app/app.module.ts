@@ -1,6 +1,6 @@
 import { AuthGuard } from './common/services/authentication/auth-guard.service';
 import { AutoCompleteComponent } from './common/components/autocomplete/autocomplete.component';
-import { NgAutoCompleteModule } from "ng-auto-complete";
+import { NgAutoCompleteModule } from "./common/components/autocomplete/auto-complete";
 import { InputComponent } from './common/components/input/input.component';
 import { ModalComponent } from './common/components/modal/modal.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,10 +18,14 @@ import { NavbarComponent } from './common/components/navbar/navbar.component';
 import { DirectivecontainerComponent } from './common/directives/directivecontainer/directivecontainer.component';
 import { DemoPageComponent } from './demo-page/demo-page.component';
 import { LoginComponent } from './login/login.component';
-import {ToastModule} from 'ng2-toastr/ng2-toastr';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { MemberAccumsInquiryComponent } from './member-accums-inquiry/member-accums-inquiry.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ErrorComponent } from './common/components/error/error.component';
+import { StoreModule } from '@ngrx/store';
+import { rootReducer } from './store/root-reducer';
+import { DemoContainerComponent } from './demo-container/demo-container.component';
+import { PostsComponent } from './demo-container/posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,8 @@ import { ErrorComponent } from './common/components/error/error.component';
     LoginComponent,
     MemberAccumsInquiryComponent,
     ErrorComponent,
+    DemoContainerComponent,
+    PostsComponent
   ],
   imports: [
     NgAutoCompleteModule,
@@ -47,7 +53,8 @@ import { ErrorComponent } from './common/components/error/error.component';
     HttpModule,
     RouterModule.forRoot(ROUTES,
     { useHash: true, preloadingStrategy: PreloadAllModules }),
-    ToastModule.forRoot()
+    ToastModule.forRoot(),
+    StoreModule.forRoot(rootReducer)
   ],
   providers: [ 
     GlobalService,

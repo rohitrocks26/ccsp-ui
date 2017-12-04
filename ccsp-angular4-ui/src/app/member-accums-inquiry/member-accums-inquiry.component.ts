@@ -1,5 +1,5 @@
 import { Component, OnInit ,SimpleChanges} from '@angular/core';
-import { CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent } from 'ng-auto-complete';
+import { CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent } from '../common/components/autocomplete/auto-complete';
 import { CurrencyPipeModule } from '../common/modules/currency-pipe/currency-pipe.module';
 import { GlobalService } from '../common';
 import { Modal } from '../common/components/modal/modal';
@@ -14,7 +14,7 @@ import { Input } from '../common/components/input/input';
 
 export class MemberAccumsInquiryComponent implements OnInit {
 
-title = 'app';
+  title = 'app';
   public donation : string; 
   public modeltransfer:Modal = new Modal("Search Message","You will see search results in below table ");
   public username :Input  = new Input("username","","enter username","text","username");

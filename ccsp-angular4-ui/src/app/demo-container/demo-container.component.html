@@ -1,0 +1,16 @@
+<navbarComponent [navbarList]="menuModelArray"></navbarComponent>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <label>Select User</label>
+      <select (ngModelChange)="change($event)" [(ngModel)]="selectedValue" class="form-control">
+        <option *ngFor="let user of users" [ngValue]="user">{{user}}</option>
+      </select>
+    </div>
+    <div class="col-md-4" *ngIf="init">
+      <label>Skills</label>
+      <posts></posts>
+    </div>
+  </div>
+</div>

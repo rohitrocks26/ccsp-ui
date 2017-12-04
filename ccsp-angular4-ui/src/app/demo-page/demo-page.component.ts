@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent } from 'ng-auto-complete';
+import { CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent } from '../common/components/autocomplete/auto-complete';
 import { CurrencyPipeModule } from '../common/modules/currency-pipe/currency-pipe.module';
 import { GlobalService } from '../common/';
 import { Modal } from '../common/components/modal/modal';
 import { Input } from '../common/components/input/input';
+import { AppState } from '../models/appstate'
+import { Action } from '../models/action';
+import { Store } from '@ngrx/store'
+import {Subscription} from 'rxjs/Subscription';
+import {Constants} from '../common/constants';
 
 @Component({
   selector: 'demo-page',
@@ -66,11 +71,11 @@ public items=[
  public menuModelArray=[{
     "name":"home",
     "id":"home",
-    "url":"#"
+    "url":"#/demoPage"
   },{
      "name":"about",
     "id":"about",
-    "url":"#"
+    "url":"#/demoContainer"
   },
   {
      "name":"contact us",
@@ -84,8 +89,10 @@ public minCount:number=0;
 public maxCount:number=this.limit-1;
 public id : string;
 public data : string;
-constructor ( private globalService : GlobalService ) {
-
+public subscription : Subscription;
+constructor ( private globalService : GlobalService, private store : Store<AppState> ) {
+  this.subscription = this.store.select(appState => appState.selectedUser)
+  .subscribe(value=> this.id = value )
 }
 
 list(){
@@ -101,7 +108,7 @@ list(){
     return items;
   }
   requestData() {
-    this.globalService.getRequest('https://172.31.37.79:8080/' + this.id)
+    this.globalService.getRequest(Constants.API_URL + this.id)
     .subscribe(data=> this.loadData(data),error=>console.log("Error in component" + error));
   }
   loadData (data : any) {
@@ -115,6 +122,9 @@ list(){
   }
   ngOnInit() {
     console.log("inside the inint");
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }

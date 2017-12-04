@@ -24,8 +24,8 @@ export class AuthenticationService {
     public get isAuthenticated(): boolean {
         return localStorage.getItem('token') !== null ? true : false;
     }
-    public authenticate(username: string, password: string) {
-       return this.httpClient.post(Constants.AUTH_URL, {username : username, password : password}, {headers : this.headers })
+    public authenticate(username: string, password: string) : Observable<any> {
+       return this.httpClient.get(`${Constants.AUTH_URL}/${username}`, {headers : this.headers })
         .map(response => this.handleResponse(response))
         .timeout(5000)        
         .catch(error => this.handleError(error))
@@ -38,6 +38,7 @@ export class AuthenticationService {
             //construct http error object from the response
             throw new HttpResponseError(200, responseJSON.errorMessage, responseJSON.errorDescription);
         }
+        localStorage.setItem('token',responseJSON.id_token)
         return responseJSON;
     }
     private handleError(error: any): Observable<any> {

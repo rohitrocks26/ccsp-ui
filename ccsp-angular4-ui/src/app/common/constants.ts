@@ -1,3 +1,5 @@
 export class Constants {
-  public static AUTH_URL: string = 'https://172.31.37.79:8080/';
+  //Authentication
+  public static AUTH_URL: string = 'http://localhost:3000';
+  public static API_URL : string = 'http://localhost:3000/'
 }

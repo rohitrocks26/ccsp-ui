@@ -8,7 +8,7 @@ import {
     Output,
     ViewEncapsulation
   } from '@angular/core';
- import {CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent} from 'ng-auto-complete';
+ import {CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent} from './auto-complete';
   @Component({
     selector: 'autoCompleteComponent',
     providers: [
