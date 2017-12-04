@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent } from '../common/components/autocomplete/auto-complete';
 import { CurrencyPipeModule } from '../common/modules/currency-pipe/currency-pipe.module';
-import { GlobalService } from '../common/';
+import { GlobalService } from '@app/core';
 import { Modal } from '../common/components/modal/modal';
 import { Input } from '../common/components/input/input';
 import { AppState } from '../models/appstate'

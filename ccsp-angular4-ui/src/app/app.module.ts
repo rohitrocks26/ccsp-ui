@@ -1,4 +1,3 @@
-import { AuthGuard } from './common/services/authentication/auth-guard.service';
 import { AutoCompleteComponent } from './common/components/autocomplete/autocomplete.component';
 import { NgAutoCompleteModule } from "./common/components/autocomplete/auto-complete";
 import { InputComponent } from './common/components/input/input.component';
@@ -11,7 +10,6 @@ import { RouterModule,PreloadAllModules} from '@angular/router';
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { PaginationComponent} from './common/components/pagination/pagination.component';
-import { GlobalService, AuthenticationService, UtilsService, GlobalErrorHandlerService} from './common';
 import { DatepickerComponent } from './common/components/datepicker/datepicker.component';
 import { CurrencyFormatterDirective } from './common/directives/currency-formatter.directive';
 import { NavbarComponent } from './common/components/navbar/navbar.component';
@@ -26,6 +24,7 @@ import { StoreModule } from '@ngrx/store';
 import { rootReducer } from './store/root-reducer';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { PostsComponent } from './demo-container/posts/posts.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -46,6 +45,7 @@ import { PostsComponent } from './demo-container/posts/posts.component';
     PostsComponent
   ],
   imports: [
+    CoreModule,
     NgAutoCompleteModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -56,13 +56,7 @@ import { PostsComponent } from './demo-container/posts/posts.component';
     ToastModule.forRoot(),
     StoreModule.forRoot(rootReducer)
   ],
-  providers: [ 
-    GlobalService,
-    AuthenticationService,
-    AuthGuard,
-    UtilsService,
-    GlobalErrorHandlerService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

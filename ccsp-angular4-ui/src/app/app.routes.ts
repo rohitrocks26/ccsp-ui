@@ -1,4 +1,4 @@
-import { AuthGuard } from './common/services/authentication/auth-guard.service';
+import { AuthGuard } from '@app/core';
 import { DemoPageComponent } from './demo-page/demo-page.component';
 import { LoginComponent } from './login/login.component';
 import { Routes } from '@angular/router';

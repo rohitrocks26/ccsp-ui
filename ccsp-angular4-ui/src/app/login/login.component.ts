@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
-import {AuthenticationService} from '../common';
+import {AuthenticationService} from '@app/core';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

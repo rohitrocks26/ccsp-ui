@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewContainerRef, Input } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
-import { GlobalErrorHandlerService } from '../../';
+import { GlobalErrorHandlerService } from '@app/core';
 import { Observable, Subscription } from 'rxjs'
-import { HttpResponseError } from '../../services/global/http-response-error';
+import { HttpResponseError } from '@app/core';
 
 
 @Component({

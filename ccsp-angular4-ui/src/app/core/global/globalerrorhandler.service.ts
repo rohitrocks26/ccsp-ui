@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpResponseError } from './http-response-error';
 import { Subject } from 'rxjs/Subject';
-import { ErrorMessage } from '../../error-message';
+import { ErrorMessage } from '../../common/error-message';
 
 @Injectable()
 export class GlobalErrorHandlerService {

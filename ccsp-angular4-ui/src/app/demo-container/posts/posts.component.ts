@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store'
 import { AppState } from '../../models/appstate'
 import { Action } from '../../models/action';
-import { GlobalService } from '../../common/';
+import { GlobalService } from '@app/core';
 import {Subscription} from 'rxjs/Subscription';
 
 @Component({

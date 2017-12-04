@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers, Request, RequestMethod } from '@angular/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
-import { Constants } from '../../constants';
+import { Constants } from '../../common/constants';
 import { UtilsService } from '../utils/utils.service';
 import { GlobalErrorHandlerService } from '../global/globalerrorhandler.service'
 import { Token } from './token';
