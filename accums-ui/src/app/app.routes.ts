@@ -4,6 +4,7 @@ import {MemberAccumsInquiryComponent} from './member-accums-inquiry/member-accum
 
 import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { ManualLoadComponent } from './manual-load/manual-load.component';
 
 export const ROUTES: Routes = [
       {
@@ -16,13 +17,17 @@ export const ROUTES: Routes = [
         component: LandingPageComponent,
         children:[
           {
-            path : '',
+            path :'member-accums-inquiry',
             redirectTo : 'member-accums-inquiry',
             pathMatch : 'prefix'
           },
           {
             path:'member-accums-inquiry',
             component: MemberAccumsInquiryComponent
+          },
+          {
+            path:'manual-speed-load',
+            component:ManualLoadComponent
           },
           {
             path:'something-else',

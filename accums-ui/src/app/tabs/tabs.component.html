@@ -4,7 +4,7 @@
       <li>
         <img src="assets/house.png">
       </li>
-      <li class="margin-left-18 li-border act">
+      <li class="margin-left-18 li-border " [routerLinkActiveOptions]="{exact: true}"  routerLinkActive="active" >
         <a  [routerLink]="['member-accums-inquiry']">Member Accums Inquiry</a>
       </li>
       <li class="li-border">
@@ -16,8 +16,9 @@
       <li class="li-border">
         <a href="#">Vendor Accums</a>
       </li>
-      <li class="li-border">
-        <a href="#">Manual Speed Load</a>
+      <li class="li-border" routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" >
+        <a [routerLink]="['manual-speed-load']"
+        >Manual Speed Load</a>
       </li>
       <li class="floatRight">
         <span class="glyphicon" [class.glyphicon-minus]="classChanged" [class.glyphicon-plus]="!classChanged" (click)="toggleClass($event)" data-toggle="collapse" data-target="#search"></span>

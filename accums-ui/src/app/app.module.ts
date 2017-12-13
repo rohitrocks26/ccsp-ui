@@ -28,6 +28,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import {UtilizationTableComponent} from './common';
 import { MemberUtilizationCollapseComponent } from './member-utilization-collapse/member-utilization-collapse.component';
 import { TableDropdownComponent } from './common/table-dropdown/table-dropdown.component';
+import { ManualLoadComponent } from './manual-load/manual-load.component';
 
 @NgModule({
   declarations: [
@@ -49,13 +50,14 @@ import { TableDropdownComponent } from './common/table-dropdown/table-dropdown.c
     DirectivecontainerComponent,
     SearchResultsComponent,
     TableDropdownComponent,
+    ManualLoadComponent,
   ],
   imports: [
        NgAutoCompleteModule,
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES,
+        RouterModule.forRoot(ROUTES,
     { useHash: true, preloadingStrategy: PreloadAllModules }),
   ],
   providers: [ GlobalService,
