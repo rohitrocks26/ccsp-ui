@@ -5,7 +5,14 @@
 }
 .modal-top{
     top:125px;
+    border: 6px solid #a9a9a9ed;
+    width: 29%;
 }
 .modal-dialog .modal-content{
     border-radius: 0px;
+    text-align: center;
+   
+}
+.closeButton{
+    margin-bottom: 1%;
 }
