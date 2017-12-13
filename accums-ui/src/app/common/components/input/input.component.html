@@ -1,5 +1,5 @@
 <div class="input-group">
     <input type="{{inputData.type}}" class="form-input" 
-    placeholder="{{inputData.placeHolder}}" value="{{inputData.value}}" [(ngModel)]="inputData.value"
-    (ngModelChange)="change($event)">
+    placeholder="{{inputData.placeHolder}}" value="{{inputData.value}}" [(ngModel)]="inputData.value" [readonly]="inputData.readonly"
+    (focusout)="change($event,inputBox.value)">
     </div>

@@ -8,7 +8,7 @@ import { InputModel, Modal, Globals } from '../common/index';
 })
 export class ManualLoadComponent implements OnInit {
   
-  public fileUpload :InputModel  = new InputModel("fileUpload","","","text");
+  public fileUpload :InputModel  = new InputModel("fileUpload","","","text",true);
  public modeltransfer:Modal = new Modal("","");
  public loadDisable:boolean;
   constructor(private global:Globals) {
@@ -21,8 +21,8 @@ export class ManualLoadComponent implements OnInit {
   fileChangeEvent(fileInput:any){
     if (fileInput.target.files ) {
       this.loadDisable=false;
-      this.fileUpload=new InputModel("fileUpload",fileInput.target.files[0].name,"","text");
-      if(fileInput.target.files[0].type != "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"){
+      this.fileUpload=new InputModel("fileUpload",fileInput.target.files[0].name,"","text",true);
+      if(fileInput.target.files[0].type != "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" || fileInput.target.files[0].type != "application/vnd.ms-excel"){
         this.modeltransfer = new Modal("","file format not supported");
       }
       else{
