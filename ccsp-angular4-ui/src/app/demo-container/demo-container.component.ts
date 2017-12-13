@@ -1,3 +1,4 @@
+import { Constants } from './../../../../ccsp-angular4-ui-poc/src/app/common/constants';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store'
 import { AppState } from '../models/appstate'

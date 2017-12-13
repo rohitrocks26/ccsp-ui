@@ -1,5 +1,13 @@
+import { ErrorComponent } from './common/components/error/error.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { RouterModule,PreloadAllModules} from '@angular/router';
+import { CoreModule } from './core/core.module';
+import { NgAutoCompleteModule } from "ng-auto-complete";
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -7,28 +15,17 @@ import { HeaderComponent } from './header/header.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { MemberAccumsInquiryComponent } from './member-accums-inquiry/member-accums-inquiry.component';
 import { MemberAccumsSearchComponent } from './member-accums-search/member-accums-search.component';
-
-
-import { CanactivateauthguardService } from './common/services/canactivateauthguard.service';
-import { AutoCompleteComponent } from './common/components/autocomplete/autocomplete.component';
-import { NgAutoCompleteModule } from "ng-auto-complete";
-import { InputComponent } from './common/components/input/input.component';
-import { ModalComponent } from './common/components/modal/modal.component';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { RouterModule,PreloadAllModules} from '@angular/router';
 import { ROUTES } from './app.routes';
-import { PaginationComponent} from './common/components/pagination/pagination.component';
-import { GlobalService, AuthenticationService ,Globals} from './common';
-import { DatepickerComponent } from './common/components/datepicker/datepicker.component';
-import { CurrencyFormatterDirective } from './common/directives/currency-formatter.directive';
-import { NavbarComponent } from './common/components/navbar/navbar.component';
-import { DirectivecontainerComponent } from './common/directives/directivecontainer/directivecontainer.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
-import {UtilizationTableComponent} from './common';
 import { MemberUtilizationCollapseComponent } from './member-utilization-collapse/member-utilization-collapse.component';
-import { TableDropdownComponent } from './common/table-dropdown/table-dropdown.component';
-import { ManualLoadComponent } from './manual-load/manual-load.component';
+import { ManualSpeedLoadComponent } from './manual-speed-load/manual-speed-load.component';
+
+
+import { AutoCompleteComponent, InputComponent,
+  ModalComponent, PaginationComponent, DatepickerComponent,
+  NavbarComponent, CurrencyFormatterDirective, DirectivecontainerComponent,
+  UtilizationTableComponent, TableDropdownComponent, Globals
+} from './common';
 
 @NgModule({
   declarations: [
@@ -39,7 +36,7 @@ import { ManualLoadComponent } from './manual-load/manual-load.component';
     TabsComponent,
     MemberAccumsInquiryComponent,
     MemberAccumsSearchComponent,
-     PaginationComponent,
+    PaginationComponent,
     ModalComponent,
     DatepickerComponent,
     UtilizationTableComponent,
@@ -50,20 +47,20 @@ import { ManualLoadComponent } from './manual-load/manual-load.component';
     DirectivecontainerComponent,
     SearchResultsComponent,
     TableDropdownComponent,
-    ManualLoadComponent,
+    ManualSpeedLoadComponent,
+    ErrorComponent
   ],
   imports: [
-       NgAutoCompleteModule,
+    CoreModule,
+    NgAutoCompleteModule,
     BrowserModule,
     FormsModule,
     HttpModule,
-        RouterModule.forRoot(ROUTES,
-    { useHash: true, preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(ROUTES,{ useHash: true, preloadingStrategy: PreloadAllModules }),
+    ToastModule.forRoot(),
+    NoopAnimationsModule
   ],
-  providers: [ GlobalService,
-    AuthenticationService,
-    CanactivateauthguardService,
-    Globals],
+  providers: [ Globals ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

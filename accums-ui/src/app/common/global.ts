@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class Globals {
   //URLS
-  _authenticationUrl: string = "http://34.208.243.62:4000/generateToken";
+  authenticationUrl: string = "http://34.208.243.62:4000/generateToken";
   manualSpeedLoadUrl : string = "http://TestUrl";
 
   emptyString = "";
@@ -19,4 +19,5 @@ export class Globals {
   fileUploadFailure : string = "File Upload Failed";
   xlsxFormat : string = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
   xlsFormat : string = "application/vnd.ms-excel";
+  defautAllowedFileSize : number = 5000000;
 }

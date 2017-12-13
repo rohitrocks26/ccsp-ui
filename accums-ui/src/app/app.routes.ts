@@ -1,10 +1,9 @@
-import {LandingPageComponent} from './landing-page/landing-page.component';
-import {MemberAccumsInquiryComponent} from './member-accums-inquiry/member-accums-inquiry.component';
-
-
+import { AuthGuard } from '@app/core';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { MemberAccumsInquiryComponent } from './member-accums-inquiry/member-accums-inquiry.component';
 import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { ManualLoadComponent } from './manual-load/manual-load.component';
+import { ManualSpeedLoadComponent } from './manual-speed-load/manual-speed-load.component';
 
 export const ROUTES: Routes = [
       {
@@ -17,6 +16,16 @@ export const ROUTES: Routes = [
         component: LandingPageComponent,
         children:[
           {
+            path : '',
+            redirectTo : 'manual-speed-load',
+            pathMatch : 'full'
+          },
+          {
+            path:'manual-speed-load',
+            component: ManualSpeedLoadComponent
+          }
+          /*,
+          {
             path :'member-accums-inquiry',
             redirectTo : 'member-accums-inquiry',
             pathMatch : 'prefix'
@@ -26,13 +35,9 @@ export const ROUTES: Routes = [
             component: MemberAccumsInquiryComponent
           },
           {
-            path:'manual-speed-load',
-            component:ManualLoadComponent
-          },
-          {
             path:'something-else',
             component: LandingPageComponent
-          }
+          }*/
         ]
       },
 ];

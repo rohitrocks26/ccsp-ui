@@ -1,18 +1,20 @@
 //Service exports
 
-export * from './services/authentication.service'; 
-export * from './services/global.service'; 
 export * from './global';
 
 //Component exports
+export * from './components/autocomplete/autocomplete.component';
 export * from './components/input/input.component';
 export * from './components/pagination/pagination.component';
 export * from './components/navbar/navbar.component';
 export * from './components/modal/modal.component';
 export * from './components/datepicker/datepicker.component';
 export * from './components/utilization-table/utilization-table.component';
-//Directive exports
+export * from './components/table-dropdown/table-dropdown.component';
 
+//Directive exports
+export * from './directives/currency-formatter.directive';
+export * from './directives/directivecontainer/directivecontainer.component';
 
 //Pipe exports
 
