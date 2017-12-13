@@ -29,7 +29,6 @@ export class GlobalService {
         if (token !== undefined){
             header.set('Authorization', 'Bearer ' + token  );
         }
-        header.append('AAA','AAcc')
         return header;
     }
     private handleResponse(response : any) : any {
