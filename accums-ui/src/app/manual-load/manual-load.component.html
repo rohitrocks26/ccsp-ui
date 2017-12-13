@@ -20,7 +20,7 @@
           <label for="file-upload" class="custom-file-upload">
             {{global.browseButton}}
           </label>
-          <input id="file-upload" accept=".xlsx, .xlsm " (change)="fileChangeEvent($event)"   type="file"/> 
+          <input id="file-upload" accept=".xlsx, .xls " (change)="fileChangeEvent($event)"   type="file"/> 
        </div>
       </form>
       <app-modal [modelinput]="modeltransfer"></app-modal>
