@@ -15,24 +15,40 @@ export class GlobalService {
     private globalErrorHandlerService : GlobalErrorHandlerService ) {
         this.headers = this.getHeaders();
     }
-    public getRequest ( requestUrl : string ) : Observable<Response> {
+    public getRequest ( requestUrl : string, urlParameters ? : any ) : Observable<any> {
+        // Set the headers and optional query parameters for the request
+        let requestOptions = new RequestOptions();
+        requestOptions.headers = this.headers;
+        requestOptions.params = urlParameters;
+        
+        //Return a get observable for making a get request
         return this.httpClient
-        .get(requestUrl, { headers : this.headers })
-        .timeout(5000)
+        .get(requestUrl, requestOptions)
         .map(response => this.handleResponse(response))
         .catch(error => this.handleError(error))
     } 
-    public postRequest (requestUrl : string, postBody : any) : Observable<any> {
-        return this.httpClient.post(requestUrl, postBody, {headers : this.headers })
+    public postRequest (requestUrl : string, postBody : any, urlParameters ? : any) : Observable<any> {
+         // Set the headers and optional query parameters for the request
+        let requestOptions = new RequestOptions();
+        requestOptions.headers = this.headers;
+        requestOptions.params = urlParameters;
+
+         //Return a post observable for making a post request
+        return this.httpClient.post(requestUrl, postBody, requestOptions )
         .map(response => this.handleResponse(response))
-        .timeout(5000)        
+        .catch(error => this.handleError(error))
+    }
+    public uploadExcel (requestUrl : string, postBody : any) : Observable<any> {
+        let options = new RequestOptions();
+        return this.httpClient.post(requestUrl, postBody, options )
+        .map(response => this.handleResponse(response))
         .catch(error => this.handleError(error))
     }
     private getHeaders () : Headers {
         let header = new Headers();
         let token = this.authService.accessToken;
         if (token !== undefined)
-            header.set('Authorization', 'Bearer  {token}');
+            header.set('Authorization', `Bearer  ${token}`);
         return header;
     }
     private handleResponse(response : Response) {
@@ -50,7 +66,7 @@ export class GlobalService {
         //if there's an error based on standardized format throw an error
         //and catch at component level
         let httpError = error instanceof HttpResponseError ? error : new HttpResponseError(error.status);
-        this.globalErrorHandlerService.handleError(httpError);
-        return Observable.throw(httpError);
+        let errorObject = this.globalErrorHandlerService.handleError(httpError);
+        return Observable.throw(errorObject);
     }
 }

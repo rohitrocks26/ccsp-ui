@@ -1,130 +1,133 @@
+import { AutoCompleteGroup } from './../shared/components/autocomplete/autocomplete-group';
+import { GlobalService } from './../core/global/global.service';
+import { HttpResponseError } from './../../../../accums-ui/src/app/core/global/http-response-error';
 import { Component, OnInit } from '@angular/core';
-import { CreateNewAutocompleteGroup, SelectedAutocompleteItem, NgAutocompleteComponent } from '../common/components/autocomplete/auto-complete';
-import { CurrencyPipeModule } from '../common/modules/currency-pipe/currency-pipe.module';
-import { GlobalService } from '@app/core';
-import { Modal } from '../common/components/modal/modal';
-import { Input } from '../common/components/input/input';
+import { CurrencyPipeModule } from '../shared/modules/currency-pipe/currency-pipe.module';
+import { Modal } from '../shared/components/modal/modal';
+import { Input } from '../shared/components/input/input';
 import { AppState } from '../models/appstate'
 import { Action } from '../models/action';
 import { Store } from '@ngrx/store'
-import {Subscription} from 'rxjs/Subscription';
-import {Constants} from '../common/constants';
+import { Subscription } from 'rxjs/Subscription';
+import { Globals } from '../shared/globals';
+
 
 @Component({
   selector: 'demo-page',
   templateUrl: './demo-page.component.html',
-  styleUrls: ['./demo-page.component.css'],
-  providers:[CurrencyPipeModule]
+  styleUrls: ['./demo-page.component.scss'],
+  providers: [CurrencyPipeModule]
 })
 export class DemoPageComponent implements OnInit {
   title = 'app';
-  public donation : string; 
-  public modeltransfer:Modal = new Modal("Model header","This is a model component defined for giving the confirmation or error triggered in a particalar process . The properties are fully configurable based on usage !!!!! ");
-  public inputtransfer :Input  = new Input("Amount","","enter some amount","text","amount");
-  public groupItem=[{"title": 'aditi', "id": '1'},
-  {"title": 'yash', "id": '2'},
-  {"title": 'nitin', "id": '3'},
-  {"title": 'anil', "id": '4'},
-  {"title": 'somdatt', "id": '5'},
-  {"title": 'rohit', "id": '1'},
-  {"title": 'nitish', "id": '2'},
-  {"title": 'koyel', "id": '3'},
-  {"title": 'shreeram', "id": '4'},
-  {"title": 'sourin', "id": '5'}];
-public group =
-CreateNewAutocompleteGroup(
-'Search from list',
-'completer',
-this.groupItem,
-{titleKey: "title", childrenKey: null}
-);
+  public donation: string;
+  public autoCompleteGroup : AutoCompleteGroup;
+  public modelTransfer: Modal = new Modal("Model header", "This is a model component defined for giving the confirmation or error triggered in a particalar process . The properties are fully configurable based on usage !!!!! ");
+  public inputObject: Input = new Input("Amount", "", "enter some amount", "text", "amount");
+  public group =['America',
+  'Australia',
+  'Africa',
+  'Bangladesh',
+  'Bahrain',
+  'India',
+  'Zimbabwe'
+  ];
 
-public items=[
-  {
-    "name":"content1",
-    "id":"content1",
-    "url":"#"
-  },{
-     "name":"content2",
-    "id":"content2",
-    "url":"#"
+  public items = [
+    {
+      "name": "content1",
+      "id": "content1",
+      "url": "#"
+    }, {
+      "name": "content2",
+      "id": "content2",
+      "url": "#"
+    },
+    {
+      "name": "content3",
+      "id": "content3",
+      "url": "#"
+    }, {
+      "name": "content4",
+      "id": "content4",
+      "url": "#"
+    },
+    {
+      "name": "content5",
+      "id": "content5",
+      "url": "#"
+    }, {
+      "name": "content6",
+      "id": "content6",
+      "url": "#"
+    }
+  ]
+  public menuModelArray = [{
+    "name": "home",
+    "id": "home",
+    "url": "#/demoPage"
+  }, {
+    "name": "about",
+    "id": "about",
+    "url": "#/demoContainer"
   },
   {
-    "name":"content3",
-    "id":"content3",
-    "url":"#"
-  },{
-     "name":"content4",
-    "id":"content4",
-    "url":"#"
-  },
-  {
-    "name":"content5",
-    "id":"content5",
-    "url":"#"
-  },{
-     "name":"content6",
-    "id":"content6",
-    "url":"#"
+    "name": "contact us",
+    "id": "contact us",
+    "url": "#"
   }
-]
- public menuModelArray=[{
-    "name":"home",
-    "id":"home",
-    "url":"#/demoPage"
-  },{
-     "name":"about",
-    "id":"about",
-    "url":"#/demoContainer"
-  },
-  {
-     "name":"contact us",
-    "id":"contact us",
-    "url":"#"
+  ]
+  public itemLength = this.items.length;
+  public limit: number = 2;
+  public minCount: number = 0;
+  public maxCount: number = this.limit - 1;
+  public id: string;
+  public data: string;
+  public subscription: Subscription;
+  constructor(private globalService: GlobalService, private store: Store<AppState>,
+    private globals: Globals) {
+    this.subscription = this.store.select(appState => appState.selectedUser)
+      .subscribe(value => this.id = value)
   }
-]
-public itemLength=this.items.length;
-public limit:number=2;
-public minCount:number=0;
-public maxCount:number=this.limit-1;
-public id : string;
-public data : string;
-public subscription : Subscription;
-constructor ( private globalService : GlobalService, private store : Store<AppState> ) {
-  this.subscription = this.store.select(appState => appState.selectedUser)
-  .subscribe(value=> this.id = value )
-}
 
-list(){
-  if(this.items.length<this.maxCount){
-    this.maxCount=this.items.length-1;
-  }
+  list() {
+    if (this.items.length < this.maxCount) {
+      this.maxCount = this.items.length - 1;
+    }
     var items: Array<any> = [];
-    for(var i = this.minCount; i <= this.maxCount; i++){
-      
-       items.push(this.items[i]);
-       
+    for (var i = this.minCount; i <= this.maxCount; i++) {
+
+      items.push(this.items[i]);
+
     }
     return items;
   }
   requestData() {
-    this.globalService.getRequest(Constants.API_URL + this.id)
-    .subscribe(data=> this.loadData(data),error=>console.log("Error in component" + error));
+    this.subscription = this.globalService.getRequest(this.globals.apiUrl, { value: '10' })
+      .subscribe(data => this.loadData(data),
+      error => this.handleError(error));
   }
-  loadData (data : any) {
+  loadData(data: any) {
     this.data = data;
     console.log(data);
   }
-  changePage(ev){
-    this.maxCount=ev.maxCount;
-    this.minCount=ev.minCount;
+  handleError(error: HttpResponseError) {
+    console.log(error.errorMessage);
+    console.log(error.errorDescription);
+  }
+  changePage(ev) {
+    this.maxCount = ev.maxCount;
+    this.minCount = ev.minCount;
 
   }
   ngOnInit() {
     console.log("inside the inint");
+    this.autoCompleteGroup = new AutoCompleteGroup("Search a country",this.group);
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
+  dateSelected(date: any) {
+    console.log("Date :" + date);
+  }
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpResponseError } from './http-response-error';
 import { Subject } from 'rxjs/Subject';
-import { ErrorMessage } from '../../common/error-message';
+import { ErrorMessage } from './error-message';
 
 @Injectable()
 export class GlobalErrorHandlerService {
@@ -12,10 +12,11 @@ export class GlobalErrorHandlerService {
     handleError(error: HttpResponseError) {
         switch (error.status) {
             case 200: this.displayErrorSubject.next(error);
-                break;
+            return error;
             default:
                 let errorObject = ErrorMessage.errorMap[error.status] || ErrorMessage.errorMap['default'];
                 this.displayErrorSubject.next(errorObject);
+                return errorObject;
         }
     }
     public getDisplayErrorSubject(): Subject<any> {

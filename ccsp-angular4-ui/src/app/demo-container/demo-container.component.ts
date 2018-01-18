@@ -8,7 +8,7 @@ import {Subscription} from 'rxjs/Subscription';
 @Component({
   selector: 'app-demo-container',
   templateUrl: './demo-container.component.html',
-  styleUrls: ['./demo-container.component.css']
+  styleUrls: ['./demo-container.component.scss']
 })
 export class DemoContainerComponent implements OnInit {
   selectedValue : string;

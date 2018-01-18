@@ -9,7 +9,7 @@ import {Subscription} from 'rxjs/Subscription';
 @Component({
   selector: 'posts',
   templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.css']
+  styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
   skills : any;

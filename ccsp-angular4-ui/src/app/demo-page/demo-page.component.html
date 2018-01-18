@@ -1,126 +1,144 @@
-<navbarComponent [navbarList]="menuModelArray"></navbarComponent>
-
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">HCSC</a>
+    </div>
+  </div>
+</nav>
 <!-- Page Content -->
 <div class="container">
   <div class="jumbotron">
-<div class="row">
-  <div class="col-sm-4">
-     <div class="panel panel-default">
-        <div class="panel-heading"><b>Modal</b></div>
-             <div class="panel-body">
-                <div class="container-fluid">
-                    <div class="col-md-12">
-                        <button type="button" class="btn btn-success btn-md center-block" data-toggle="modal" data-target="#myModal">Open Modal</button>
-                           <app-modal [modelinput]="modeltransfer"></app-modal>
-                          </div>
-                  </div>
-                  </div>
-                <div class="panel-footer">
-                  <a href="http://52.88.104.145:8080/ui-wiki/#/notifications">Modal Reference</a>
-                </div>
-  </div>
-  </div>
-  <div class="col-sm-4">
-   <div class="panel panel-default">
-        <div class="panel-heading"><b>Datepicker</b></div>
-             <div class="panel-body">
-                <div class="container-fluid">
-                    <app-datepicker></app-datepicker>
-                  </div>
-                  </div>
-                <div class="panel-footer">
-                  <a href="http://52.88.104.145:8080/ui-wiki/#/datepicker">Datepicker Reference</a>
-                </div>
-  </div>
-  </div>
- <div class="col-sm-4">
-     <div class="panel panel-default">
-        <div class="panel-heading"><b>Masking</b></div>
-             <div class="panel-body">
-                <div class="container-fluid">
-                    <div class="col-md-12 form-group">
-                      
-                        <input type="text" pattern="[0-9]*" #mobile="ngModel" placeholder="Please enter valid amount" class="form-control" id="donation" [ngModel]="donation" appCurrencyFormatter >
-                        <div [hidden]="mobile.valid || mobile.pristine"
-                        class="alert alert-danger">
-                       
-                        <div [hidden]="!mobile.hasError('pattern')">Please enter only numbers</div>
-                     </div>   
-                      </div>
-                  </div>
-                  </div>
-                <div class="panel-footer">
-                  <a href="http://52.88.104.145:8080/ui-wiki/#/masking">Masking Reference</a>
-                </div>
-  </div>
-</div>
-</div>
-<div class="row">
-  <div class="col-sm-4">
-     <div class="panel panel-default">
-        <div class="panel-heading"><b>Autocomplete</b></div>
-             <div class="panel-body">
-                <div class="container-fluid">
-                    <!-- <autoCompleteComponent [autoCompleteSearchList]="group"></autoCompleteComponent> -->
-                  </div>
-                  </div>
-                <div class="panel-footer">
-                  <a href="http://52.88.104.145:8080/ui-wiki/#/autocomplete">Autocomplete Reference</a>
-                </div>
-  </div>
-  </div>
-  <div class="col-sm-4">
-   <div class="panel panel-default">
-        <div class="panel-heading"><b>Pagination</b></div>
-             <div class="panel-body">
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-sm-4"></div>
-                      <div class="col-sm-4">
-                    <ng-template ngFor let-item [ngForOf]="list()" let-currentElementIndex="(index + 1)">
-                     <div id="{{item.id}}">{{item.name}}</div>
-                    </ng-template>
-                      </div>
-                  <div class="col-sm-4"></div>
-                  </div>
-                  <div class="row">
-                     <div class="col-sm-4"></div>
-                   <paginationComponent (pageClicked)="changePage($event)" [maxLimit]="limit" [itemlength]="itemLength"></paginationComponent>
-                  <div class="col-sm-4"></div>
-                  </div>
-                  </div>
-                  </div>
-                <div class="panel-footer">
-                  <a href="http://52.88.104.145:8080/ui-wiki/#/pagination">Pagination Reference</a>
-                </div>
-  </div>
-  </div>
- <div class="col-sm-4">
-     <div class="panel panel-default">
-        <div class="panel-heading"><b>Input</b></div>
-             <div class="panel-body">
-                <div class="container-fluid">
-                  <label>Id</label><input type="text" class="form-control" [(ngModel)]="id">
-                  <button type="submit" (click)="requestData()" class="btn btn-primary top-margin">Submit</button>
-                  </div>
-                
-                  <div *ngIf="data" style="margin-top : 5px">
-                    <label>Plan ID : {{data.planID}}</label>
-                    <label>Plan Name : {{data.adminPlanName}}</label>
-                    <label>Plan Version Key List : {{data.adminPlanVersionKeyList}}</label>
-                  </div>
-                  </div>
-                
-                <div class="panel-footer">
-                  <a href="http://52.88.104.145:8080/ui-wiki/#/input">Input Reference</a>
-                </div>
-  </div>
-              
-</div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Modal</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <div class="col-md-12">
+                <button type="button" class="btn btn-success btn-md center-block" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                <app-modal [modelInput]="modelTransfer"></app-modal>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/notifications">Modal Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Datepicker</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-datepicker [minDate]="'01/01/2018'" [maxDate]="'02/02/2018'" (dateChanged)="dateSelected($event)"></app-datepicker>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/datepicker">Datepicker Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Masking</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <div class="col-md-12 form-group">
 
-</div>
+                <input type="text" pattern="[0-9]*" #amount="ngModel" placeholder="Please enter valid amount" class="form-control" id="donation"
+                  [ngModel]="donation" appCurrencyFormatter>
+                <div [hidden]="amount.valid || amount.pristine" class="alert alert-danger">
+
+                  <div [hidden]="!amount.hasError('pattern')">Please enter only number</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/masking">Masking Reference</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Autocomplete</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-autocomplete [autoCompleteGroup]="autoCompleteGroup"></app-autocomplete>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/autocomplete">Autocomplete Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Pagination</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                  <ng-template ngFor let-item [ngForOf]="list()" let-currentElementIndex="(index + 1)">
+                    <div id="{{item.id}}">{{item.name}}</div>
+                  </ng-template>
+                </div>
+                <div class="col-sm-4"></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4"></div>
+                <app-pagination (pageClicked)="changePage($event)" [maxLimit]="limit" [itemLength]="itemLength"></app-pagination>
+                <div class="col-sm-4"></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/pagination">Pagination Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Input</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <label>Id</label>
+              <input type="text" class="form-control" [(ngModel)]="id">
+              <button type="submit" (click)="requestData()"  class="btn btn-primary top-margin">Submit</button>
+            </div>
+
+            <div *ngIf="data" style="margin-top : 5px">
+              <label>Plan ID : {{data.planID}}</label>
+              <label>Plan Name : {{data.adminPlanName}}</label>
+              <label>Plan Version Key List : {{data.adminPlanVersionKeyList}}</label>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Input Reference</a>
+          </div>
+        </div>
+        <app-input [inputData]="inputObject" (inputChangeValue)="valueChanged($event)"></app-input>
+      </div>
+      <>
+    </div>
   </div>
-   <!-- <div class="row">
+  <!-- <div class="row">
      <div class="col-md-8">
         <div class="panel panel-default">
             <div class="panel-body">
@@ -143,4 +161,3 @@
    </div> -->
 </div>
 <!-- /.container -->
-

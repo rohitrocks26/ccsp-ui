@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers, Request, RequestMethod } from '@angular/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
-import { Constants } from '../../common/constants';
+import { Globals } from '../../shared/globals';
 import { UtilsService } from '../utils/utils.service';
 import { GlobalErrorHandlerService } from '../global/globalerrorhandler.service'
 import { Token } from './token';
@@ -15,7 +15,8 @@ export class AuthenticationService {
     private _authToken: string;
     private headers: Headers;
     constructor(private router: Router, private httpClient: Http, 
-        private globalErrorHandlerService : GlobalErrorHandlerService) {
+        private globalErrorHandlerService : GlobalErrorHandlerService,
+        private globals : Globals) {
         this.headers = this.getHeaders();
     }
     public get accessToken(): string {
@@ -24,10 +25,10 @@ export class AuthenticationService {
     public get isAuthenticated(): boolean {
         return localStorage.getItem('token') !== null ? true : false;
     }
-    public authenticate(username: string, password: string) : Observable<any> {
-       return this.httpClient.get(`${Constants.AUTH_URL}/${username}`, {headers : this.headers })
+    public authenticate(authenticalUrl : string, credentials : any) : Observable<any> {
+       return this.httpClient.post(authenticalUrl, credentials , {headers : this.headers })
         .map(response => this.handleResponse(response))
-        .timeout(5000)        
+        .timeout(10000)        
         .catch(error => this.handleError(error))
     }
     private handleResponse(response: Response) {
@@ -38,15 +39,15 @@ export class AuthenticationService {
             //construct http error object from the response
             throw new HttpResponseError(200, responseJSON.errorMessage, responseJSON.errorDescription);
         }
-        localStorage.setItem('token',responseJSON.id_token)
+        localStorage.setItem('token', responseJSON.id_token || responseJSON.token)
         return responseJSON;
     }
     private handleError(error: any): Observable<any> {
         //if there's an error based on standardized format throw an error
         //and catch at component level
         let httpError = error instanceof HttpResponseError ? error : new HttpResponseError(error.status);
-        this.globalErrorHandlerService.handleError(httpError);
-        return Observable.throw(httpError);
+        let errorObject = this.globalErrorHandlerService.handleError(httpError);
+        return Observable.throw(errorObject);
     }
 
     private getHeaders(): Headers {
