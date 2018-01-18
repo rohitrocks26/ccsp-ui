@@ -1,0 +1,4 @@
+
+    <input type="{{inputData.type}}" class="form-control" id="{{inputData.id}}"
+    placeholder="{{inputData.placeholder}}" value="{{inputData.value}}" [(ngModel)]="inputData.value"
+    (ngModelChange)="change($event)">
