@@ -14,7 +14,6 @@ import { DemoContainerComponent } from './demo-container/demo-container.componen
 import { PostsComponent } from './demo-container/posts/posts.component';
 import { CoreModule } from './core/core.module';
 import { Globals } from './shared/globals';
-import { LoginComponent } from './login/login.component';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({

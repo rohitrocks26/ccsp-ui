@@ -10,7 +10,7 @@ import { Action } from '../models/action';
 import { Store } from '@ngrx/store'
 import { Subscription } from 'rxjs/Subscription';
 import { Globals } from '../shared/globals';
-
+import {NavItem} from '../shared/components/navbar/nav-item';
 
 @Component({
   selector: 'demo-page',
@@ -21,16 +21,16 @@ import { Globals } from '../shared/globals';
 export class DemoPageComponent implements OnInit {
   title = 'app';
   public donation: string;
-  public autoCompleteGroup : AutoCompleteGroup;
+  public autoCompleteGroup: AutoCompleteGroup;
   public modelTransfer: Modal = new Modal("Model header", "This is a model component defined for giving the confirmation or error triggered in a particalar process . The properties are fully configurable based on usage !!!!! ");
   public inputObject: Input = new Input("Amount", "", "enter some amount", "text", "amount");
-  public group =['America',
-  'Australia',
-  'Africa',
-  'Bangladesh',
-  'Bahrain',
-  'India',
-  'Zimbabwe'
+  public group = ['America',
+    'Australia',
+    'Africa',
+    'Bangladesh',
+    'Bahrain',
+    'India',
+    'Zimbabwe'
   ];
 
   public items = [
@@ -62,21 +62,40 @@ export class DemoPageComponent implements OnInit {
       "url": "#"
     }
   ]
-  public menuModelArray = [{
-    "name": "home",
-    "id": "home",
-    "url": "#/demoPage"
+  public menuModelArray : Array<NavItem> = [{
+    name: "home",
+    url: "/demoPage",
+    active : true
   }, {
-    "name": "about",
-    "id": "about",
-    "url": "#/demoContainer"
+    name: "about",
+    url: "../demoContainer",
+    active : false
   },
   {
-    "name": "contact us",
-    "id": "contact us",
-    "url": "#"
+    name: "contact us",
+    url: "#",
+    active : false
   }
   ]
+  public select_options : Array<any> = [{
+    name : 'Option 1',
+    value : 'Opt1'
+  },
+  {
+    name : 'Option 2',
+    value : 'Opt2'
+  },
+  {
+    name : 'Option 3',
+    value : 'Opt3'
+  },
+  {
+    name : 'Option 4',
+    value : 'Opt4'
+  },
+]
+  public textareaText = "Initial textarea text";
+
   public itemLength = this.items.length;
   public limit: number = 2;
   public minCount: number = 0;
@@ -120,14 +139,22 @@ export class DemoPageComponent implements OnInit {
     this.minCount = ev.minCount;
 
   }
+  selectSelection(option : any) {
+    debugger;
+  }
   ngOnInit() {
     console.log("inside the inint");
-    this.autoCompleteGroup = new AutoCompleteGroup("Search a country",this.group);
+    this.autoCompleteGroup = new AutoCompleteGroup("Search a country", this.group);
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
   dateSelected(date: any) {
     console.log("Date :" + date);
+  }
+  checkboxChanged(value : any) {
+  }
+  textareaChanged(value : string) {
+    this.textareaText = value;
   }
 }

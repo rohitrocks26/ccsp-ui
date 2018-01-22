@@ -1,29 +1,23 @@
-import { Component, OnInit ,Input} from '@angular/core';
-import { AuthenticationService } from '@app/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {NavItem} from './nav-item';
 
 @Component({
-  selector: 'navbarComponent',
+  selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor(private authenticationService : AuthenticationService) { }
+  @Input() tabs: Array<NavItem> = [];
+  @Input() title : string;
+  constructor() { }
 
   ngOnInit() {
   }
-  @Input() public navbarList=Array<any>();
-  
-    private val: string;
-   createRange(){
-      var items: number[] = [];
-      for(var i = 0; i < this.navbarList.length; i++){
-         items.push(this.navbarList[i]);
-      }
-      return items;
+  activateLink(item: any) {
+    var index = this.tabs.indexOf(item);
+    this.tabs[index].active = true;
+    for (let i = 0; i < this.tabs.length; i++) {
+      if (i != index) this.tabs[i].active = false;
     }
-    logout() {
-      this.authenticationService.logout();
-    }
-
+  }
 }

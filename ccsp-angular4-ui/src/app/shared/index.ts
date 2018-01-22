@@ -8,6 +8,10 @@ export * from './components/modal/modal.component';
 export * from './components/datepicker/datepicker.component';
 export * from './components/autocomplete/autocomplete.component';
 export * from './components/error/error.component';
+export * from './components/select-dropdown/select-dropdown.component';
+export * from './components/checkbox/checkbox.component';
+export * from './components/textarea/textarea.component';
+
 //Directive exports
 
 export * from './directives/currency-formatter.directive';

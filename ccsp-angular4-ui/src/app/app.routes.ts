@@ -16,6 +16,11 @@ const routes: Routes = [
         path:'demoPage',
         loadChildren:'./demo-page/demo-page.module#DemoPageModule',
         canActivate : [AuthGuard]
+      },
+      {
+        path:'demoContainer',
+        component: DemoContainerComponent,
+        canActivate : [AuthGuard]
       }
 ];
 export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(routes, 

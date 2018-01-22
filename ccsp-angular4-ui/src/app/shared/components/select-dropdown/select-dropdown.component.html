@@ -1,0 +1,8 @@
+<select *ngIf="isMultiple" multiple class="form-control" [ngModel]="selected" (ngModelChange)="selectedItem($event)">
+  <option *ngIf="defaultText!==''" disabled hidden>{{defaultText}}</option>
+  <option *ngFor="let option of options" [ngValue]="option">{{option[displayKey]}}</option>
+</select>
+<select *ngIf="!isMultiple" class="form-control" [ngModel]="selected" (ngModelChange)="selectedItem($event)">
+  <option *ngIf="defaultText!==''" disabled hidden>{{defaultText}}</option>
+  <option *ngFor="let option of options" [ngValue]="option">{{option[displayKey]}}</option>
+</select>

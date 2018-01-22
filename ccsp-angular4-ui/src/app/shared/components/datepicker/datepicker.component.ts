@@ -12,6 +12,7 @@ export class DatepickerComponent implements OnInit, AfterViewChecked {
   public selectedDate : any;
   @Input() minDate : string;
   @Input() maxDate : string;
+  @Input() format : string;
   public startDate : string;
   public endDate : string;
   @Output() dateChanged : EventEmitter<any> = new EventEmitter(); 
@@ -20,18 +21,22 @@ export class DatepickerComponent implements OnInit, AfterViewChecked {
   ngOnInit() {
     this.initializeDateValues();
     let that = this;
-    debugger;
     $(this.datePickerInput.nativeElement).datepicker({
       startDate : that.startDate,
       endDate : that.endDate,
+      format : that.format
     })
-    $(this.datePickerInput.nativeElement).on("dp.change",function(e){ console.log(e.date);  });
   }
   ngAfterViewChecked() {
+  if(this.selectedDate !== this.datePickerInput.nativeElement.value ) {
+    debugger;
+    this.selectedDate = this.datePickerInput.nativeElement.value;
+    this.dateChanged.emit(this.selectedDate);
+  }
+  }
+  show(event : any ) {
   }
   selectedDateChanged(date : any) {
-    let that = this;
-    that.dateChanged.emit(date);
   }
   initializeDateValues() {
     this.startDate = this.minDate!== undefined ? this.minDate : "01/01/1950";
