@@ -14,6 +14,8 @@ import {
 })
 export class InputComponent implements OnInit {
   @Input() inputData: any;
+  @Input() disabled: boolean;
+  @Input() readonly: boolean;
   @Output() inputChangeValue: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
   public change(value: any) {

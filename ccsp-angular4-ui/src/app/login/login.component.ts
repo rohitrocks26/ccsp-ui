@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
-import { AuthenticationService } from '@app/core';
+import { AuthenticationService } from '../core/authentication/authentication.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,12 +18,11 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   formdata(username: string, password: string) {
-    debugger;
     this.authenticationService.authenticate("https://reqres.in/api/login",
-    { email : username, password}).subscribe(
+      { email: username, password }).subscribe(
       response => this.router.navigate(['/demoPage']),
       error => this.handleError(error)
-    )
+      )
   }
   public handleError(error: Error): void {
   }

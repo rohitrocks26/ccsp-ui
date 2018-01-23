@@ -1,0 +1,6 @@
+<div class="radio">
+  <label>
+    <input [name]="group"  [disabled]="disabled" [ngModel]="radioBtn" (ngModelChange)="radioBtnChanged($event)" #radioButton type="radio" [value]="value" />
+    <ng-content></ng-content>
+  </label>
+</div>

@@ -10,6 +10,7 @@ export class SelectDropdownComponent implements OnInit {
   @Input() defaultText : string;
   @Input() displayKey : string;
   @Input() isMultiple : boolean;
+  @Input() disabled : boolean;
   @Output() optionSelected : EventEmitter<any> = new EventEmitter();
   public selected : any;
   constructor() { }

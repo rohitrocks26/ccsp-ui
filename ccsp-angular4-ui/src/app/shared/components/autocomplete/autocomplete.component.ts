@@ -21,6 +21,7 @@ import {
 export class AutoCompleteComponent implements OnInit {
 
   @Input() autoCompleteGroup : AutoCompleteGroup = new AutoCompleteGroup("");
+  @Input() disabled : boolean;
   public showSuggestions : boolean = false;
   public autoCompleteSearchList : Array<string> = [];
   public title : string;  
@@ -32,7 +33,6 @@ export class AutoCompleteComponent implements OnInit {
     let filList= this.autoCompleteSearchList.filter(
       item => item.toLowerCase().startsWith(this.searchTerm.toLocaleLowerCase())
     );
-    debugger;
     return filList;
   }
   itemSelected(item: string) {
@@ -52,6 +52,6 @@ export class AutoCompleteComponent implements OnInit {
   }
   hideSuggestions() {
     let that = this;
-    setTimeout(()=>that.showSuggestions=false,100);
+    setTimeout(()=>that.showSuggestions=false,200);
   }
 }

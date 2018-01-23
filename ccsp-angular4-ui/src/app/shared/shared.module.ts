@@ -7,21 +7,24 @@ import { AutoCompleteComponent, PaginationComponent,
         InputComponent, DatepickerComponent,
         CurrencyFormatterDirective, CurrencyPipeModule,
         ErrorComponent, DirectivecontainerComponent,
-        SelectDropdownComponent, CheckboxComponent, TextareaComponent
+        SelectDropdownComponent, CheckboxComponent, TextareaComponent,
+        ButtonComponent, RadiobuttonComponent, SwitchComponent
      } from './index';
 @NgModule({
   imports: [CommonModule, FormsModule, RouterModule],
   exports: [CommonModule,FormsModule,CurrencyPipeModule,AutoCompleteComponent,
     PaginationComponent,NavbarComponent,ModalComponent,InputComponent,
     DatepickerComponent,CurrencyFormatterDirective, DirectivecontainerComponent,
-    ErrorComponent, SelectDropdownComponent, CheckboxComponent,TextareaComponent
+    ErrorComponent, SelectDropdownComponent, CheckboxComponent,TextareaComponent,
+    ButtonComponent, RadiobuttonComponent, SwitchComponent
   ],
   declarations: [
     AutoCompleteComponent, PaginationComponent,
     NavbarComponent, ModalComponent,
     InputComponent, DatepickerComponent,
     CurrencyFormatterDirective, DirectivecontainerComponent,
-    ErrorComponent, SelectDropdownComponent, CheckboxComponent, TextareaComponent
+    ErrorComponent, SelectDropdownComponent, CheckboxComponent, TextareaComponent, 
+    ButtonComponent, RadiobuttonComponent, SwitchComponent
     ]
 })
 export class SharedModule { }  

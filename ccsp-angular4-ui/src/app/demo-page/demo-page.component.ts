@@ -21,6 +21,7 @@ import {NavItem} from '../shared/components/navbar/nav-item';
 export class DemoPageComponent implements OnInit {
   title = 'app';
   public donation: string;
+  public radioButtonValue : any;
   public autoCompleteGroup: AutoCompleteGroup;
   public modelTransfer: Modal = new Modal("Model header", "This is a model component defined for giving the confirmation or error triggered in a particalar process . The properties are fully configurable based on usage !!!!! ");
   public inputObject: Input = new Input("Amount", "", "enter some amount", "text", "amount");
@@ -103,6 +104,8 @@ export class DemoPageComponent implements OnInit {
   public id: string;
   public data: string;
   public subscription: Subscription;
+  public gender : any;
+  public value : boolean = false;
   constructor(private globalService: GlobalService, private store: Store<AppState>,
     private globals: Globals) {
     this.subscription = this.store.select(appState => appState.selectedUser)
@@ -140,7 +143,6 @@ export class DemoPageComponent implements OnInit {
 
   }
   selectSelection(option : any) {
-    debugger;
   }
   ngOnInit() {
     console.log("inside the inint");
@@ -156,5 +158,13 @@ export class DemoPageComponent implements OnInit {
   }
   textareaChanged(value : string) {
     this.textareaText = value;
+  }
+  buttonClicked(event : any ) {
+  }
+  radioButtonChanged(radioButtonValue : any) {
+  }
+  switchChanged(switchButtonValue : any) {
+  }
+  ngOnChanges() {
   }
 }

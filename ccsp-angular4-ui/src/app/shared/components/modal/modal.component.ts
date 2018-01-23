@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ModalComponent implements OnInit {
   @Input() public modelInput ; 
+  @Input() disabled : boolean ; 
  
   constructor() {}
 

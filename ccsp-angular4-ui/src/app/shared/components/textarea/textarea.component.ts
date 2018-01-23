@@ -8,6 +8,8 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class TextareaComponent implements OnInit {
   @Input() textareaText : string;
   @Input() numberOfRows : number;
+  @Input() disabled : boolean;
+  @Input() readonly : boolean;
   @Output() textareaChanged : EventEmitter<string> = new EventEmitter();
   constructor() { }
 

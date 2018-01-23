@@ -154,7 +154,7 @@
           </div>
           <div class="panel-body">
             <div class="container-fluid">
-              <app-checkbox (checkboxValueChanged)="checkboxChanged($event)" [checkboxValue]="true" [checkboxLabel]="'Male'" ></app-checkbox>
+              <app-checkbox [disabled]="true" (checkboxValueChanged)="checkboxChanged($event)" [checkboxValue]="true" [checkboxLabel]="'Male'"></app-checkbox>
               <app-checkbox (checkboxValueChanged)="checkboxChanged($event)" [checkboxValue]="false" [checkboxLabel]="'Female'"></app-checkbox>
             </div>
           </div>
@@ -165,22 +165,72 @@
         </div>
       </div>
       <div class="col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <b>Textarea</b>
-            </div>
-            <div class="panel-body">
-              <div class="container-fluid">
-                <app-textarea [textareaText]="textareaText" 
-                [numberOfRows]="5" (textareaChanged)="textareaChanged($event)"></app-textarea>
-              </div>
-            </div>
-  
-            <div class="panel-footer">
-              <a href="http://52.88.104.145:8080/ui-wiki/#/input">Textarea Reference</a>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Textarea</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-textarea [textareaText]="textareaText" [numberOfRows]="5" (textareaChanged)="textareaChanged($event)"></app-textarea>
             </div>
           </div>
+
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Textarea Reference</a>
+          </div>
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Button</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-button (buttonClicked)="buttonClicked($event)">Button Title</app-button>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Button Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>RadioButton</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-radiobutton [checked]="true" (radioButtonChanged)="radioButtonChanged($event)" [value]="'Male'" [group]="'gender'">Male</app-radiobutton>
+              <app-radiobutton (radioButtonChanged)="radioButtonChanged($event)" [value]="'Female'" [group]="'gender'">Female</app-radiobutton>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">RadioButton Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Switch</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-switch (switchValueChanged)="switchChanged($event)" [switchLabel]="'Attending'" [switchValue]="true"></app-switch>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Switch Reference</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
