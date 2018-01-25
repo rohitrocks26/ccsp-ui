@@ -1,4 +1,4 @@
 <input [disabled]="disabled" [placeholder]="title" [(ngModel)]="searchTerm" (focus)="displaySuggestions()" (blur)="hideSuggestions()"  type="text" class="form-control">
-<ul class="suggestionsBox" *ngIf="showSuggestions">
-    <li *ngFor="let option of filteredList" (click)="itemSelected(option)">{{option}}</li>
+<ul class="suggestionsBox" role="listbox" *ngIf="showSuggestions">
+    <li role="option" *ngFor="let option of filteredList" (click)="itemSelected(option)">{{option}}</li>
 </ul>

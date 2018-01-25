@@ -138,7 +138,17 @@
           </div>
           <div class="panel-body">
             <div class="container-fluid">
-              <app-select-dropdown [options]="select_options" [defaultText]="'Select an option'" [displayKey]="'name'" (optionSelected)="selectSelection($event)"></app-select-dropdown>
+              <form #selectForm="ngForm">
+                <select class="form-control" name="state" ngModel>
+                  <option value="" disabled>Choose a state</option>
+                  <option *ngFor="let state of states" [ngValue]="state">
+                    {{ state.abbrev }}
+                  </option>
+                </select>
+              </form>
+              
+               <label>Form value: {{ selectForm.value | json }}</label>
+               <!-- example value: {state: {name: 'New York', abbrev: 'NY'} } -->
             </div>
           </div>
 
@@ -154,8 +164,12 @@
           </div>
           <div class="panel-body">
             <div class="container-fluid">
-              <app-checkbox [disabled]="true" (checkboxValueChanged)="checkboxChanged($event)" [checkboxValue]="true" [checkboxLabel]="'Male'"></app-checkbox>
-              <app-checkbox (checkboxValueChanged)="checkboxChanged($event)" [checkboxValue]="false" [checkboxLabel]="'Female'"></app-checkbox>
+              <input type="checkbox" [(ngModel)]="option_1"> Option 1
+              <input type="checkbox" [(ngModel)]="option_2"> Option 2
+              <input type="checkbox" [(ngModel)]="option_3"> Option 3
+              <label>Option 1 : {{option_1}} </label>
+              <label>Option 2 : {{option_2}} </label>
+              <label>Option 3 : {{option_3}} </label>
             </div>
           </div>
 
@@ -171,7 +185,8 @@
           </div>
           <div class="panel-body">
             <div class="container-fluid">
-              <app-textarea [textareaText]="textareaText" [numberOfRows]="5" (textareaChanged)="textareaChanged($event)"></app-textarea>
+              <textarea [disabled]="disabled" [readonly]="readonly" [(ngModel)]="textareaText" class="form-control" ></textarea>
+              <label>Textarea Text : {{textareaText}}</label>
             </div>
           </div>
 
@@ -189,7 +204,7 @@
           </div>
           <div class="panel-body">
             <div class="container-fluid">
-              <app-button (buttonClicked)="buttonClicked($event)">Button Title</app-button>
+              <button class="form-control btn-primary" (click)="buttonClicked($event)">Button Title</button>
             </div>
           </div>
 
@@ -205,8 +220,15 @@
           </div>
           <div class="panel-body">
             <div class="container-fluid">
-              <app-radiobutton [checked]="true" (radioButtonChanged)="radioButtonChanged($event)" [value]="'Male'" [group]="'gender'">Male</app-radiobutton>
-              <app-radiobutton (radioButtonChanged)="radioButtonChanged($event)" [value]="'Female'" [group]="'gender'">Female</app-radiobutton>
+              <form #f="ngForm">
+                <input type="radio" value="Cricket" name="food" [(ngModel)]="Sport"> Cricket
+                <input type="radio" value="Football" name="food" [(ngModel)]="Sport"> Football
+                <input type="radio" value="Tennis" name="food" [(ngModel)]="Sport"> Tennis
+              </form>
+              <label>Form value: {{ f.value | json }}</label>
+              <!-- {food: 'lamb' } -->
+              <label>Sport : {{ Sport }}</label>
+              <!-- 'lamb' -->
             </div>
           </div>
 
@@ -228,6 +250,23 @@
 
           <div class="panel-footer">
             <a href="http://52.88.104.145:8080/ui-wiki/#/input">Switch Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <b>Tooltip</b>
+            </div>
+            <div class="panel-body">
+              <div class="container-fluid">
+              </div>
+            </div>
+
+            <div class="panel-footer">
+              <a href="http://52.88.104.145:8080/ui-wiki/#/input">Tooltip Reference</a>
+            </div>
           </div>
         </div>
       </div>

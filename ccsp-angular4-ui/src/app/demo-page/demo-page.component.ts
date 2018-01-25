@@ -106,6 +106,18 @@ export class DemoPageComponent implements OnInit {
   public subscription: Subscription;
   public gender : any;
   public value : boolean = false;
+  public option_1 : boolean = false;
+  public option_2 : boolean = false;
+  public option_3 : boolean = false;
+
+  states = [
+    {name: 'Arizona', abbrev: 'AZ'},
+    {name: 'California', abbrev: 'CA'},
+    {name: 'Colorado', abbrev: 'CO'},
+    {name: 'New York', abbrev: 'NY'},
+    {name: 'Pennsylvania', abbrev: 'PA'},
+  ];
+
   constructor(private globalService: GlobalService, private store: Store<AppState>,
     private globals: Globals) {
     this.subscription = this.store.select(appState => appState.selectedUser)
