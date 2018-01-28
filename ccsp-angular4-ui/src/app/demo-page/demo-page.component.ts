@@ -12,6 +12,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { Globals } from '../shared/globals';
 import {NavItem} from '../shared/components/navbar/nav-item';
 
+
+declare var $ : any;
 @Component({
   selector: 'demo-page',
   templateUrl: './demo-page.component.html',
@@ -63,7 +65,7 @@ export class DemoPageComponent implements OnInit {
       "url": "#"
     }
   ]
-  public menuModelArray : Array<NavItem> = [{
+  public navItemsArray : Array<NavItem> = [{
     name: "home",
     url: "/demoPage",
     active : true
@@ -109,7 +111,7 @@ export class DemoPageComponent implements OnInit {
   public option_1 : boolean = false;
   public option_2 : boolean = false;
   public option_3 : boolean = false;
-
+  public sport : string = "Cricket";
   states = [
     {name: 'Arizona', abbrev: 'AZ'},
     {name: 'California', abbrev: 'CA'},
@@ -117,6 +119,7 @@ export class DemoPageComponent implements OnInit {
     {name: 'New York', abbrev: 'NY'},
     {name: 'Pennsylvania', abbrev: 'PA'},
   ];
+  public switchValue : boolean = false;
 
   constructor(private globalService: GlobalService, private store: Store<AppState>,
     private globals: Globals) {
@@ -175,7 +178,7 @@ export class DemoPageComponent implements OnInit {
   }
   radioButtonChanged(radioButtonValue : any) {
   }
-  switchChanged(switchButtonValue : any) {
+  switchChanged(switchButtonValue : boolean) {
   }
   ngOnChanges() {
   }

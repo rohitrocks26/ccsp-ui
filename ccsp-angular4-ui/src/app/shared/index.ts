@@ -14,6 +14,9 @@ export * from './components/textarea/textarea.component';
 export * from './components/button/button.component';
 export * from './components/radiobutton/radiobutton.component';
 export * from './components/switch/switch.component';
+export * from './components/tooltip/tooltip.component';
+export * from './components/progressbar/progressbar.component';
+
 
 //Directive exports
 

@@ -1,4 +1,4 @@
 <label class="switch">
-  <input [disabled]="disabled" [ngModel]="switchValue" (ngModelChange)="switchSelectionChanged($event)" type="checkbox">
+  <input [disabled]="disabled" [(ngModel)]="switchValue" (ngModelChange)="switchSelectionChanged($event)" type="checkbox">
   <span class="slider"></span>
 </label>

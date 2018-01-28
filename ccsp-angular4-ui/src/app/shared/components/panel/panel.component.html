@@ -1,0 +1,5 @@
+<div class="panel panel-default">
+    <div *ngIf="hasHeading" class="panel-heading"><ng-content select="[panel-heading]"></ng-content></div>
+    <div *ngIf="hasBody" class="panel-body"><ng-content select="[panel-body]"></ng-content></div>
+    <div *ngIf="hasFooter" class="panel-footer"><ng-content select="[panel-footer]"></ng-content></div>
+  </div>

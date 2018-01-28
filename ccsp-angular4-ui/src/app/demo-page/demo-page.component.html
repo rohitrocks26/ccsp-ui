@@ -1,4 +1,4 @@
-<app-navbar [tabs]="menuModelArray" [title]="'HCSC'"></app-navbar>
+<app-navbar [tabs]="navItemsArray" [title]="'HCSC'"></app-navbar>
 <!-- Page Content -->
 <div class="container">
   <div class="jumbotron">
@@ -28,8 +28,11 @@
           </div>
           <div class="panel-body">
             <div class="container-fluid">
-              <app-datepicker [minDate]="'01/01/2018'" [maxDate]="'04/02/2018'" (dateChanged)="dateSelected($event)"></app-datepicker>
+              <form #dateForm="ngForm">
+                <app-datepicker [format]="'dd/mm/yyyy'" [(ngModel)]="date" name="dateValue" [minDate]="'01/01/2018'" [maxDate]="'04/02/2018'" (dateChanged)="dateSelected($event)"></app-datepicker>
+              </form>
             </div>
+            <label>Date form value: {{ dateForm.value | json }}</label>
           </div>
           <div class="panel-footer">
             <a href="http://52.88.104.145:8080/ui-wiki/#/datepicker">Datepicker Reference</a>
@@ -68,8 +71,12 @@
           </div>
           <div class="panel-body">
             <div class="container-fluid">
-              <app-autocomplete [autoCompleteGroup]="autoCompleteGroup"></app-autocomplete>
+              <form #autocomplete="ngForm">
+                <app-autocomplete name="selectedTerm" [restrictToGroup]="true" [(ngModel)]="autocompleteComp" [autoCompleteGroup]="autoCompleteGroup"></app-autocomplete>
+              </form>
             </div>
+            <label>Autocomplete form value: {{ autocomplete.value | json }}</label>
+
           </div>
           <div class="panel-footer">
             <a href="http://52.88.104.145:8080/ui-wiki/#/autocomplete">Autocomplete Reference</a>
@@ -113,7 +120,6 @@
             <div class="container-fluid">
               <label>Id</label>
               <input type="text" class="form-control" [(ngModel)]="id">
-              <button type="submit" (click)="requestData()"  class="btn btn-primary top-margin">Submit</button>
             </div>
 
             <div *ngIf="data" style="margin-top : 5px">
@@ -146,10 +152,9 @@
                   </option>
                 </select>
               </form>
-              
-               <label>Form value: {{ selectForm.value | json }}</label>
-               <!-- example value: {state: {name: 'New York', abbrev: 'NY'} } -->
             </div>
+            <label>Form value: {{ selectForm.value | json }}</label>
+
           </div>
 
           <div class="panel-footer">
@@ -167,10 +172,10 @@
               <input type="checkbox" [(ngModel)]="option_1"> Option 1
               <input type="checkbox" [(ngModel)]="option_2"> Option 2
               <input type="checkbox" [(ngModel)]="option_3"> Option 3
-              <label>Option 1 : {{option_1}} </label>
-              <label>Option 2 : {{option_2}} </label>
-              <label>Option 3 : {{option_3}} </label>
             </div>
+            <label>Option 1 : {{option_1}} </label>
+            <label>Option 2 : {{option_2}} </label>
+            <label>Option 3 : {{option_3}} </label>
           </div>
 
           <div class="panel-footer">
@@ -185,9 +190,10 @@
           </div>
           <div class="panel-body">
             <div class="container-fluid">
-              <textarea [disabled]="disabled" [readonly]="readonly" [(ngModel)]="textareaText" class="form-control" ></textarea>
-              <label>Textarea Text : {{textareaText}}</label>
+              <textarea [disabled]="disabled" [readonly]="readonly" [(ngModel)]="textareaText" class="form-control"></textarea>
             </div>
+            <label>Textarea Text : {{textareaText}}</label>
+
           </div>
 
           <div class="panel-footer">
@@ -221,15 +227,13 @@
           <div class="panel-body">
             <div class="container-fluid">
               <form #f="ngForm">
-                <input type="radio" value="Cricket" name="food" [(ngModel)]="Sport"> Cricket
-                <input type="radio" value="Football" name="food" [(ngModel)]="Sport"> Football
-                <input type="radio" value="Tennis" name="food" [(ngModel)]="Sport"> Tennis
+                <input type="radio" value="Cricket" name="sport" [(ngModel)]="sport"> Cricket
+                <input type="radio" value="Football" name="sport" [(ngModel)]="sport"> Football
+                <input type="radio" value="Tennis" name="sport" [(ngModel)]="sport"> Tennis
               </form>
-              <label>Form value: {{ f.value | json }}</label>
-              <!-- {food: 'lamb' } -->
-              <label>Sport : {{ Sport }}</label>
-              <!-- 'lamb' -->
             </div>
+            <label>Form value: {{ f.value | json }}</label>
+            <label>Sport : {{ sport }}</label>
           </div>
 
           <div class="panel-footer">
@@ -244,8 +248,12 @@
           </div>
           <div class="panel-body">
             <div class="container-fluid">
-              <app-switch (switchValueChanged)="switchChanged($event)" [switchLabel]="'Attending'" [switchValue]="true"></app-switch>
+              <form #switchForm="ngForm">
+                <app-switch (ngModelChange)="switchChanged($event)" name="switch" [ngModel]="switchValue"></app-switch>
+              </form>
             </div>
+            <label>Switch form value: {{ switchForm.value | json }}</label>
+
           </div>
 
           <div class="panel-footer">
@@ -253,23 +261,99 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <b>Tooltip</b>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Tooltip</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-tooltip [title]="'Tooltip activated!!'" [position]="'bottom'">Hover over me</app-tooltip>
             </div>
-            <div class="panel-body">
-              <div class="container-fluid">
-              </div>
-            </div>
+          </div>
 
-            <div class="panel-footer">
-              <a href="http://52.88.104.145:8080/ui-wiki/#/input">Tooltip Reference</a>
-            </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Tooltip Reference</a>
           </div>
         </div>
       </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>ProgressBar</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-progressbar [completion]="0.6"></app-progressbar>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Progressbar Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>ProgressSpinner</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-progressspinner [color]="'black'" [size]="40"></app-progressspinner>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">ProgressSpinner Reference</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Panel</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-panel [hasHeading]="true" [hasBody]="true" [hasFooter]="true">
+                <div panel-heading>
+                  Header
+                </div>
+                <div panel-body>
+                  Body
+                </div>
+                <div panel-footer>
+                  Footer
+                </div>
+              </app-panel>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Panel Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <b>Icons</b>
+            </div>
+            <div class="panel-body">
+              <div class="container-fluid">
+                <app-icon [iconName]="'fa fa-address-book'" [size]="40" [color]="'blue'"></app-icon>
+                <app-icon [iconName]="'fa fa-battery-full'" [size]="40" [color]="'black'"></app-icon>
+                <app-icon [iconName]="'fa fa-calendar-o'" [size]="40" [color]="'red'"></app-icon>
+              
+              </div>
+            </div>
+            <div class="panel-footer">
+              <a href="http://52.88.104.145:8080/ui-wiki/#/input">Icons Reference</a>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>
