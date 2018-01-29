@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./progressspinner.component.scss']
 })
 export class ProgressspinnerComponent implements OnInit {
-  @Input() color : string = "black";
-  @Input() size : string = "24";
+  @Input() width : number = 30;
+  @Input() height : number = 30;
   constructor() { }
 
   ngOnInit() {
