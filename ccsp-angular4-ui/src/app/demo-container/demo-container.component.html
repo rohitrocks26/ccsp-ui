@@ -12,4 +12,6 @@
       <posts></posts>
     </div>
   </div>
+  <app-autocomplete name="selectedTerm" [restrictToGroup]="true" [(ngModel)]="autocompleteComp"
+  [title]="title" [items]="items"></app-autocomplete>
 </div>

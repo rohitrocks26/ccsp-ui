@@ -1,3 +1,5 @@
+import { AutoCompleteComponent } from './../shared/components/autocomplete/autocomplete.component';
+import { AutoCompleteGroup } from './../shared/components/autocomplete/autocomplete-group';
 import { Constants } from './../../../../ccsp-angular4-ui-poc/src/app/common/constants';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store'
@@ -12,6 +14,14 @@ import {Subscription} from 'rxjs/Subscription';
 })
 export class DemoContainerComponent implements OnInit {
   selectedValue : string;
+  public autocompleteGroup : AutoCompleteGroup = new AutoCompleteGroup('',[]);
+  public autocompleteGrp : any = {};
+  title : string = "Search a sport";
+  items : Array<string> = [
+    'Cricket',
+    'Football',
+    'Basketball'
+  ];
   public menuModelArray=[{
     "name":"home",
     "id":"home",
@@ -26,7 +36,7 @@ export class DemoContainerComponent implements OnInit {
     "id":"contact us",
     "url":"#"
   }
-  ]
+  ];
   users : Array<string> = ['Yash','Somdatt','Aditi'];
   subscription : Subscription;
   init : boolean;

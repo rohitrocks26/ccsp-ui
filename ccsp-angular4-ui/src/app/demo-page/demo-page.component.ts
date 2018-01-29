@@ -21,10 +21,8 @@ declare var $ : any;
   providers: [CurrencyPipeModule]
 })
 export class DemoPageComponent implements OnInit {
-  title = 'app';
   public donation: string;
   public radioButtonValue : any;
-  public autoCompleteGroup: AutoCompleteGroup;
   public modelTransfer: Modal = new Modal("Model header", "This is a model component defined for giving the confirmation or error triggered in a particalar process . The properties are fully configurable based on usage !!!!! ");
   public inputObject: Input = new Input("Amount", "", "enter some amount", "text", "amount");
   public group = ['America',
@@ -35,7 +33,7 @@ export class DemoPageComponent implements OnInit {
     'India',
     'Zimbabwe'
   ];
-
+  public title : string = "Search a country";
   public items = [
     {
       "name": "content1",
@@ -161,7 +159,6 @@ export class DemoPageComponent implements OnInit {
   }
   ngOnInit() {
     console.log("inside the inint");
-    this.autoCompleteGroup = new AutoCompleteGroup("Search a country", this.group);
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();

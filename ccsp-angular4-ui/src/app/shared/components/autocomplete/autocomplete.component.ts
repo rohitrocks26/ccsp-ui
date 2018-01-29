@@ -24,21 +24,20 @@ import {
   encapsulation: ViewEncapsulation.None
 })
 export class AutoCompleteComponent implements OnInit, ControlValueAccessor {
-  @Input() autoCompleteGroup: AutoCompleteGroup = new AutoCompleteGroup("");
+  @Input() title : string;
+  @Input() items : Array<string> = [];
   @Input() disabled: boolean;
   @Input() restrictToGroup : boolean;
   @Output() selectedValue: EventEmitter<any> = new EventEmitter<any>();
 
   public showSuggestions: boolean = false;
-  public autoCompleteSearchList: Array<string> = [];
-  public title: string;
   public searchTerm: string;
   public selected;
   private propagateChange = (_: any) => { };
 
   public get filteredList() {
-    if (this.searchTerm === "" || this.searchTerm === undefined) return this.autoCompleteSearchList;
-    let filList = this.autoCompleteSearchList.filter(
+    if (this.searchTerm === "" || this.searchTerm === undefined) return this.items;
+    let filList = this.items.filter(
       item => item.toLowerCase().startsWith(this.searchTerm.toLocaleLowerCase())
     );
     return filList;
@@ -60,8 +59,6 @@ export class AutoCompleteComponent implements OnInit, ControlValueAccessor {
   }
   public group;
   public ngOnInit() {
-    this.autoCompleteSearchList = this.autoCompleteGroup.items;
-    this.title = this.autoCompleteGroup.title;
   }
   displaySuggestions() : void {
     this.showSuggestions = true;
@@ -75,7 +72,7 @@ export class AutoCompleteComponent implements OnInit, ControlValueAccessor {
     this.autocompleteValue = value;
   }
   searchTermInList() : boolean {
-    return this.autoCompleteSearchList.indexOf(this.searchTerm) > -1;
+    return this.items.indexOf(this.searchTerm) > -1;
   }
   registerOnChange(fn: any): void {
     this.propagateChange = fn;
