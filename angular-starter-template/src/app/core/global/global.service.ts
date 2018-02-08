@@ -39,24 +39,27 @@ export class GlobalService {
             .catch(error => this.handleError(error))
     }
     public uploadExcel(requestUrl: string, postBody: any): Observable<any> {
+        //Function to upload an excel file to a url endpoint
         let options = {};
         return this.httpClient.post(requestUrl, postBody, options)
             .map(response => this.handleResponse(response))
             .catch(error => this.handleError(error))
     }
     private getHeaders(addAuthToken: boolean, headers?: any): HttpHeaders {
-        debugger;
+        //Sets the headers for the request
         let httpHeaders = new HttpHeaders();
         if(headers){
             for(let key in headers)
             httpHeaders = httpHeaders.append(key, headers[key])
         }
+        //Add Authorization header if the addAuthToken is true and if there exists a token
         let token = this.authService.accessToken;
         if (addAuthToken && token !== undefined)
             httpHeaders = httpHeaders.append('Authorization', `Bearer  ${token}`);
         return httpHeaders;
     }
     getParams(urlParameters: any): HttpParams {
+        //Add query string parameters to the request
         let params = new HttpParams();
         for (const key in urlParameters) {
             if (urlParameters.hasOwnProperty(key)) {

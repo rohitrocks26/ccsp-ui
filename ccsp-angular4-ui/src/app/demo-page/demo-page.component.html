@@ -72,7 +72,7 @@
           <div class="panel-body">
             <div class="container-fluid">
               <form #autocomplete="ngForm">
-                <app-autocomplete name="selectedTerm" [restrictToGroup]="true" [(ngModel)]="autocompleteComp" [title]="title" [items]="group"></app-autocomplete>
+                <app-autocomplete name="selectedTerm" [restrictToGroup]="true" [(ngModel)]="autocompleteComp"  [title]="title" [items]="group"></app-autocomplete>
               </form>
             </div>
             <label>Autocomplete form value: {{ autocomplete.value | json }}</label>
@@ -338,5 +338,6 @@
       </div>
     </div>
   </div>
+  
 </div>
 <!-- /.container -->

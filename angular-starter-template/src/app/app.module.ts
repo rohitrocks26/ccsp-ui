@@ -6,33 +6,28 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule,PreloadAllModules} from '@angular/router';
 import { AppComponent } from './app.component';
-import { DemoPageComponent } from './demo-page/demo-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { rootReducer } from './store/root-reducer';
-import { DemoContainerComponent } from './demo-container/demo-container.component';
-import { PostsComponent } from './demo-container/posts/posts.component';
 import { CoreModule } from './core/core.module';
-import { Globals } from './shared/globals';
+import { GlobalConstants } from './shared/globalconstants';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DemoContainerComponent,
-    PostsComponent
+    AppComponent
   ],
   imports: [
     CoreModule,
+    HttpClientModule,
+    FormsModule,
     SharedModule,
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
-    HttpClientModule,
     AppRoutes,
     StoreModule.forRoot(rootReducer)
   ],
-  providers: [Globals],
+  providers: [GlobalConstants],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

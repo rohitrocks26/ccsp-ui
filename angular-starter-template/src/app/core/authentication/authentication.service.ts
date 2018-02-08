@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
-import { Globals } from '../../shared/globals';
 import { UtilsService } from '../utils/utils.service';
 import { GlobalErrorHandlerService } from '../global/globalerrorhandler.service'
 import { Token } from './token';
@@ -15,8 +14,7 @@ export class AuthenticationService {
     private _authToken: string;
     private headers: HttpHeaders;
     constructor(private router: Router, private httpClient: HttpClient, 
-        private globalErrorHandlerService : GlobalErrorHandlerService,
-        private globals : Globals) {
+        private globalErrorHandlerService : GlobalErrorHandlerService) {
         this.headers = this.getHeaders();
     }
     public get accessToken(): string {
@@ -27,8 +25,7 @@ export class AuthenticationService {
     }
     public authenticate(authenticalUrl : string, credentials : any) : Observable<any> {
        return this.httpClient.post(authenticalUrl, credentials , {headers : this.headers })
-        .map(response => this.handleResponse(response))
-        .timeout(10000)        
+        .map(response => this.handleResponse(response))   
         .catch(error => this.handleError(error))
     }
     private handleResponse(response: any) {

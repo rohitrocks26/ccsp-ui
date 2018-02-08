@@ -117,7 +117,7 @@ export class DemoPageComponent implements OnInit {
     {name: 'New York', abbrev: 'NY'},
     {name: 'Pennsylvania', abbrev: 'PA'},
   ];
-  public switchValue : boolean = false;
+  public switchValue : boolean = true;
 
   constructor(private globalService: GlobalService, private store: Store<AppState>,
     private globals: Globals) {
@@ -138,7 +138,8 @@ export class DemoPageComponent implements OnInit {
     return items;
   }
   requestData() {
-    this.subscription = this.globalService.getRequest(this.globals.apiUrl, { value: '10' })
+    this.subscription = this.globalService.getRequest('https://jsonplaceholders.typicode.com/posts', { id : 12123}
+  ,false, { 'a' : 'b' })
       .subscribe(data => this.loadData(data),
       error => this.handleError(error));
   }
@@ -159,6 +160,7 @@ export class DemoPageComponent implements OnInit {
   }
   ngOnInit() {
     console.log("inside the inint");
+    this.requestData();
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();

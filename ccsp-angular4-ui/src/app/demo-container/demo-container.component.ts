@@ -1,3 +1,4 @@
+import { GlobalService } from './../core/global/global.service';
 import { AutoCompleteComponent } from './../shared/components/autocomplete/autocomplete.component';
 import { AutoCompleteGroup } from './../shared/components/autocomplete/autocomplete-group';
 import { Constants } from './../../../../ccsp-angular4-ui-poc/src/app/common/constants';
@@ -37,16 +38,24 @@ export class DemoContainerComponent implements OnInit {
     "url":"#"
   }
   ];
+  public data : any;
   users : Array<string> = ['Yash','Somdatt','Aditi'];
   subscription : Subscription;
   init : boolean;
-  constructor(private store : Store<AppState>) {
+  constructor(private store : Store<AppState>, private globalService : GlobalService) {
     this.subscription = this.store.select(state => state.selectedUser).filter(Boolean)
       .subscribe( value=> this.selectedValue = value);
    }
 
   ngOnInit() {
-    this.init = true;
+    this.globalService.postRequest('https://jsonplaceholder.typicode.com/posts/1', { id : 'sss'})
+    .subscribe(data=>this.loadData(data), error=>this.handleError(error))
+  }
+  loadData(data : any) {
+    this.data = data;
+  }
+  handleError(error : any) {
+    console.log("Error in DemoContainer :" +  error);
   }
   change(event : string) {
     this.store.dispatch(new Action('UPDATE_SELECTED_USER',event));
