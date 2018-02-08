@@ -25,7 +25,7 @@ describe('ModalComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ModalComponent);
     component = fixture.componentInstance;
-    component.modelinput = { modelHeader : 'Model header', modelContent :"Model Content"}; 
+    //component.modelinput = { modelHeader : 'Model header', modelContent :"Model Content"}; 
     fixture.detectChanges();
     debugElement = fixture.debugElement.query(By.css('.modal-body'));
     debugelementHeader = fixture.debugElement.query(By.css('.modal-title'));
@@ -33,14 +33,5 @@ describe('ModalComponent', () => {
     elementheader = debugelementHeader.nativeElement;
   });
 
-  it('should display modal body defined as property', () => {
-     var modal =<HTMLElement>elementbody.getElementsByClassName("p")[0]; 
-     console.log(modal);
-     expect(elementbody.textContent).toBe(component.modelinput.modelContent);
-  });  
-  it('should display modal header defined as property', () => {
-    
-    var modal =<HTMLElement>elementheader.getElementsByClassName(".modal-title")[0];
-    expect(elementheader.textContent).toBe(component.modelinput.modelHeader);
- });  
+
 });
