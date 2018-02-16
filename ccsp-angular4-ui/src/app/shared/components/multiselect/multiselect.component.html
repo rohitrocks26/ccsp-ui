@@ -1,0 +1,16 @@
+<div class="dropdown" (mouseleave)="isToggled=(isToggled ? !isToggled : isToggled)">
+  <div class="dropdownToggle multiselectSize multiselectHeight" (click)="isToggled=!isToggled">
+    <p class = "displayValue">{{displayValue}}</p>
+    <span class="dropdownCaret" [ngStyle] = "{'margin-top': dropdownList.length==0 ? '-4px' : '-24px'}"></span>
+  </div>
+  
+  <div>
+  	<ul class = "dropdownMenu" *ngIf = "isToggled && dropdownList.length>0">
+			<li *ngFor="let item of checkBoxDataList">
+			<input class="dropCheckbox" type="checkbox" #checkboxElement
+				(change)="onDropdownChange();" [(ngModel)]="item.checked"
+				[checked]="item.checked" [disabled] = "item.disabled" />
+			<p class="displayP">{{item.data}}</p></li>
+	</ul>
+  </div>
+</div>
