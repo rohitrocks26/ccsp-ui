@@ -1,0 +1,4 @@
+<div [ngClass]="{'form-group' : !calendarIcon, 'input-group' : calendarIcon}">
+    <input (keyup)="datepickerInput.value = fixDatePattern(datepickerInput.value)" [readonly]="!isEditable" [disabled]="disabled" type='text'  #datepickerInput class="form-control datepickerInput" />
+    <span (click)="showCalendar()" *ngIf="calendarIcon" class="input-group-addon datepickerCalendar"><span class="glyphicon-calendar glyphicon"></span></span>
+</div>

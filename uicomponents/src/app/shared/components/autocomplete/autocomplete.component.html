@@ -1,0 +1,4 @@
+<input [disabled]="disabled" [placeholder]="title" [(ngModel)]="searchTerm" (focus)="displaySuggestions()" (blur)="hideSuggestions()"  type="text" class="form-control autocompleteInput">
+<ul class="suggestionsBox autocompleteSuggestions" role="listbox" *ngIf="showSuggestions">
+    <li class="autocompleteSuggestionItem" role="option" *ngFor="let option of filteredList" (click)="itemSelected(option)">{{option}}</li>
+</ul>

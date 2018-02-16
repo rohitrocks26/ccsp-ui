@@ -1,0 +1,402 @@
+<app-navbar [tabs]="navItemsArray" [title]="'HCSC'"></app-navbar>
+<!-- Page Content -->
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Modal</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <div class="col-md-12">
+                <button type="button" class="btn btn-success btn-md center-block" data-toggle="modal" (click)="modalComponent.showModal()">Open Modal</button>
+                <app-modal #modalComponent>
+                  <div class="bgwhite">
+                    <h5>My Content in a Modal!!</h5>
+                    <button (click)="modalComponent.hideModal()" class="btn btn-primary">Yes</button>
+                    <button (click)="disagree()" class="btn btn-primary">No</button>
+                  </div>
+                </app-modal>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/notifications">Modal Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Datepicker</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <form #dateForm="ngForm">
+                <app-datepicker [format]="'mm/dd/yyyy'" [(ngModel)]="date" name="dateValue" [minDate]="minDate" [maxDate]="maxDate" (dateChanged)="dateSelected($event)"
+                [isEditable]="false"></app-datepicker>
+              </form>
+            </div>
+            <label>Date form value: {{ dateForm.value | json }}</label>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/datepicker">Datepicker Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Masking</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <div class="col-md-12 form-group">
+
+                <input type="text" pattern="[0-9]*" #amount="ngModel" placeholder="Please enter valid amount" class="form-control" id="donation"
+                  [ngModel]="donation" appCurrencyFormatter>
+                <div [hidden]="amount.valid || amount.pristine" class="alert alert-danger">
+
+                  <div [hidden]="!amount.hasError('pattern')">Please enter only number</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/masking">Masking Reference</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Autocomplete</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <form #autocomplete="ngForm">
+                <app-autocomplete name="selectedTerm" [restrictToGroup]="true" [(ngModel)]="autocompleteComp" [title]="title" [items]="group"></app-autocomplete>
+              </form>
+            </div>
+            <label>Autocomplete form value: {{ autocomplete.value | json }}</label>
+
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/autocomplete">Autocomplete Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Pagination</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                  <ng-template ngFor let-item [ngForOf]="list()" let-currentElementIndex="(index + 1)">
+                    <div id="{{item.id}}">{{item.name}}</div>
+                  </ng-template>
+                </div>
+                <div class="col-sm-4"></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4"></div>
+                <app-pagination (pageClicked)="changePage($event)" [maxLimit]="limit" [itemLength]="itemLength"></app-pagination>
+                <div class="col-sm-4"></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/pagination">Pagination Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Input</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <label>Id</label>
+              <input type="text" class="form-control" [(ngModel)]="id">
+            </div>
+
+            <div *ngIf="data" style="margin-top : 5px">
+              <label>Plan ID : {{data.planID}}</label>
+              <label>Plan Name : {{data.adminPlanName}}</label>
+              <label>Plan Version Key List : {{data.adminPlanVersionKeyList}}</label>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Input Reference</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Select-Dropdown</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <form #selectForm="ngForm">
+                <select class="form-control" name="state" ngModel>
+                  <option value="" disabled>Choose a state</option>
+                  <option *ngFor="let state of states" [ngValue]="state">
+                    {{ state.abbrev }}
+                  </option>
+                </select>
+              </form>
+            </div>
+            <label>Form value: {{ selectForm.value | json }}</label>
+
+          </div>
+
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Select-Dropdown Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Checkbox</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <input type="checkbox" [(ngModel)]="option_1"> Option 1
+              <input type="checkbox" [(ngModel)]="option_2"> Option 2
+              <input type="checkbox" [(ngModel)]="option_3"> Option 3
+            </div>
+            <label>Option 1 : {{option_1}} </label>
+            <label>Option 2 : {{option_2}} </label>
+            <label>Option 3 : {{option_3}} </label>
+          </div>
+
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Checkbox Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Textarea</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <textarea [disabled]="disabled" [readonly]="readonly" [(ngModel)]="textareaText" class="form-control"></textarea>
+            </div>
+            <label>Textarea Text : {{textareaText}}</label>
+
+          </div>
+
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Textarea Reference</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Button</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <button class="form-control btn-primary" (click)="buttonClicked($event)">Button Title</button>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Button Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>RadioButton</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <form #f="ngForm">
+                <input type="radio" value="Cricket" name="sport" [(ngModel)]="sport"> Cricket
+                <input type="radio" value="Football" name="sport" [(ngModel)]="sport"> Football
+                <input type="radio" value="Tennis" name="sport" [(ngModel)]="sport"> Tennis
+              </form>
+            </div>
+            <label>Form value: {{ f.value | json }}</label>
+            <label>Sport : {{ sport }}</label>
+          </div>
+
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">RadioButton Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Switch</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <form #switchForm="ngForm">
+                <app-switch [switchOnLabel]="'Yes'" [switchOffLabel]="'No'"  (ngModelChange)="switchChanged($event)" name="switch" [ngModel]="switchValue"></app-switch>
+              </form>
+            </div>
+            <label>Switch form value: {{ switchForm.value | json }}</label>
+
+          </div>
+
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Switch Reference</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Tooltip</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-tooltip [title]="'Tooltip activated!!'" [position]="'bottom'">Hover over me</app-tooltip>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Tooltip Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>ProgressBar</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-progressbar [completion]="0.6"></app-progressbar>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Progressbar Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>ProgressSpinner</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-progressspinner [spinnerColor]="'blue'" [width]="80" [height]="80"></app-progressspinner>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">ProgressSpinner Reference</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <b>Panel</b>
+          </div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <app-panel [hasHeading]="true" [hasBody]="true" [hasFooter]="true">
+                <div panel-heading>
+                  Header
+                </div>
+                <div panel-body>
+                  Body
+                </div>
+                <div panel-footer>
+                  Footer
+                </div>
+              </app-panel>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <a href="http://52.88.104.145:8080/ui-wiki/#/input">Panel Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <b>Collapse</b>
+            </div>
+            <div class="panel-body">
+              <div class="container-fluid">
+                <app-collapse>
+                  <div collapse-header>Hi Header</div>
+                  <div collapse-content>Hello Body</div>
+                </app-collapse>
+                
+              </div>
+            </div>
+            <div class="panel-footer">
+              <a href="http://52.88.104.145:8080/ui-wiki/#/input">Collapse Reference</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <b>Breadcrumb</b>
+              </div>
+              <div class="panel-body">
+                <div class="container-fluid">
+                  <app-breadcrumb [items]="navItemsArray"></app-breadcrumb>
+                </div>
+              </div>
+              <div class="panel-footer">
+                <a href="http://52.88.104.145:8080/ui-wiki/#/input">Breadcrumb Reference</a>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <b>Multiselect</b>
+              </div>
+              <div class="panel-body">
+                <div class="container-fluid">
+                  <app-multiselect [dropdownList]="multiselectArray" [(ngModel)]="itemsSelected"></app-multiselect>
+                  <label>{{itemsSelected}}</label>
+                </div>
+              </div>
+              <div class="panel-footer">
+                <a href="http://52.88.104.145:8080/ui-wiki/#/input">Multiselect Reference</a>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- /.container -->

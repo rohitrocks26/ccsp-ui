@@ -1,0 +1,192 @@
+import { ModalComponent } from './../shared/components/modal/modal.component';
+import { AutoCompleteGroup } from './../shared/components/autocomplete/autocomplete-group';
+import { GlobalService } from './../core/global/global.service';
+import { HttpResponseError } from './../../../../accums-ui/src/app/core/global/http-response-error';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CurrencyPipeModule } from '../shared/modules/currency-pipe/currency-pipe.module';
+import { Modal } from '../shared/components/modal/modal';
+import { AppState } from '../models/appstate'
+import { Action } from '../models/action';
+import { Store } from '@ngrx/store';
+import { Subscription } from 'rxjs/Subscription';
+import {NavItem} from '../shared/components/navbar/nav-item';
+
+
+declare var $ : any;
+@Component({
+  selector: 'demo-page',
+  templateUrl: './demo-page.component.html',
+  styleUrls: ['./demo-page.component.scss'],
+  providers: [CurrencyPipeModule]
+})
+export class DemoPageComponent implements OnInit {
+  @ViewChild('modalComponent') modalComponent : any;
+  public donation: string;
+  public radioButtonValue : any;
+  public modelTransfer: Modal = new Modal("Model header", "This is a model component defined for giving the confirmation or error triggered in a particalar process . The properties are fully configurable based on usage !!!!! ");
+  public group = ['America',
+    'Australia',
+    'Africa',
+    'Bangladesh',
+    'Bahrain',
+    'India',
+    'Zimbabwe'
+  ];
+  public title : string = "Search a country";
+  public items = [
+    {
+      "name": "content1",
+      "id": "content1",
+      "url": "#"
+    }, {
+      "name": "content2",
+      "id": "content2",
+      "url": "#"
+    },
+    {
+      "name": "content3",
+      "id": "content3",
+      "url": "#"
+    }, {
+      "name": "content4",
+      "id": "content4",
+      "url": "#"
+    },
+    {
+      "name": "content5",
+      "id": "content5",
+      "url": "#"
+    }, {
+      "name": "content6",
+      "id": "content6",
+      "url": "#"
+    }
+  ]
+  public navItemsArray : Array<NavItem> = [{
+    name: "home",
+    url: "/demoPage",
+    active : true
+  }, {
+    name: "about",
+    url: "",
+    active : false
+  },
+  {
+    name: "contact us",
+    url: "#",
+    active : false
+  }
+  ]
+  public select_options : Array<any> = [{
+    name : 'Option 1',
+    value : 'Opt1'
+  },
+  {
+    name : 'Option 2',
+    value : 'Opt2'
+  },
+  {
+    name : 'Option 3',
+    value : 'Opt3'
+  },
+  {
+    name : 'Option 4',
+    value : 'Opt4'
+  },
+]
+  public textareaText = "Initial textarea text";
+
+  public itemLength = this.items.length;
+  public limit: number = 2;
+  public minCount: number = 0;
+  public maxCount: number = this.limit - 1;
+  public id: string;
+  public data: string;
+  public subscription: Subscription;
+  public gender : any;
+  public value : boolean = false;
+  public option_1 : boolean = false;
+  public option_2 : boolean = false;
+  public option_3 : boolean = false;
+  public minDate : string = "05/03/2018";
+  public maxDate : string = "08/01/2018";
+  public date : string = "05/03/2018";
+  public sport : string = "Cricket";
+  states = [
+    {name: 'Arizona', abbrev: 'AZ'},
+    {name: 'California', abbrev: 'CA'},
+    {name: 'Colorado', abbrev: 'CO'},
+    {name: 'New York', abbrev: 'NY'},
+    {name: 'Pennsylvania', abbrev: 'PA'},
+  ];
+  public switchValue : boolean = true;
+  public multiselectArray : Array<string> = ['Choice 1', 'Choice 2', 'Choice 3', 'Choice 4']
+  constructor(private globalService: GlobalService, private store: Store<AppState>) {
+    this.subscription = this.store.select(appState => appState.selectedUser)
+      .subscribe(value => this.id = value)
+  }
+
+  list() {
+    if (this.items.length < this.maxCount) {
+      this.maxCount = this.items.length - 1;
+    }
+    var items: Array<any> = [];
+    for (var i = this.minCount; i <= this.maxCount; i++) {
+
+      items.push(this.items[i]);
+
+    }
+    return items;
+  }
+  requestData() {
+    this.subscription = this.globalService.getRequest('https://jsonplaceholders.typicode.com/posts', { id : 12123}
+  ,false, { 'a' : 'b' })
+      .subscribe(data => this.loadData(data),
+      error => this.handleError(error));
+  }
+  loadData(data: any) {
+    this.data = data;
+    console.log(data);
+  }
+  handleError(error: HttpResponseError) {
+    console.log(error.errorMessage);
+    console.log(error.errorDescription);
+  }
+  changePage(ev) {
+    this.maxCount = ev.maxCount;
+    this.minCount = ev.minCount;
+
+  }
+  selectSelection(option : any) {
+  }
+  ngOnInit() {
+    console.log("inside the inint");
+    this.requestData();
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+  dateSelected(date: any) {
+    console.log("Date :" + date);
+  }
+  checkboxChanged(value : any) {
+  }
+  textareaChanged(value : string) {
+    this.textareaText = value;
+  }
+  buttonClicked(event : any ) {
+    this.date ="05/01/2018";
+    this.minDate = "03/01/2018";
+    this.maxDate = "09/09/2018";
+  }
+  radioButtonChanged(radioButtonValue : any) {
+  }
+  switchChanged(switchButtonValue : boolean) {
+  }
+  agree() {
+    this.modalComponent.hideModal();
+  }
+  
+  ngOnChanges() {
+  }
+}
