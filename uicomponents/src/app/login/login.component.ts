@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
       )
   }
   public handleError(error: Error): void {
+    console.log(error);
   }
 
 }

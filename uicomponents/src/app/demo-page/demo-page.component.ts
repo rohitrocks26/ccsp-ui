@@ -160,14 +160,12 @@ export class DemoPageComponent implements OnInit {
   selectSelection(option : any) {
   }
   ngOnInit() {
-    console.log("inside the inint");
     this.requestData();
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
   dateSelected(date: any) {
-    console.log("Date :" + date);
   }
   checkboxChanged(value : any) {
   }

@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { By }              from '@angular/platform-browser';
+import { DebugElement }    from '@angular/core';
 declare let $;
 @Component({
   selector: 'app-collapse',
@@ -13,7 +15,6 @@ export class CollapseComponent implements OnInit {
   ngOnInit() {
   }
   openCollapse() {
-    debugger;
     $(this.collapseBody.nativeElement).collapse('toggle');
   }
 }

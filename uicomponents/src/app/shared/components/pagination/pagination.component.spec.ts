@@ -21,7 +21,7 @@ describe('PaginationComponent', () => {
     fixture = TestBed.createComponent(PaginationComponent);
     component = fixture.componentInstance;
     component.maxLimit = 10;
-    component.itemlength = 100;
+    component.itemLength = 100;
     fixture.detectChanges();
     debugElement = fixture.debugElement.query(By.css('li'));
     element = debugElement.nativeElement;
@@ -31,7 +31,7 @@ describe('PaginationComponent', () => {
     expect(component).toBeTruthy();
   });
     it('should calculate and update the count of pages', () => {
-    expect(component.count).toBe(10);
+     expect(component.count).toBe(10);
   });
 
 it('should trigger event emitter on click', () => {
@@ -41,4 +41,10 @@ it('should trigger event emitter on click', () => {
   expect(emittedObject.minCount).toBe(10);
   expect(emittedObject.maxCount).toBe(19);
   });  
+  it('should recalculate count on ngOnChanges', () => {
+    component.itemLength = 99;
+    component.maxLimit = 10;
+    component.ngOnChanges(null);
+    expect(component.count).toBe(10);
+    });  
 });

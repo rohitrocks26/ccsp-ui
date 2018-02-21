@@ -20,7 +20,7 @@ export class SwitchComponent implements OnInit, ControlValueAccessor {
   @Input() switchOnLabel : string;
   @Input() switchOffLabel : string;
   @Output() switchValueChanged : EventEmitter<any> = new EventEmitter();
-  private propagateChange = (_: any) => { };
+  public propagateChange = (_: any) => { };
   constructor() { }
 
   ngOnInit() {

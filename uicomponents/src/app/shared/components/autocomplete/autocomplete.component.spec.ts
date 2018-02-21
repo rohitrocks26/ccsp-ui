@@ -21,16 +21,7 @@ describe('AutocompleteComponent', () => {
     fixture = TestBed.createComponent(AutoCompleteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    component.autoCompleteSearchList=[{"title": 'aditi', "id": '1'},
-  {"title": 'yash', "id": '2'},
-  {"title": 'nitin', "id": '3'},
-  {"title": 'anil', "id": '4'},
-  {"title": 'somdatt', "id": '5'},
-  {"title": 'rohit', "id": '1'},
-  {"title": 'nitish', "id": '2'},
-  {"title": 'koyel', "id": '3'},
-  {"title": 'shreeram', "id": '4'},
-  {"title": 'sourin', "id": '5'}];
+    
     //debugElement = fixture.debugElement.query(By.css('p'));
    // element = debugElement.nativeElement;
   });
@@ -38,11 +29,36 @@ describe('AutocompleteComponent', () => {
   it('should create component', () => {
     expect(component).toBeTruthy();
   });
-  it('should emit value', () => {
-    let emittedObject : any;
-  component.selectedValue.subscribe((emitObject) => emittedObject = emitObject);
-  component.emitSelected("aditi");
-  expect(emittedObject.value).toBe("aditi");
+  it('should filter the list according to search term', () => {
+    component.items = ['India','USA','New Zealand'];
+    component.searchTerm = 'In';
+    fixture.detectChanges();
+    expect(component.filteredList.length).toBe(1);
+    expect(component).toBeTruthy();
+  });
+  it('should bind the search term to the ngModel', () => {
+    component.searchTerm = 'USA';
+    fixture.detectChanges();
+    expect(component.autocompleteValue).toBe(component.searchTerm);
+  });
+  it('should emit the selected value', () => {
+    component.itemSelected('India');
+    component.selectedValue.subscribe(item=> expect(item).toBe('India'));
+  });
+  it('should hide the suggestions on selection', () => {
+    component.itemSelected('India');
+    expect(component.showSuggestions).toBeFalsy();
+  });
+  it('should display the suggestions', () => {
+    component.displaySuggestions();
+    expect(component.showSuggestions).toBeTruthy();
+  });
+  it('should trigger hide suggestions on selection', () => {
+    component.restrictToGroup = false;
+    component.searchTerm='some';
+    let spy = spyOn(component,'searchTermInList').and.returnValue(true);
+    component.hideSuggestions();
+    expect(component.showSuggestions).toBeFalsy();
   });
   // To check if the change is reflected onto the UI
 });

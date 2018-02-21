@@ -13,14 +13,14 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 })
 export class MultiselectComponent implements OnInit, ControlValueAccessor, OnChanges {
 
-  private isInputChanged = false;
+  public isInputChanged = false;
   public isToggled: boolean;
   public isSingleValue: boolean;
   @Input() dropdownList: Array<any> = [];
-  private selectedValues: Array<any> = [];
+  public selectedValues: Array<any> = [];
   public displayValue: String;
-  private checkBoxDataList: Array<any> = [];
-  private propagateChange = (_: any) => {};
+  public checkBoxDataList: Array<any> = [];
+  public propagateChange = (_: any) => {};
   writeValue(obj: any): void {
     if (this.selectedValues && this.selectedValues.length > 0) {
       this.propagateChange(this.selectedValues);

@@ -32,7 +32,7 @@ export class AutoCompleteComponent implements OnInit, ControlValueAccessor {
   public showSuggestions: boolean = false;
   public searchTerm: string;
   public selected;
-  private propagateChange = (_: any) => { };
+  public propagateChange = (_: any) => { };
 
   public get filteredList() {
     if (this.searchTerm === "" || this.searchTerm === undefined) return this.items;

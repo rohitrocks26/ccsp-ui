@@ -27,11 +27,20 @@ describe('ModalComponent', () => {
     component = fixture.componentInstance;
     //component.modelinput = { modelHeader : 'Model header', modelContent :"Model Content"}; 
     fixture.detectChanges();
-    debugElement = fixture.debugElement.query(By.css('.modal-body'));
-    debugelementHeader = fixture.debugElement.query(By.css('.modal-title'));
-    elementbody = debugElement.nativeElement;
-    elementheader = debugelementHeader.nativeElement;
   });
-
-
+  it('should create the component', () => {
+    expect(component).toBeTruthy();
+  });
+  it('should show the modal', () => {
+    component.showModal();
+    debugElement = fixture.debugElement.query(By.css('.modal'));
+    let el = debugElement.nativeElement;
+    expect(el).toBeTruthy();
+  });
+  it('should hide the modal', () => {
+    component.hideModal();
+    debugElement = fixture.debugElement.query(By.css('.modal'));
+    let el = debugElement.nativeElement;
+    expect(el).toBeTruthy();
+  });
 });
